@@ -21,7 +21,7 @@ export default function RegistrationPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Đăng ký thành công! Hệ thống TOÁN.VN sẽ liên hệ lại với bạn trong vòng 24h.");
+    alert("Đăng ký thành công! Hệ thống MathPlus Academy sẽ liên hệ lại với bạn trong vòng 24h.");
   };
 
   return (
@@ -111,7 +111,7 @@ export default function RegistrationPage() {
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-gray-50 focus:bg-white appearance-none"
                     onChange={handleChange}
                   >
-                    <option value="">Chọn cơ sở TOÁN.VN gần nhất</option>
+                    <option value="">Chọn cơ sở MathPlus Academy gần nhất</option>
                     <option value="online">Học Online tương tác trực tiếp</option>
                     <option value="hn_caugiay">Hà Nội - Cơ sở Cầu Giấy</option>
                     <option value="hn_dongda">Hà Nội - Cơ sở Đống Đa</option>
@@ -144,7 +144,7 @@ export default function RegistrationPage() {
               
               <h3 className="text-2xl font-bold mb-6">Liên hệ trực tiếp</h3>
               <p className="text-blue-200 mb-8 leading-relaxed">
-                Nếu bạn cần hỗ trợ ngay lập tức, vui lòng liên hệ với bộ phận CSKH của TOÁN.VN qua các kênh dưới đây.
+                Nếu bạn cần hỗ trợ ngay lập tức, vui lòng liên hệ với bộ phận CSKH của MathPlus Academy qua các kênh dưới đây.
               </p>
 
               <div className="space-y-6">
@@ -164,7 +164,7 @@ export default function RegistrationPage() {
                   </div>
                   <div>
                     <p className="text-sm text-blue-200 mb-1">Email CSKH</p>
-                    <p className="font-bold text-lg">cskh@toan.vn</p>
+                    <p className="font-bold text-lg">cskh@mathplus.vn</p>
                   </div>
                 </div>
 
@@ -182,7 +182,7 @@ export default function RegistrationPage() {
             
             <div className="mt-8 rounded-3xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="300">
               <Image
-                src="https://toan.vn/wp-content/uploads/2026/04/1212.jpg"
+                src="/images/offline_math_class.jpg"
                 alt="Support"
                 width={400}
                 height={300}

@@ -65,7 +65,7 @@ export default function TeachersPage() {
         <div className="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
           <h1 className="text-4xl md:text-5xl font-black text-white mb-6">Đội Ngũ Giáo Viên Tài Năng</h1>
           <p className="text-blue-100 max-w-3xl mx-auto text-lg leading-relaxed">
-            100% giáo viên tại TOÁN.VN được tuyển chọn khắt khe, tốt nghiệp các trường Đại học Sư phạm hàng đầu. Chúng tôi không chỉ dạy kiến thức, mà còn truyền cảm hứng yêu thích môn Toán cho các em.
+            100% giáo viên tại MathPlus Academy được tuyển chọn khắt khe, tốt nghiệp các trường Đại học Sư phạm hàng đầu. Chúng tôi không chỉ dạy kiến thức, mà còn truyền cảm hứng yêu thích môn Toán cho các em.
           </p>
         </div>
       </div>

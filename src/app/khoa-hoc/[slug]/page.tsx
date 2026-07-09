@@ -57,7 +57,7 @@ export default function CourseDetailPage() {
             <div className="lg:w-2/5" data-aos="fade-left">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/3] group cursor-pointer">
                 <Image
-                  src="https://toan.vn/wp-content/uploads/2026/04/1212.jpg"
+                  src="/images/offline_math_class.jpg"
                   alt="Lớp học Toán 12"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"

@@ -43,7 +43,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
       {/* Main Content */}
       <main className="flex-1 flex flex-col">
         <header className="h-16 bg-white shadow-sm flex items-center justify-between px-6">
-          <h1 className="text-xl font-semibold text-gray-800">Quản lý hệ thống TOAN.VN</h1>
+          <h1 className="text-xl font-semibold text-gray-800">Quản lý hệ thống MathPlus Academy</h1>
           <div className="flex items-center space-x-4">
             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
               A

@@ -8,7 +8,7 @@ import AosProvider from "@/components/AosProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Toan.vn - Trung tâm đào tạo Toán",
+  title: "MathPlus Academy - Trung tâm đào tạo Toán",
   description: "Cung cấp các khóa học bồi dưỡng và luyện thi toán",
 };
 

@@ -5,19 +5,19 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#11244e] text-white pt-16 pb-8">
+    <footer className="bg-[#2e5311] text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Image
-              src="/images/footer-logo.svg"
-              alt="Toan.vn Logo Footer"
+              src="/images/logo.jpg"
+              alt="MathPlus Academy Logo Footer"
               width={177}
               height={58}
-              className="mb-6"
+              className="mb-6 rounded-full w-16 h-16 object-cover"
             />
             <p className="text-sm text-gray-300 leading-relaxed">
-              TOÁN.VN là hệ thống trung tâm bồi dưỡng và luyện thi Toán hàng đầu tại Việt Nam, mang đến phương pháp học tập chủ động, giúp học sinh yêu thích và giỏi môn Toán.
+              MathPlus Academy là hệ thống trung tâm bồi dưỡng và luyện thi Toán hàng đầu tại Việt Nam, mang đến phương pháp học tập chủ động, giúp học sinh yêu thích và giỏi môn Toán.
             </p>
           </div>
           <div>
@@ -42,12 +42,12 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Thông tin liên hệ</h3>
             <ul className="space-y-3 text-gray-300">
               <li><span className="font-bold text-white">Hotline:</span> 024.7301.8910</li>
-              <li><span className="font-bold text-white">Email:</span> cskh@toan.vn</li>
+              <li><span className="font-bold text-white">Email:</span> cskh@mathplus.vn</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400 text-sm">
-          © {new Date().getFullYear()} TOAN.VN. All rights reserved.
+          © {new Date().getFullYear()} MathPlus Academy. All rights reserved.
         </div>
       </div>
     </footer>
