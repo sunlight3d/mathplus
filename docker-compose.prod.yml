@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: mathplus_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: mathplus
+      POSTGRES_PASSWORD: MathPlus@2026!Secure
+      POSTGRES_DB: mathplus
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mathplus -d mathplus"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build:
+      context: .
+      args:
+        DATABASE_URL: "postgresql://mathplus:MathPlus%402026%21Secure@103.176.178.110:5432/mathplus?schema=public"
+    container_name: mathplus-web
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgresql://mathplus:MathPlus%402026%21Secure@db:5432/mathplus?schema=public
+
+volumes:
+  postgres_data:
