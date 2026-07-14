@@ -1,0 +1,354 @@
+{
+  "settings": [],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Toán Tiểu Học - Vững Bước Tương Lai",
+      "slug": "toan-tieu-hoc",
+      "description": "Lấy lại căn bản, bồi dưỡng học sinh giỏi Toán Tiểu học. Rèn luyện tư duy logic sớm cho các em.",
+      "category": "Toán tiểu học",
+      "price": "Liên hệ",
+      "image": null,
+      "createdAt": "2026-07-11T04:16:40.522Z",
+      "updatedAt": "2026-07-11T04:16:40.522Z"
+    },
+    {
+      "id": 2,
+      "title": "Toán THCS - Hành Trang Vượt Bậc",
+      "slug": "toan-thcs",
+      "description": "Hệ thống kiến thức trọng tâm, luyện thi vào lớp 10 chuyên và các kỳ thi học sinh giỏi.",
+      "category": "Toán THCS",
+      "price": "Liên hệ",
+      "image": null,
+      "createdAt": "2026-07-11T04:16:40.542Z",
+      "updatedAt": "2026-07-11T04:16:40.542Z"
+    },
+    {
+      "id": 3,
+      "title": "Toán PTTH - Chinh Phục Điểm 9, 10",
+      "slug": "toan-ptth",
+      "description": "Luyện thi Đại học, bám sát đề thi THPT Quốc Gia với các phương pháp giải siêu tốc.",
+      "category": "Toán PTTH",
+      "price": "Liên hệ",
+      "image": null,
+      "createdAt": "2026-07-11T04:16:40.570Z",
+      "updatedAt": "2026-07-11T04:16:40.570Z"
+    },
+    {
+      "id": 4,
+      "title": "Luyện thi Đại học Cao tốc",
+      "slug": "luyen-thi-dai-hoc",
+      "description": "Khóa học thiết kế riêng cho các sĩ tử lớp 12 tăng tốc trong giai đoạn nước rút.",
+      "category": "Luyện thi đại học",
+      "price": "Liên hệ",
+      "image": null,
+      "createdAt": "2026-07-11T04:16:40.616Z",
+      "updatedAt": "2026-07-11T04:16:40.616Z"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Thầy Dũng Toán",
+      "avatar": null,
+      "bio": "Chuyên gia luyện thi Đại học với hơn 15 năm kinh nghiệm. Thầy nổi tiếng với phương pháp giải nhanh và tư duy đột phá.",
+      "role": "Giáo viên Toán THPT",
+      "exp": "15+ năm",
+      "students": "10.000+",
+      "createdAt": "2026-07-11T04:16:40.647Z",
+      "updatedAt": "2026-07-11T04:16:40.647Z"
+    },
+    {
+      "id": 2,
+      "name": "Thầy Trần Hồng Hà",
+      "avatar": null,
+      "bio": "Giáo viên chuyên ôn luyện thi vào lớp 10 các trường Chuyên. Thầy có rất nhiều học sinh đạt thủ khoa, á khoa.",
+      "role": "Giáo viên Toán THCS",
+      "exp": "10+ năm",
+      "students": "5.000+",
+      "createdAt": "2026-07-11T04:16:40.694Z",
+      "updatedAt": "2026-07-11T04:16:40.694Z"
+    },
+    {
+      "id": 3,
+      "name": "Thầy Thanh & Cô Linh",
+      "avatar": "",
+      "bio": "Bộ đôi giáo viên tận tâm với Toán Tiểu học, giúp hàng ngàn học sinh yêu thích và tự tin học Toán.",
+      "role": "Giáo viên Toán Tiểu học",
+      "exp": "8+ năm",
+      "students": "3.000+",
+      "createdAt": "2026-07-11T04:16:40.724Z",
+      "updatedAt": "2026-07-11T09:47:11.961Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Bài viết mẫu về phương pháp học Toán số 1",
+      "slug": "bai-viet-mau-so-1",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 1. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.579Z",
+      "updatedAt": "2026-07-11T07:25:20.579Z"
+    },
+    {
+      "id": 2,
+      "title": "Bài viết mẫu về phương pháp học Toán số 2",
+      "slug": "bai-viet-mau-so-2",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 2. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.596Z",
+      "updatedAt": "2026-07-11T07:25:20.596Z"
+    },
+    {
+      "id": 3,
+      "title": "Bài viết mẫu về phương pháp học Toán số 3",
+      "slug": "bai-viet-mau-so-3",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 3. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.610Z",
+      "updatedAt": "2026-07-11T07:25:20.610Z"
+    },
+    {
+      "id": 4,
+      "title": "Bài viết mẫu về phương pháp học Toán số 4",
+      "slug": "bai-viet-mau-so-4",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 4. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.625Z",
+      "updatedAt": "2026-07-11T07:25:20.625Z"
+    },
+    {
+      "id": 5,
+      "title": "Bài viết mẫu về phương pháp học Toán số 5",
+      "slug": "bai-viet-mau-so-5",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 5. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.640Z",
+      "updatedAt": "2026-07-11T07:25:20.640Z"
+    },
+    {
+      "id": 6,
+      "title": "Bài viết mẫu về phương pháp học Toán số 6",
+      "slug": "bai-viet-mau-so-6",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 6. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.655Z",
+      "updatedAt": "2026-07-11T07:25:20.655Z"
+    },
+    {
+      "id": 7,
+      "title": "Bài viết mẫu về phương pháp học Toán số 7",
+      "slug": "bai-viet-mau-so-7",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 7. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.671Z",
+      "updatedAt": "2026-07-11T07:25:20.671Z"
+    },
+    {
+      "id": 8,
+      "title": "Bài viết mẫu về phương pháp học Toán số 8",
+      "slug": "bai-viet-mau-so-8",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 8. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.689Z",
+      "updatedAt": "2026-07-11T07:25:20.689Z"
+    },
+    {
+      "id": 9,
+      "title": "Bài viết mẫu về phương pháp học Toán số 9",
+      "slug": "bai-viet-mau-so-9",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 9. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.703Z",
+      "updatedAt": "2026-07-11T07:25:20.703Z"
+    },
+    {
+      "id": 10,
+      "title": "Bài viết mẫu về phương pháp học Toán số 10",
+      "slug": "bai-viet-mau-so-10",
+      "content": "<p>Đây là nội dung chi tiết của bài viết số 10. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
+      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "published": true,
+      "createdAt": "2026-07-11T07:25:20.720Z",
+      "updatedAt": "2026-07-11T07:25:20.720Z"
+    }
+  ],
+  "registrations": [],
+  "successStories": [
+    {
+      "id": 1,
+      "studentName": "Nguyễn Minh Nguyệt",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 1)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-1",
+      "createdAt": "2026-07-11T04:16:40.745Z",
+      "updatedAt": "2026-07-11T04:16:40.745Z"
+    },
+    {
+      "id": 2,
+      "studentName": "Trần Nhật Hải",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 2)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-2",
+      "createdAt": "2026-07-11T04:16:40.772Z",
+      "updatedAt": "2026-07-11T04:16:40.772Z"
+    },
+    {
+      "id": 3,
+      "studentName": "Lê Khánh Vân",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 3)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-3",
+      "createdAt": "2026-07-11T04:16:40.793Z",
+      "updatedAt": "2026-07-11T04:16:40.793Z"
+    },
+    {
+      "id": 4,
+      "studentName": "Phạm Quỳnh Anh",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 4)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-4",
+      "createdAt": "2026-07-11T04:16:40.815Z",
+      "updatedAt": "2026-07-11T04:16:40.815Z"
+    },
+    {
+      "id": 5,
+      "studentName": "Hoàng Minh Tuấn",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 5)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-5",
+      "createdAt": "2026-07-11T04:16:40.835Z",
+      "updatedAt": "2026-07-11T04:16:40.835Z"
+    },
+    {
+      "id": 6,
+      "studentName": "Vũ Hải Đăng",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 6)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-6",
+      "createdAt": "2026-07-11T04:16:40.862Z",
+      "updatedAt": "2026-07-11T04:16:40.862Z"
+    },
+    {
+      "id": 7,
+      "studentName": "Ngô Bảo Trâm",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 7)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-7",
+      "createdAt": "2026-07-11T04:16:40.883Z",
+      "updatedAt": "2026-07-11T04:16:40.883Z"
+    },
+    {
+      "id": 8,
+      "studentName": "Đặng Thùy Dương",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 8)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-8",
+      "createdAt": "2026-07-11T04:16:40.909Z",
+      "updatedAt": "2026-07-11T04:16:40.909Z"
+    },
+    {
+      "id": 9,
+      "studentName": "Bùi Đức Anh",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 9)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-9",
+      "createdAt": "2026-07-11T04:16:40.927Z",
+      "updatedAt": "2026-07-11T04:16:40.927Z"
+    },
+    {
+      "id": 10,
+      "studentName": "Đỗ Minh Khang",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 10)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-10",
+      "createdAt": "2026-07-11T04:16:40.953Z",
+      "updatedAt": "2026-07-11T04:16:40.953Z"
+    },
+    {
+      "id": 11,
+      "studentName": "Trịnh Thị Nhàn",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 11)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-11",
+      "createdAt": "2026-07-11T04:16:40.973Z",
+      "updatedAt": "2026-07-11T04:16:40.973Z"
+    },
+    {
+      "id": 12,
+      "studentName": "Hồ Quang Hiếu",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 12)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-12",
+      "createdAt": "2026-07-11T04:16:41.000Z",
+      "updatedAt": "2026-07-11T04:16:41.000Z"
+    },
+    {
+      "id": 13,
+      "studentName": "Lý Hải Băng",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 13)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-13",
+      "createdAt": "2026-07-11T04:16:41.019Z",
+      "updatedAt": "2026-07-11T04:16:41.019Z"
+    },
+    {
+      "id": 14,
+      "studentName": "Tạ Minh Tú",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 14)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-14",
+      "createdAt": "2026-07-11T04:16:41.046Z",
+      "updatedAt": "2026-07-11T04:16:41.046Z"
+    },
+    {
+      "id": 15,
+      "studentName": "Cao Quốc Vượng",
+      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 15)",
+      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
+      "content": "Nội dung chi tiết câu chuyện thành công...",
+      "imageUrl": null,
+      "slug": "cau-chuyen-thanh-cong-15",
+      "createdAt": "2026-07-11T04:16:41.068Z",
+      "updatedAt": "2026-07-11T04:16:41.068Z"
+    }
+  ]
+}

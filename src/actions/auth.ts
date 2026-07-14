@@ -11,7 +11,7 @@ export async function loginAction(formData: FormData) {
   if (username === "admin" && password === "mathplusvolamcaithe") {
     const cookieOptions: any = {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_SITE_URL?.startsWith("https://"),
       path: "/",
     };
     
