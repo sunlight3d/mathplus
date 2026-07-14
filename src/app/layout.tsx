@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AosProvider from "@/components/AosProvider";
 import FloatingContact from "@/components/FloatingContact";
+import MathRender from "@/components/MathRender";
 import { getSettings } from "@/actions/settings";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,6 +32,7 @@ export default async function RootLayout({
             <main className="flex-grow">{children}</main>
             <Footer logoUrl={logoUrl} />
             <FloatingContact />
+            <MathRender />
           </div>
         </AosProvider>
       </body>
