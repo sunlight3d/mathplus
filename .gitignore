@@ -39,3 +39,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large Media and Archives
+*.zip
+*.tar
+*.gz
+*.rar
+*.mp4
+*.mov
+*.MOV
+*.mkv
+*.heic
+*.HEIC
+
+# Temporary working directories
+/temp/

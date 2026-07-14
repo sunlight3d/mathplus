@@ -7,3 +7,9 @@ node_modules
 .env.local
 docker-compose.yml
 Dockerfile
+
+temp
+.next
+node_modules
+db_dump.json
+db_dump.sql

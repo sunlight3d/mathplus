@@ -11,16 +11,16 @@ export default function CourseDetailPage() {
   return (
     <div className="w-full bg-white pb-20">
       {/* Hero Banner for specific course */}
-      <div className="relative bg-[#11244e] text-white pt-20 pb-28">
+      <div className="relative bg-gradient-to-r from-green-700 to-emerald-500 text-white pt-20 pb-28">
         <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-40 -left-20 w-72 h-72 bg-red-500 rounded-full blur-3xl"></div>
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-green-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-40 -left-20 w-72 h-72 bg-orange-400 rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-3/5" data-aos="fade-right">
-              <div className="inline-block px-3 py-1 bg-red-600 rounded-full text-sm font-bold tracking-wider mb-6">
+              <div className="inline-block px-3 py-1 bg-orange-500 rounded-full text-sm font-bold tracking-wider mb-6 text-white shadow-md">
                 Luyện thi Đại học
               </div>
               <h1 className="text-4xl lg:text-5xl font-black leading-tight mb-6">Toán lớp 12 - Luyện thi Đại học mục tiêu 9+</h1>
@@ -45,7 +45,7 @@ export default function CourseDetailPage() {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Link href="/dang-ki-hoc" className="bg-red-600 hover:bg-red-500 text-white px-8 py-4 rounded-full font-bold transition-transform hover:scale-105 shadow-lg shadow-red-600/30">
+                <Link href="/dang-ki-hoc" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold transition-transform hover:scale-105 shadow-lg shadow-orange-500/30">
                   Đăng ký khóa học ngay
                 </Link>
                 <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold transition-colors">
@@ -76,7 +76,7 @@ export default function CourseDetailPage() {
           
           {/* Main Content */}
           <div className="lg:w-2/3">
-            <h2 className="text-2xl font-bold text-[#11244e] mb-6">Mục tiêu khóa học</h2>
+            <h2 className="text-2xl font-bold text-green-800 mb-6">Mục tiêu khóa học</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
               <div className="flex gap-3">
                 <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
@@ -96,7 +96,7 @@ export default function CourseDetailPage() {
               </div>
             </div>
 
-            <h2 className="text-2xl font-bold text-[#11244e] mb-6">Nội dung chương trình</h2>
+            <h2 className="text-2xl font-bold text-green-800 mb-6">Nội dung chương trình</h2>
             <div className="space-y-4 mb-12">
               {[
                 { title: "Chuyên đề 1: Hàm số và Đồ thị (Khảo sát, Cực trị, Tiệm cận...)", lessons: 12 },
@@ -105,12 +105,12 @@ export default function CourseDetailPage() {
                 { title: "Chuyên đề 4: Khối tròn xoay (Nón, Trụ, Cầu)", lessons: 6 },
                 { title: "Chuyên đề 5: Nguyên hàm, Tích phân và Ứng dụng", lessons: 14 },
               ].map((module, idx) => (
-                <div key={idx} className="border border-gray-200 rounded-xl p-4 flex items-center justify-between hover:border-red-400 transition-colors cursor-pointer group">
+                <div key={idx} className="border border-gray-200 rounded-xl p-4 flex items-center justify-between hover:border-orange-400 transition-colors cursor-pointer group">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#11244e] font-bold">
+                    <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-800 font-bold">
                       {idx + 1}
                     </div>
-                    <h3 className="font-semibold text-gray-800 group-hover:text-red-600 transition-colors">{module.title}</h3>
+                    <h3 className="font-semibold text-gray-800 group-hover:text-orange-500 transition-colors">{module.title}</h3>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-500">
                     <FileText className="w-4 h-4" />
@@ -124,7 +124,7 @@ export default function CourseDetailPage() {
           {/* Sidebar */}
           <div className="lg:w-1/3">
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 sticky top-24">
-              <h3 className="text-xl font-bold text-[#11244e] mb-6 border-b border-gray-200 pb-4">Đặc quyền của học viên</h3>
+              <h3 className="text-xl font-bold text-green-800 mb-6 border-b border-gray-200 pb-4">Đặc quyền của học viên</h3>
               
               <ul className="space-y-4 mb-8">
                 <li className="flex gap-3">
@@ -141,12 +141,12 @@ export default function CourseDetailPage() {
                 </li>
               </ul>
 
-              <div className="bg-white p-4 rounded-xl border border-red-100 mb-6 text-center">
+              <div className="bg-white p-4 rounded-xl border border-orange-100 mb-6 text-center">
                 <p className="text-sm text-gray-500 mb-1">Học phí trọn khóa</p>
-                <p className="text-2xl font-black text-red-600">Liên hệ trực tiếp</p>
+                <p className="text-2xl font-black text-orange-500">Liên hệ trực tiếp</p>
               </div>
 
-              <Link href="/dang-ki-hoc" className="w-full bg-[#11244e] hover:bg-blue-900 text-white py-4 rounded-xl font-bold flex items-center justify-center transition-colors">
+              <Link href="/dang-ki-hoc" className="w-full bg-green-700 hover:bg-green-800 text-white py-4 rounded-xl font-bold flex items-center justify-center transition-colors shadow-lg shadow-green-700/20">
                 Đăng ký ngay <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </div>

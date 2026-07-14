@@ -1,76 +1,64 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
 
-export default function Header() {
+export default function Header({ logoUrl = "/images/logo.jpg" }: { logoUrl?: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = [
+    { name: "Giới thiệu", path: "/gioi-thieu" },
+    { name: "Khóa học Toán", path: "/khoa-hoc" },
+    { name: "Câu chuyện thành công", path: "/cau-chuyen-thanh-cong" },
+    { name: "Đội ngũ giáo viên", path: "/doi-ngu-giao-vien" },
+    { name: "Đăng ký học – thi", path: "/dang-ki-hoc" },
+    { name: "Blog", path: "/blog" },
+    { name: "Liên hệ", path: "/lien-he" },
+  ];
+
   return (
     <header className="w-full bg-white shadow-sm relative z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <Image
-            src="/images/logo.jpg"
-            alt="MathPlus Academy Logo"
-            width={177}
-            height={58}
-            className="h-12 w-12 object-cover rounded-full"
-          />
+          <div className="relative w-48 h-12">
+            <Image
+              src={logoUrl}
+              alt="MathPlus Academy Logo"
+              width={177}
+              height={58}
+              className="h-12 w-12 object-cover rounded-full"
+            />
+          </div>
         </Link>
 
         {/* Main Navigation (Desktop) */}
         <nav className="hidden lg:flex items-center space-x-8">
-          <div className="group relative">
-            <Link
-              href="/khoa-hoc"
-              className="text-[15px] font-bold text-[#2e5311] hover:text-[#64B428] flex items-center"
-            >
-              Khóa học Toán <ChevronDown className="w-4 h-4 ml-1" />
-            </Link>
-          </div>
-          <div className="group relative">
-            <Link
-              href="/luyen-thi"
-              className="text-[15px] font-bold text-[#2e5311] hover:text-[#64B428] flex items-center"
-            >
-              Luyện thi Toán <ChevronDown className="w-4 h-4 ml-1" />
-            </Link>
-          </div>
-          <div className="group relative">
-            <Link
-              href="/ket-qua-hoc-tap"
-              className="text-[15px] font-bold text-[#2e5311] hover:text-[#64B428] flex items-center"
-            >
-              Kết quả học tập <ChevronDown className="w-4 h-4 ml-1" />
-            </Link>
-          </div>
-          <Link
-            href="/doi-ngu-giao-vien"
-            className="text-[15px] font-bold text-[#2e5311] hover:text-[#64B428]"
-          >
-            Đội ngũ giáo viên
-          </Link>
-          <Link
-            href="/dang-ki-hoc"
-            className="text-[15px] font-bold text-[#2e5311] hover:text-[#64B428]"
-          >
-            Đăng ký học – thi
-          </Link>
-          <div className="group relative">
-            <Link
-              href="/lien-he"
-              className="text-[15px] font-bold text-[#2e5311] hover:text-[#64B428] flex items-center"
-            >
-              Liên hệ <ChevronDown className="w-4 h-4 ml-1" />
-            </Link>
-          </div>
-          <Link
-            href="/cau-chuyen-thanh-cong"
-            className="text-[15px] font-bold text-[#2e5311] hover:text-[#64B428]"
-          >
-            Câu chuyện thành công
-          </Link>
+          {navItems.map((item) => {
+            const isActive = pathname === item.path;
+            return (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`text-[15px] font-bold transition-colors ${
+                  isActive ? "text-[#FFB800]" : "text-[#2e5311] hover:text-[#64B428]"
+                }`}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Mobile menu button */}

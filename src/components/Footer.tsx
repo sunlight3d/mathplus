@@ -2,15 +2,33 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
-export default function Footer() {
+export default function Footer({ logoUrl = "/images/logo.jpg" }: { logoUrl?: string }) {
   return (
-    <footer className="bg-[#2e5311] text-white pt-16 pb-8">
+    <>
+      {/* Call to action */}
+      <section className="py-20 bg-gradient-to-r from-[#2e5311] to-[#1b310a] relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#64B428] blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Bạn đã sẵn sàng bứt phá điểm số?</h2>
+          <p className="text-xl text-[#e0eed5] mb-10 max-w-2xl mx-auto">Tham gia cùng 50,000+ học sinh khác đã thành công với phương pháp học chủ động tại MathPlus Academy</p>
+          <button className="bg-[#64B428] hover:bg-[#509020] text-white px-10 py-5 rounded-full font-bold text-xl shadow-[0_0_20px_rgba(100,180,40,0.5)] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(100,180,40,0.7)] flex items-center mx-auto">
+            Đăng ký kiểm tra năng lực miễn phí <ArrowRight className="ml-2" />
+          </button>
+        </div>
+      </section>
+
+      <footer className="bg-[#2e5311] text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Image
-              src="/images/logo.jpg"
+              src={logoUrl}
               alt="MathPlus Academy Logo Footer"
               width={177}
               height={58}
@@ -51,5 +69,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }
