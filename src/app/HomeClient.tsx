@@ -22,7 +22,7 @@ export default function HomeClient({ settings }: { settings: Record<string, stri
       bgImage: settings["HOME_BANNER_2"] || "/images/hero_slider_2.jpg",
     },
     {
-      title: "14+ năm MathPlus Academy",
+      title: "14+ năm Trung tâm giáo dục MathPlus Academy",
       heading: "Cùng 50.000 + học sinh giỏi Toán",
       bgImage: settings["HOME_BANNER_3"] || "/images/hero_slider_3.jpg",
     },

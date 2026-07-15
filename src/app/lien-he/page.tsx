@@ -12,31 +12,21 @@ export default function ContactPage() {
   const centers = [
     {
       id: 1,
-      name: "MATHPLUS CẦU GIẤY",
-      address: "Ngõ 34 phố Nghĩa Đô, Phường Nghĩa Đô, Cầu Giấy, Hà Nội",
-      hotline: "0982.921.441",
-      phone: "0902.236.836",
-      zalo: "0353.556.860",
+      name: "MATHPLUS XÃ ĐÀN (CƠ SỞ 1)",
+      address: "101B Xã Đàn 2, Đống Đa, Hà Nội",
+      hotline: "0832.645.999",
+      phone: "0832.645.999",
+      zalo: "0832.645.999",
       mapLink: "https://www.google.com/maps",
       qrCode: "https://toan.vn/wp-content/uploads/2023/03/zalo-cau-giay.jpg"
     },
     {
       id: 2,
-      name: "MATHPLUS ĐÔNG ANH",
-      address: "Số 123 Đường Cao Lỗ, Uy Nỗ, Đông Anh, Hà Nội",
-      hotline: "0987.654.321",
-      phone: "024.7301.8910",
-      zalo: "0912.345.678",
-      mapLink: "https://www.google.com/maps",
-      qrCode: "https://toan.vn/wp-content/uploads/2023/02/DC.png"
-    },
-    {
-      id: 3,
-      name: "MATHPLUS THANH XUÂN",
-      address: "Số 45 Nguyễn Trãi, Thanh Xuân Trung, Thanh Xuân, Hà Nội",
-      hotline: "0965.123.456",
-      phone: "024.7301.8911",
-      zalo: "0965.123.456",
+      name: "MATHPLUS HỒ ĐẮC DI (CƠ SỞ 2)",
+      address: "65 Hồ Đắc Di, Đống Đa, Hà Nội",
+      hotline: "0977.961.189",
+      phone: "0977.961.189",
+      zalo: "0977.961.189",
       mapLink: "https://www.google.com/maps",
       qrCode: "https://toan.vn/wp-content/uploads/2023/02/DC.png"
     }
@@ -76,15 +66,15 @@ export default function ContactPage() {
             <div className="grid grid-cols-2 gap-8 mt-10">
               <div>
                 <p className="text-gray-500 mb-2 font-medium">Hotline</p>
-                <a href="tel:0902236836" className="text-xl font-bold text-[#2e5311] hover:text-[#64B428] transition-colors">
-                  0902-236-836
+                <a href="tel:0832645999" className="text-xl font-bold text-[#2e5311] hover:text-[#64B428] transition-colors">
+                  0832-645-999
                 </a>
               </div>
               
               <div>
                 <p className="text-gray-500 mb-2 font-medium">Điện thoại</p>
-                <a href="tel:02473018910" className="text-xl font-bold text-[#2e5311] hover:text-[#64B428] transition-colors">
-                  024-7301-8910
+                <a href="tel:0977961189" className="text-xl font-bold text-[#2e5311] hover:text-[#64B428] transition-colors">
+                  0977-961-189
                 </a>
               </div>
 
@@ -165,7 +155,6 @@ export default function ContactPage() {
             >
               <option value="">Tỉnh/Thành phố</option>
               <option value="Hà Nội">Hà Nội</option>
-              <option value="Vĩnh Phúc">Vĩnh Phúc</option>
             </select>
             
             <select 
@@ -174,15 +163,13 @@ export default function ContactPage() {
               onChange={(e) => setDistrict(e.target.value)}
             >
               <option value="">Quận/Huyện</option>
-              <option value="Cầu Giấy">Cầu Giấy</option>
-              <option value="Đông Anh">Đông Anh</option>
-              <option value="Thanh Xuân">Thanh Xuân</option>
+              <option value="Đống Đa">Đống Đa</option>
             </select>
             
             <select className="flex-1 w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#64B428] transition-all text-gray-700">
               <option value="">Trung tâm</option>
-              <option value="MATHPLUS CẦU GIẤY">MATHPLUS CẦU GIẤY</option>
-              <option value="MATHPLUS ĐÔNG ANH">MATHPLUS ĐÔNG ANH</option>
+              <option value="MATHPLUS XÃ ĐÀN">MATHPLUS XÃ ĐÀN</option>
+              <option value="MATHPLUS HỒ ĐẮC DI">MATHPLUS HỒ ĐẮC DI</option>
             </select>
 
             <button className="w-full md:w-auto px-8 py-3 bg-[#FFB800] hover:bg-[#e5a600] text-white font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors">

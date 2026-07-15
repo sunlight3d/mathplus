@@ -35,7 +35,7 @@ export default function Header({ logoUrl = "/images/logo.jpg" }: { logoUrl?: str
           <div className="relative w-48 h-12">
             <Image
               src={logoUrl}
-              alt="MathPlus Academy Logo"
+              alt="Trung tâm giáo dục MathPlus Academy Logo"
               width={177}
               height={58}
               className="h-12 w-12 object-cover rounded-full"

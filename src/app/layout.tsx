@@ -11,7 +11,7 @@ import { getSettings } from "@/actions/settings";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MathPlus Academy - Trung tâm đào tạo Toán",
+  title: "Trung tâm giáo dục MathPlus Academy - Trung tâm đào tạo Toán",
   description: "Cung cấp các khóa học bồi dưỡng và luyện thi toán",
 };
 

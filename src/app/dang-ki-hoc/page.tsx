@@ -218,9 +218,8 @@ export default function DangKiHocPage() {
                     <select className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#64B428]/50 focus:border-[#64B428] transition-all text-gray-700 appearance-none">
                       <option value="">— Vui lòng chọn —</option>
                       <option value="MATHPLUS ONLINE">MATHPLUS ONLINE</option>
-                      <option value="MATHPLUS CẦU GIẤY">MATHPLUS CẦU GIẤY</option>
-                      <option value="MATHPLUS ĐÔNG ANH">MATHPLUS ĐÔNG ANH</option>
-                      <option value="MATHPLUS THANH XUÂN">MATHPLUS THANH XUÂN</option>
+                      <option value="MATHPLUS XÃ ĐÀN">MATHPLUS XÃ ĐÀN</option>
+                      <option value="MATHPLUS HỒ ĐẮC DI">MATHPLUS HỒ ĐẮC DI</option>
                     </select>
                   </div>
 
@@ -287,8 +286,8 @@ export default function DangKiHocPage() {
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800">Hệ thống đào tạo Toán trực tiếp</h3>
                   </div>
-                  <p className="text-gray-600 mb-8 max-w-2xl">
-                    Hệ thống các trung tâm giảng dạy môn Toán trực tiếp tại Hà Nội và Vĩnh Phúc, trang bị cơ sở vật chất hiện đại, tạo môi trường học tập tốt nhất cho học sinh.
+                  <p className="text-gray-600">
+                    Hệ thống các trung tâm giảng dạy môn Toán trực tiếp tại Hà Nội, trang bị cơ sở vật chất hiện đại, tạo môi trường học tập tốt nhất cho học sinh.
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-8 lg:gap-12 bg-gray-50 p-8 rounded-2xl border border-gray-100">
