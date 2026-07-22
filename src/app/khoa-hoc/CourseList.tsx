@@ -66,9 +66,10 @@ export default function CourseList({ courses }: { courses: any[] }) {
                   {course.title}
                 </h3>
               </Link>
-              <p className="text-gray-600 line-clamp-3 mb-6 text-sm">
-                {course.description}
-              </p>
+              <div 
+                className="text-gray-600 line-clamp-3 mb-6 text-sm prose prose-sm"
+                dangerouslySetInnerHTML={{ __html: course.description || '' }}
+              />
 
               <div className="mt-auto pt-4 border-t border-green-50 flex items-center justify-between">
                 <span className="text-orange-500 font-bold">

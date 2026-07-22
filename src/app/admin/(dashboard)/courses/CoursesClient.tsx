@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import { createCourse, updateCourse, deleteCourse } from "@/actions/admin";
 import { Edit, Trash2, Plus, Upload, X } from "lucide-react";
 import Cropper from 'react-easy-crop';
+import RichTextEditor from "@/components/RichTextEditor";
 import { uploadImageAction } from "@/actions/upload";
 
 // Helper to extract a cropped image as Blob
@@ -207,7 +208,10 @@ export default function CoursesClient({ courses }: { courses: any[] }) {
 
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Mô tả</label>
-                <textarea name="description" value={formData.description} onChange={handleChange} rows={3} className="w-full px-3 py-2 border rounded-lg focus:ring-green-500 focus:border-green-500"></textarea>
+                <RichTextEditor 
+                  value={formData.description} 
+                  onChange={(value) => setFormData({ ...formData, description: value })} 
+                />
               </div>
             </div>
             <div className="flex justify-end gap-3 mt-6">
