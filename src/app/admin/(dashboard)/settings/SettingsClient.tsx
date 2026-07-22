@@ -54,6 +54,7 @@ const DEFAULT_SETTINGS = [
   { key: "ABOUT_FOUNDER_IMG", name: "Ảnh Người sáng lập", desc: "Ảnh chân dung Founder trang giới thiệu (Tỷ lệ 1:1 hoặc 9:16)", defaultRatio: 1, defaultUrl: "/images/10.jpg" },
   { key: "ABOUT_OFFLINE_IMG", name: "Ảnh Đội ngũ/Cơ sở", desc: "Ảnh phần đội ngũ giáo viên / cơ sở vật chất (Tỷ lệ 16:9)", defaultRatio: 16 / 9, defaultUrl: "/images/offline_math_class.jpg" },
   { key: "ABOUT_ONLINE_IMG", name: "Ảnh Phương pháp", desc: "Ảnh phần phương pháp giảng dạy (Tỷ lệ 16:9)", defaultRatio: 16 / 9, defaultUrl: "/images/online_math_class.jpg" },
+  { key: "REGISTRATION_IMG", name: "Ảnh Đăng ký học", desc: "Ảnh đại diện trang Đăng ký học (Tỷ lệ 1:1 hoặc 9:16)", defaultRatio: 1, defaultUrl: "/images/thay_dung_day_hoc.jpg" },
 ];
 
 const DEFAULT_TEXT_SETTINGS = [

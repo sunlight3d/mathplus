@@ -33,6 +33,9 @@ services:
         condition: service_healthy
     environment:
       - DATABASE_URL=postgresql://mathplus:MathPlus%402026%21Secure@db:5432/mathplus?schema=public
+    volumes:
+      - uploads_data:/app/public/uploads
 
 volumes:
   postgres_data:
+  uploads_data:

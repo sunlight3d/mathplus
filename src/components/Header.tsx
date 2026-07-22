@@ -62,10 +62,34 @@ export default function Header({ logoUrl = "/images/logo.jpg" }: { logoUrl?: str
         </nav>
 
         {/* Mobile menu button */}
-        <button className="lg:hidden p-2 text-gray-600">
+        <button className="lg:hidden p-2 text-gray-600" onClick={() => setIsOpen(!isOpen)}>
           <Menu className="w-6 h-6" />
         </button>
       </div>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <nav className="lg:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-full shadow-md z-50">
+          <ul className="flex flex-col py-2">
+            {navItems.map((item) => {
+              const isActive = pathname === item.path;
+              return (
+                <li key={item.path}>
+                  <Link
+                    href={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-4 py-3 text-[15px] font-bold border-b border-gray-50 last:border-0 ${
+                      isActive ? "text-[#FFB800] bg-orange-50" : "text-[#2e5311] hover:bg-gray-50 hover:text-[#64B428]"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }

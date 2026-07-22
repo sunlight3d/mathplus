@@ -2,6 +2,8 @@ import Image from "next/image";
 import { User, Award, BookOpen } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = 'force-dynamic';
+
 export default async function TeachersPage() {
   let teachers: any[] = [];
   try {
@@ -45,9 +47,10 @@ export default async function TeachersPage() {
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2e5311]/90 via-[#2e5311]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-white text-sm leading-relaxed transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    "{teacher.bio}"
-                  </p>
+                  <div 
+                    className="text-white text-sm leading-relaxed transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 line-clamp-4"
+                    dangerouslySetInnerHTML={{ __html: teacher.bio || '' }}
+                  />
                 </div>
               </div>
               

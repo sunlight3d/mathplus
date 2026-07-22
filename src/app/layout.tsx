@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import AosProvider from "@/components/AosProvider";
-import FloatingContact from "@/components/FloatingContact";
 import MathRender from "@/components/MathRender";
 import { getSettings } from "@/actions/settings";
+import MainLayout from "@/components/MainLayout";
+
+export const dynamic = 'force-dynamic';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,13 +27,10 @@ export default async function RootLayout({
     <html lang="vi">
       <body className={inter.className}>
         <AosProvider>
-          <div className="flex flex-col min-h-screen">
-            <Header logoUrl={logoUrl} />
-            <main className="flex-grow">{children}</main>
-            <Footer logoUrl={logoUrl} />
-            <FloatingContact />
-            <MathRender />
-          </div>
+          <MainLayout logoUrl={logoUrl}>
+            {children}
+          </MainLayout>
+          <MathRender />
         </AosProvider>
       </body>
     </html>

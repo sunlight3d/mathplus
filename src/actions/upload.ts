@@ -34,10 +34,10 @@ export async function uploadImageAction(formData: FormData) {
     // Write file
     await fs.writeFile(filepath, buffer);
 
-    // Return the public URL
+    // Return the API URL to bypass Next.js dev server cache for public folder
     return { 
       success: true, 
-      url: `/uploads/teachers/${filename}` 
+      url: `/api/uploads/teachers/${filename}` 
     };
 
   } catch (error) {

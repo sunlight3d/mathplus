@@ -2,8 +2,9 @@
 
 import { useState, useCallback } from "react";
 import { createTeacher, updateTeacher, deleteTeacher } from "@/actions/admin";
-import { Edit, Trash2, Plus, Upload, X } from "lucide-react";
+import { Plus, Edit, Trash2, X, Upload } from "lucide-react";
 import Cropper from 'react-easy-crop';
+import RichTextEditor from "@/components/RichTextEditor";
 import { uploadImageAction } from "@/actions/upload";
 
 const ROLES = [
@@ -211,7 +212,10 @@ export default function TeachersClient({ teachers }: { teachers: any[] }) {
 
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Giới thiệu ngắn (Bio)</label>
-                <textarea name="bio" value={formData.bio} onChange={handleChange} rows={3} className="w-full px-3 py-2 border rounded-lg focus:ring-green-500 focus:border-green-500"></textarea>
+                <RichTextEditor 
+                  value={formData.bio} 
+                  onChange={(value) => setFormData({ ...formData, bio: value })} 
+                />
               </div>
             </div>
             <div className="flex justify-end gap-3 mt-6">
