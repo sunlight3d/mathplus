@@ -6,7 +6,8 @@ import Image from "next/image";
 import { Star, Clock, Users, ArrowRight } from "lucide-react";
 
 export default function CourseList({ courses }: { courses: any[] }) {
-  const categories = ["Tất cả", "Toán tiểu học", "Toán THCS", "Toán PTTH", "Luyện thi đại học"];
+  const dynamicCategories = Array.from(new Set(courses.map(c => c.category).filter(Boolean)));
+  const categories = ["Tất cả", ...dynamicCategories];
   const [activeCategory, setActiveCategory] = useState("Tất cả");
 
   const filteredCourses = activeCategory === "Tất cả" 

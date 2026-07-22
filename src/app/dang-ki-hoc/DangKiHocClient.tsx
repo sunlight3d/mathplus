@@ -122,34 +122,52 @@ export default function DangKiHocClient({ settings }: { settings: Record<string,
 
         {/* 3. Exam Prep Categories */}
         <section className="mb-24">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-[#2e5311] uppercase">CHƯƠNG TRÌNH ĐÀO TẠO CHÍNH</h2>
+            <p className="text-gray-500 mt-2">Các khóa học được thiết kế chuẩn mực theo từng mục tiêu của học sinh</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             
-            <a href="#" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
-                <GraduationCap className="w-10 h-10 text-white" />
+            <a href="#contact-form" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-4 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
+                <BookOpen className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Luyện thi<br />Toán Đại Học</h3>
+              <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Toán cho học sinh<br />lớp 6 đến 9</h3>
             </a>
 
-            <a href="#" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
-                <TrendingUp className="w-10 h-10 text-white" />
+            <a href="#contact-form" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-4 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
+                <BrainCircuit className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Luyện thi<br />Toán vào 10</h3>
+              <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Toán cho người<br />mất gốc</h3>
             </a>
 
-            <a href="#" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
-                <BookOpen className="w-10 h-10 text-white" />
+            <a href="#contact-form" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-4 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
+                <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Luyện thi<br />Toán lên 6</h3>
+              <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Lớp toán luyện thi<br />học sinh khá giỏi</h3>
             </a>
 
-            <a href="#" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
-                <Calculator className="w-10 h-10 text-white" />
+            <a href="#contact-form" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-4 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
+                <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Học tốt Toán<br />lớp 1 đến lớp 12</h3>
+              <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Toán cơ bản và<br />nâng cao dần</h3>
+            </a>
+
+            <a href="#contact-form" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-4 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Luyện thi vào 10</h3>
+            </a>
+
+            <a href="#contact-form" className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#2e5311] to-[#64B428] rounded-full flex items-center justify-center mb-4 shadow-md group-hover:shadow-[#64B428]/50 transition-shadow">
+                <GraduationCap className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#2e5311] transition-colors">Luyện thi đại học</h3>
             </a>
 
           </div>
@@ -173,7 +191,7 @@ export default function DangKiHocClient({ settings }: { settings: Record<string,
                     <div>
                       <input 
                         type="text" 
-                        placeholder="Họ và tên học sinh *" 
+                        placeholder="Họ và tên học sinh (*)" 
                         className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#64B428]/50 focus:border-[#64B428] transition-all"
                         required
                       />
@@ -181,7 +199,7 @@ export default function DangKiHocClient({ settings }: { settings: Record<string,
                     <div>
                       <input 
                         type="tel" 
-                        placeholder="Số điện thoại *" 
+                        placeholder="Số điện thoại phụ huynh (*)" 
                         className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#64B428]/50 focus:border-[#64B428] transition-all"
                         required
                       />
@@ -203,6 +221,19 @@ export default function DangKiHocClient({ settings }: { settings: Record<string,
                         className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#64B428]/50 focus:border-[#64B428] transition-all"
                       />
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-700 font-semibold mb-2">Chương trình học quan tâm</label>
+                    <select className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#64B428]/50 focus:border-[#64B428] transition-all text-gray-700 appearance-none">
+                      <option value="">— Vui lòng chọn chương trình —</option>
+                      <option value="Toán cho học sinh lớp 6 đến 9">Toán cho học sinh lớp 6 đến 9</option>
+                      <option value="Toán cho người mất gốc">Toán cho người mất gốc</option>
+                      <option value="Lớp toán luyện thi học sinh khá giỏi">Lớp toán luyện thi học sinh khá giỏi</option>
+                      <option value="Toán cơ bản và nâng cao dần">Toán cơ bản và nâng cao dần</option>
+                      <option value="Luyện thi vào 10">Luyện thi vào 10</option>
+                      <option value="Luyện thi đại học">Luyện thi đại học</option>
+                    </select>
                   </div>
 
                   <div>
