@@ -2,7 +2,7 @@
 # Stage 1: Install dependencies
 # ============================================
 FROM node:20-alpine AS deps
-RUN apk add --no-cache libc6-compat openssl
+RUN apk add --no-cache libc6-compat openssl python3 make g++ cairo-dev pango-dev jpeg-dev giflib-dev librsvg-dev
 WORKDIR /app
 
 COPY package.json package-lock.json ./
