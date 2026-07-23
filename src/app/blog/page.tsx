@@ -61,10 +61,11 @@ export default async function BlogPage({
                 <Link href={`/blog/${post.slug}`} className="block relative h-56 overflow-hidden">
                   <div className="absolute inset-0 bg-green-900/20 group-hover:bg-transparent transition-colors z-10"></div>
                   {post.image ? (
-                    <img
+                    <Image
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
                     <div className="w-full h-full bg-green-50 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">

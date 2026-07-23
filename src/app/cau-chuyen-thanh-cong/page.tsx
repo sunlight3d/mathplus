@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PrismaClient } from "@prisma/client";
 import Pagination from "@/components/Pagination";
 
@@ -57,10 +58,11 @@ export default async function SuccessStoriesPage({
             {stories.map((story) => (
               <div key={story.id} className="story-item bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_4px_25px_rgb(0,0,0,0.1)] transition-all duration-300 overflow-hidden group flex flex-col border border-green-50">
                 <Link href={`/cau-chuyen-thanh-cong/${story.slug}`} className="story-img block relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <Image
                     src={story.imageUrl || "/images/placeholder.jpg"}
                     alt={story.studentName}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-green-900/10 group-hover:bg-transparent transition-colors"></div>
                   <div className="absolute bottom-4 left-4 bg-orange-500/90 backdrop-blur-sm px-3 py-1 rounded text-sm font-semibold text-white shadow-sm">

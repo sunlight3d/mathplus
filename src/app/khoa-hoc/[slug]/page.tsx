@@ -1,15 +1,65 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, Clock, Users, BookOpen, Star, PlayCircle, FileText, ArrowRight } from "lucide-react";
-import { useParams } from "next/navigation";
+import { PrismaClient } from "@prisma/client";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
-export default function CourseDetailPage() {
-  const params = useParams();
-  
+const prisma = new PrismaClient();
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const course = await prisma.course.findUnique({ where: { slug } });
+  if (!course) return {};
+
+  const cleanDescription = (course.description || '').substring(0, 160).replace(/<[^>]*>?/gm, '');
+
+  return {
+    title: `${course.title} | MathPlus Academy`,
+    description: cleanDescription,
+    openGraph: {
+      title: course.title,
+      description: cleanDescription,
+      images: course.image ? [course.image] : [],
+      type: 'article',
+    }
+  };
+}
+
+export default async function CourseDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const course = await prisma.course.findUnique({ where: { slug } });
+
+  if (!course) {
+    notFound();
+  }
+
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": course.title,
+    "description": (course.description || '').substring(0, 200).replace(/<[^>]*>?/gm, ''),
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "MathPlus Academy",
+      "sameAs": "https://mathplus.com.vn"
+    }
+  };
+
   return (
     <div className="w-full bg-white pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
       {/* Hero Banner for specific course */}
       <div className="relative bg-gradient-to-r from-green-700 to-emerald-500 text-white pt-20 pb-28">
         <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
@@ -21,12 +71,13 @@ export default function CourseDetailPage() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-3/5" data-aos="fade-right">
               <div className="inline-block px-3 py-1 bg-orange-500 rounded-full text-sm font-bold tracking-wider mb-6 text-white shadow-md">
-                Luyện thi Đại học
+                {course.category || "Chương trình học"}
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black leading-tight mb-6">Toán lớp 12 - Luyện thi Đại học mục tiêu 9+</h1>
-              <p className="text-lg text-blue-100 mb-8 max-w-2xl leading-relaxed">
-                Khóa học trọng điểm giúp học sinh lớp 12 hệ thống toàn bộ kiến thức, rèn luyện kỹ năng giải đề, chiến thuật làm bài thi trắc nghiệm để bứt phá điểm số trong kỳ thi THPT Quốc gia.
-              </p>
+              <h1 className="text-4xl lg:text-5xl font-black leading-tight mb-6">{course.title}</h1>
+              <div 
+                className="text-lg text-blue-100 mb-8 max-w-2xl leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: course.description || '' }}
+              />
               
               <div className="flex flex-wrap gap-6 mb-8">
                 <div className="flex items-center gap-2">
@@ -48,20 +99,29 @@ export default function CourseDetailPage() {
                 <Link href="/dang-ki-hoc" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold transition-transform hover:scale-105 shadow-lg shadow-orange-500/30">
                   Đăng ký khóa học ngay
                 </Link>
-                <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold transition-colors">
+                <Link href="/lien-he" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold transition-colors">
                   Tư vấn lộ trình
-                </button>
+                </Link>
               </div>
             </div>
 
             <div className="lg:w-2/5" data-aos="fade-left">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/3] group cursor-pointer">
-                <Image
-                  src="/images/offline_math_class.jpg"
-                  alt="Lớp học Toán 12"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+                {course.image ? (
+                  <Image
+                    src={course.image}
+                    alt={course.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                ) : (
+                  <Image
+                    src="/images/offline_math_class.jpg"
+                    alt={course.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                )}
                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                   <PlayCircle className="w-20 h-20 text-white/80 group-hover:text-white transition-colors" />
                 </div>
@@ -80,7 +140,7 @@ export default function CourseDetailPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
               <div className="flex gap-3">
                 <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
-                <p className="text-gray-700">Nắm vững 100% kiến thức nền tảng Toán lớp 12 theo chuẩn SGK.</p>
+                <p className="text-gray-700">Nắm vững 100% kiến thức nền tảng Toán theo chuẩn SGK.</p>
               </div>
               <div className="flex gap-3">
                 <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
@@ -143,7 +203,7 @@ export default function CourseDetailPage() {
 
               <div className="bg-white p-4 rounded-xl border border-orange-100 mb-6 text-center">
                 <p className="text-sm text-gray-500 mb-1">Học phí trọn khóa</p>
-                <p className="text-2xl font-black text-orange-500">Liên hệ trực tiếp</p>
+                <p className="text-2xl font-black text-orange-500">{course.price || "Liên hệ trực tiếp"}</p>
               </div>
 
               <Link href="/dang-ki-hoc" className="w-full bg-green-700 hover:bg-green-800 text-white py-4 rounded-xl font-bold flex items-center justify-center transition-colors shadow-lg shadow-green-700/20">

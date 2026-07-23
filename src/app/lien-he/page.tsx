@@ -87,11 +87,12 @@ export default function ContactPage() {
               
               <div>
                 <p className="text-gray-500 mb-2 font-medium">Kết nối Zalo</p>
-                <div className="w-32 h-32 bg-gray-100 border border-gray-200 rounded-lg overflow-hidden p-1">
-                  <img 
+                <div className="w-32 h-32 bg-gray-100 border border-gray-200 rounded-lg overflow-hidden p-1 relative">
+                  <Image 
                     src="https://toan.vn/wp-content/uploads/2023/02/toanvn-offline.jpg" 
                     alt="Zalo QR Code" 
-                    className="w-full h-full object-contain mix-blend-multiply"
+                    fill
+                    className="object-contain mix-blend-multiply p-1"
                   />
                 </div>
               </div>
@@ -217,11 +218,12 @@ export default function ContactPage() {
 
                 {/* QR Code */}
                 <div className="bg-gray-50 md:w-1/3 p-6 flex flex-col items-center justify-center border-t md:border-t-0 md:border-l border-gray-100">
-                  <div className="w-32 h-32 bg-white rounded-lg p-1 border border-gray-200 mb-3 shadow-sm">
-                    <img 
+                  <div className="w-32 h-32 bg-white rounded-lg p-1 border border-gray-200 mb-3 shadow-sm relative">
+                    <Image 
                       src={center.qrCode} 
                       alt={`Zalo QR ${center.name}`} 
-                      className="w-full h-full object-contain"
+                      fill
+                      className="object-contain p-1"
                     />
                   </div>
                   <p className="text-center text-sm text-gray-600">

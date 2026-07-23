@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { 
   ChevronRight, 
   BrainCircuit, 
@@ -53,12 +54,13 @@ export default function DangKiHocClient({ settings }: { settings: Record<string,
 
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Left side: Image */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl group aspect-[4/3]">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#2e5311]/40 to-transparent z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
-              <img 
+              <Image 
                 src={imgUrl} 
                 alt="Thầy Dũng hướng dẫn học sinh" 
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
             </div>
 
@@ -340,11 +342,12 @@ export default function DangKiHocClient({ settings }: { settings: Record<string,
                     
                     <div className="flex flex-col items-center justify-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                       <p className="text-gray-800 font-bold mb-4">Kết nối Zalo (Offline)</p>
-                      <div className="w-40 h-40 border border-gray-200 p-2 rounded-lg bg-white">
-                        <img 
+                      <div className="w-40 h-40 border border-gray-200 p-2 rounded-lg bg-white relative">
+                        <Image 
                           src="https://toan.vn/wp-content/uploads/2023/02/toanvn-offline.jpg" 
                           alt="Zalo QR Offline" 
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover p-2"
                         />
                       </div>
                     </div>
@@ -391,11 +394,12 @@ export default function DangKiHocClient({ settings }: { settings: Record<string,
                     
                     <div className="flex flex-col items-center justify-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                       <p className="text-gray-800 font-bold mb-4">Kết nối Zalo (Online)</p>
-                      <div className="w-40 h-40 border border-gray-200 p-2 rounded-lg bg-white">
-                        <img 
+                      <div className="w-40 h-40 border border-gray-200 p-2 rounded-lg bg-white relative">
+                        <Image 
                           src="https://toan.vn/wp-content/uploads/2023/02/toanvn-online.jpg" 
                           alt="Zalo QR Online" 
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover p-2"
                         />
                       </div>
                     </div>

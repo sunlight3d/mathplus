@@ -11,8 +11,20 @@ export const dynamic = 'force-dynamic';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mathplus.com.vn'),
   title: "Trung tâm giáo dục MathPlus Academy - Trung tâm đào tạo Toán",
   description: "Cung cấp các khóa học bồi dưỡng và luyện thi toán",
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "Trung tâm giáo dục MathPlus Academy",
+    description: "Cung cấp các khóa học bồi dưỡng và luyện thi toán",
+    url: 'https://mathplus.com.vn',
+    siteName: 'MathPlus Academy',
+    locale: 'vi_VN',
+    type: 'website',
+  },
 };
 
 export default async function RootLayout({

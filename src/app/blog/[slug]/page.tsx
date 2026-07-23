@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { PrismaClient } from "@prisma/client";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -5,6 +6,29 @@ import Link from "next/link";
 import { CalendarDays, ArrowLeft, Clock } from "lucide-react";
 
 const prisma = new PrismaClient();
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await prisma.post.findUnique({ where: { slug } });
+  if (!post) return {};
+
+  const cleanDescription = post.content.substring(0, 160).replace(/<[^>]*>?/gm, '');
+
+  return {
+    title: `${post.title} | MathPlus Blog`,
+    description: cleanDescription,
+    openGraph: {
+      title: post.title,
+      description: cleanDescription,
+      images: post.image ? [post.image] : [],
+      type: 'article',
+    }
+  };
+}
 
 export default async function BlogPostPage({
   params,
@@ -21,8 +45,25 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "image": post.image ? [post.image] : [],
+    "datePublished": post.createdAt.toISOString(),
+    "dateModified": post.updatedAt.toISOString(),
+    "author": {
+      "@type": "Organization",
+      "name": "MathPlus Academy"
+    }
+  };
+
   return (
     <div className="bg-green-50/50 min-h-screen pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       {/* Post Header */}
       <section className="bg-gradient-to-r from-green-700 to-emerald-500 pt-28 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-20 mix-blend-overlay"></div>
@@ -61,10 +102,11 @@ export default async function BlogPostPage({
         <div className="bg-white rounded-2xl shadow-lg border border-green-100 overflow-hidden">
           {post.image && (
             <div className="w-full h-[400px] relative">
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
           )}
