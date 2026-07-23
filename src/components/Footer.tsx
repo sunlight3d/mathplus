@@ -59,6 +59,7 @@ export default function Footer({ logoUrl = "/images/logo.jpg" }: { logoUrl?: str
           <div>
             <h3 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Thông tin liên hệ</h3>
             <ul className="space-y-3 text-gray-300">
+              <li><span className="font-bold text-white">Địa chỉ:</span> 101B Xã Đàn 2, Đống Đa, Hà Nội</li>
               <li><span className="font-bold text-white">Hotline:</span> 0832.645.999 - 0977.961.189</li>
               <li><span className="font-bold text-white">Email:</span> cskh@mathplus.vn</li>
             </ul>
