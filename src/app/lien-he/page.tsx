@@ -26,7 +26,7 @@ export default function ContactPage() {
       address: "65 Hồ Đắc Di, Đống Đa, Hà Nội",
       hotline: "0977.961.189",
       phone: "0977.961.189",
-      zalo: "0977.961.189",
+      zalo: "0832.645.999",
       mapLink: "https://www.google.com/maps",
       qrCode: "https://toan.vn/wp-content/uploads/2023/02/DC.png"
     }
