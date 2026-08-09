@@ -1,354 +1,297 @@
 {
-  "settings": [],
+  "settings": [
+    {
+      "key": "HOME_BANNER_1",
+      "value": "/uploads/teachers/1783943521081-114818547-home_banner_1.jpg",
+      "description": "Banner Trang chủ 1",
+      "updatedAt": "2026-07-13T11:52:01.104Z"
+    },
+    {
+      "key": "HOME_BANNER_2",
+      "value": "/uploads/teachers/1783943537892-325283500-home_banner_2.jpg",
+      "description": "Banner Trang chủ 2",
+      "updatedAt": "2026-07-13T11:52:17.909Z"
+    },
+    {
+      "key": "HOME_BANNER_3",
+      "value": "/uploads/teachers/1783943560344-129620365-home_banner_3.jpg",
+      "description": "Banner Trang chủ 3",
+      "updatedAt": "2026-07-13T11:52:40.363Z"
+    },
+    {
+      "key": "ABOUT_FOUNDER_IMG",
+      "value": "/uploads/teachers/1783943586869-602380742-about_founder_img.jpg",
+      "description": "Ảnh Người sáng lập",
+      "updatedAt": "2026-07-13T11:53:06.882Z"
+    },
+    {
+      "key": "ABOUT_ONLINE_IMG",
+      "value": "/uploads/teachers/1783943642010-614847797-about_online_img.jpg",
+      "description": "Ảnh Phương pháp",
+      "updatedAt": "2026-07-13T11:54:02.030Z"
+    }
+  ],
   "courses": [
     {
-      "id": 1,
-      "title": "Toán Tiểu Học - Vững Bước Tương Lai",
-      "slug": "toan-tieu-hoc",
-      "description": "Lấy lại căn bản, bồi dưỡng học sinh giỏi Toán Tiểu học. Rèn luyện tư duy logic sớm cho các em.",
-      "category": "Toán tiểu học",
-      "price": "Liên hệ",
-      "image": null,
-      "createdAt": "2026-07-11T04:16:40.522Z",
-      "updatedAt": "2026-07-11T04:16:40.522Z"
-    },
-    {
-      "id": 2,
-      "title": "Toán THCS - Hành Trang Vượt Bậc",
-      "slug": "toan-thcs",
-      "description": "Hệ thống kiến thức trọng tâm, luyện thi vào lớp 10 chuyên và các kỳ thi học sinh giỏi.",
+      "id": 7,
+      "title": "Toán cho học sinh lớp 6 đến 9",
+      "slug": "toan-cho-hoc-sinh-lop-6-den-9",
+      "description": "<h2>Chương Trình Toán THCS Chất Lượng Cao (Lớp 6 - 9)</h2>\n<p>Khóa học bám sát chương trình sách giáo khoa mới của Bộ Giáo dục, giúp các em học sinh xây dựng nền tảng tư duy toán học vững chắc ngay từ những năm đầu cấp 2.</p>\n<h3>Mục tiêu khóa học:</h3>\n<ul>\n  <li>Nắm vững kiến thức trọng tâm từng khối lớp.</li>\n  <li>Rèn luyện kỹ năng giải các dạng toán từ cơ bản đến nâng cao.</li>\n  <li>Phát triển tư duy logic và khả năng phân tích vấn đề.</li>\n  <li>Chuẩn bị hành trang vững chắc cho kỳ thi chuyển cấp.</li>\n</ul>\n<p><strong>Lộ trình học tập:</strong> Được cá nhân hóa theo năng lực của từng học sinh, kèm cặp sát sao bởi đội ngũ giáo viên giàu kinh nghiệm.</p>",
       "category": "Toán THCS",
-      "price": "Liên hệ",
-      "image": null,
-      "createdAt": "2026-07-11T04:16:40.542Z",
-      "updatedAt": "2026-07-11T04:16:40.542Z"
+      "price": "Liên hệ tư vấn",
+      "image": "/api/uploads/courses/course_math_6_9.jpg",
+      "createdAt": "2026-07-22T12:43:20.975Z",
+      "updatedAt": "2026-07-22T13:13:09.352Z"
     },
     {
-      "id": 3,
-      "title": "Toán PTTH - Chinh Phục Điểm 9, 10",
-      "slug": "toan-ptth",
-      "description": "Luyện thi Đại học, bám sát đề thi THPT Quốc Gia với các phương pháp giải siêu tốc.",
-      "category": "Toán PTTH",
-      "price": "Liên hệ",
-      "image": null,
-      "createdAt": "2026-07-11T04:16:40.570Z",
-      "updatedAt": "2026-07-11T04:16:40.570Z"
+      "id": 8,
+      "title": "Toán cho người mất gốc",
+      "slug": "toan-cho-nguoi-mat-goc",
+      "description": "<h2>Khóa Học Lấy Lại Gốc Toán Học Nhanh Chóng</h2>\n<p>Dành riêng cho các bạn học sinh đang gặp khó khăn với môn Toán, sợ học Toán hoặc đã hổng kiến thức từ các lớp dưới. Khóa học được thiết kế đặc biệt để giúp học sinh vượt qua rào cản tâm lý và lấy lại sự tự tin.</p>\n<h3>Điểm nổi bật của khóa học:</h3>\n<ul>\n  <li>Hệ thống lại toàn bộ kiến thức nền tảng một cách dễ hiểu nhất.</li>\n  <li>Phương pháp giảng dạy chậm rãi, tỉ mỉ, đi từ bản chất vấn đề.</li>\n  <li>Luyện tập qua các ví dụ thực tế, tránh học vẹt, học tủ.</li>\n  <li>Sĩ số lớp nhỏ, giáo viên kèm cặp 1-1 sát sao.</li>\n</ul>\n<p><strong>Cam kết:</strong> Học sinh sẽ tiến bộ rõ rệt chỉ sau 1-2 tháng học tập, không còn sợ môn Toán và tự tin đạt điểm khá trên lớp.</p>",
+      "category": "Toán cơ bản",
+      "price": "Liên hệ tư vấn",
+      "image": "/api/uploads/courses/course_math_basics.jpg",
+      "createdAt": "2026-07-22T12:43:20.982Z",
+      "updatedAt": "2026-07-22T13:13:09.357Z"
     },
     {
-      "id": 4,
-      "title": "Luyện thi Đại học Cao tốc",
+      "id": 10,
+      "title": "Toán cơ bản và nâng cao dần",
+      "slug": "toan-co-ban-va-nang-cao-dan",
+      "description": "<h2>Chương Trình Toán Phổ Thông - Vững Bước Thành Công</h2>\n<p>Khóa học lý tưởng cho mọi đối tượng học sinh muốn học chắc kiến thức cơ bản và từng bước thử sức với các bài toán nâng cao để đạt điểm 8, 9, 10.</p>\n<h3>Cấu trúc khóa học:</h3>\n<ul>\n  <li><strong>Giai đoạn 1:</strong> Xây dựng nền tảng, nắm chắc 100% lý thuyết và dạng bài cơ bản.</li>\n  <li><strong>Giai đoạn 2:</strong> Rèn kỹ năng giải bài tập tự luận và trắc nghiệm chính xác.</li>\n  <li><strong>Giai đoạn 3:</strong> Tiếp xúc với các bài toán vận dụng, vận dụng cao để bứt phá điểm số.</li>\n</ul>\n<p><strong>Phương pháp:</strong> Học đi đôi với hành, hệ thống bài tập phong phú đa dạng giúp học sinh ghi nhớ sâu và lâu.</p>",
+      "category": "Toán tổng hợp",
+      "price": "Liên hệ tư vấn",
+      "image": "/api/uploads/courses/course_math_progressive.jpg",
+      "createdAt": "2026-07-22T12:43:20.989Z",
+      "updatedAt": "2026-07-22T13:13:09.336Z"
+    },
+    {
+      "id": 9,
+      "title": "Lớp toán luyện thi học sinh khá giỏi",
+      "slug": "lop-toan-luyen-thi-hoc-sinh-kha-gioi",
+      "description": "<h2>Bồi Dưỡng Học Sinh Giỏi Toán - Đột Phá Tư Duy</h2>\n<p>Khóa học chuyên sâu dành cho các bạn học sinh có tố chất, đam mê môn Toán và có nguyện vọng tham gia các kỳ thi Học sinh giỏi các cấp hoặc thi vào trường Chuyên.</p>\n<h3>Nội dung chương trình:</h3>\n<ul>\n  <li>Mở rộng và đào sâu kiến thức vượt chương trình SGK.</li>\n  <li>Tiếp cận các chuyên đề Toán khó, các dạng bài thi HSG qua các năm.</li>\n  <li>Rèn luyện kỹ năng giải toán tốc độ, tư duy nhạy bén và sáng tạo.</li>\n  <li>Thi thử liên tục để rèn luyện tâm lý phòng thi.</li>\n</ul>\n<p><strong>Đội ngũ giáo viên:</strong> Là những chuyên gia luyện thi, từng đào tạo nhiều lứa học sinh đạt giải cao cấp Thành phố và Quốc gia.</p>",
+      "category": "Toán nâng cao",
+      "price": "Liên hệ tư vấn",
+      "image": "/api/uploads/courses/course_math_advanced.jpg",
+      "createdAt": "2026-07-22T12:43:20.985Z",
+      "updatedAt": "2026-07-22T13:13:09.377Z"
+    },
+    {
+      "id": 11,
+      "title": "Luyện thi vào 10",
+      "slug": "luyen-thi-vao-10",
+      "description": "<h2>Chinh Phục Kỳ Thi Vào Lớp 10 THPT</h2>\n<p>Kỳ thi chuyển cấp vào lớp 10 luôn vô cùng khốc liệt. Khóa học này cung cấp lộ trình ôn thi bài bản, giúp các em tự tin bước vào cánh cổng trường THPT mơ ước.</p>\n<h3>Lộ trình ôn thi 3 giai đoạn:</h3>\n<ul>\n  <li><strong>Tổng ôn kiến thức:</strong> Hệ thống hóa toàn bộ kiến thức Toán 9 (Đại số và Hình học).</li>\n  <li><strong>Luyện chuyên đề thi:</strong> Đi sâu vào các dạng bài chắc chắn có trong đề thi (Rút gọn biểu thức, Giải bài toán bằng cách lập PT/HPT, Hình học tổng hợp...).</li>\n  <li><strong>Luyện đề tổng lực:</strong> Giải đề thi chính thức của các Sở GD&ĐT qua các năm, rèn kỹ năng trình bày tự luận chặt chẽ để ăn trọn điểm.</li>\n</ul>\n<p><strong>Đặc biệt:</strong> Có các lớp luyện thi riêng biệt cho học sinh thi trường Công lập bình thường và lớp luyện thi trường Chuyên (Toán chuyên, Tin chuyên).</p>",
+      "category": "Luyện thi Chuyển cấp",
+      "price": "Liên hệ tư vấn",
+      "image": "/api/uploads/courses/course_high_school_prep.jpg",
+      "createdAt": "2026-07-22T12:43:20.992Z",
+      "updatedAt": "2026-07-22T13:13:09.366Z"
+    },
+    {
+      "id": 12,
+      "title": "Luyện thi đại học",
       "slug": "luyen-thi-dai-hoc",
-      "description": "Khóa học thiết kế riêng cho các sĩ tử lớp 12 tăng tốc trong giai đoạn nước rút.",
-      "category": "Luyện thi đại học",
-      "price": "Liên hệ",
-      "image": null,
-      "createdAt": "2026-07-11T04:16:40.616Z",
-      "updatedAt": "2026-07-11T04:16:40.616Z"
+      "description": "<h2>Luyện Thi THPT Quốc Gia & Đánh Giá Năng Lực (Khối A, A1, B, D)</h2>\n<p>Khóa học mang tính quyết định, được thiết kế chuyên biệt để giúp các sĩ tử 2K bứt phá điểm số trong kỳ thi quan trọng nhất của thời học sinh.</p>\n<h3>Chiến thuật ôn thi toàn diện:</h3>\n<ul>\n  <li><strong>Quét sạch mọi chuyên đề:</strong> Ôn tập toàn diện chương trình lớp 12 và kiến thức trọng tâm 10, 11.</li>\n  <li><strong>Luyện đề thực chiến:</strong> Cọ xát với hàng trăm bộ đề thi thử bám sát ma trận đề của Bộ GD&ĐT.</li>\n  <li><strong>Tối ưu thời gian:</strong> Trang bị kỹ năng giải nhanh trắc nghiệm bằng máy tính Casio và tư duy giải nhanh.</li>\n  <li><strong>Chiến thuật phòng thi:</strong> Cách phân bổ thời gian, tránh bẫy, xử lý các câu Vận dụng cao (câu 9, 10 điểm).</li>\n</ul>\n<p><strong>Cam kết:</strong> Hỗ trợ giải đáp thắc mắc 24/7, đồng hành cùng các em cho đến sát ngày thi.</p>",
+      "category": "Luyện thi Đại học",
+      "price": "Liên hệ tư vấn",
+      "image": "/api/uploads/courses/course_university_prep.jpg",
+      "createdAt": "2026-07-22T12:43:20.996Z",
+      "updatedAt": "2026-07-22T13:13:09.373Z"
     }
   ],
   "teachers": [
     {
+      "id": 4,
+      "name": "Cô Vũ Linh",
+      "avatar": "/api/uploads/teachers/1784723262483-693527159-avatar.jpg",
+      "bio": "<p><span style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">Cô&nbsp;Vũ&nbsp;Linh&nbsp;tốt&nbsp;nghiệp&nbsp;loại&nbsp;Giỏi&nbsp;khoa&nbsp;Toán-Tin,&nbsp;Trường&nbsp;Đại&nbsp;học&nbsp;Sư&nbsp;phạm&nbsp;Hà&nbsp;Nội.&nbsp;Thời&nbsp;sinh&nbsp;viên,&nbsp;cô&nbsp;không&nbsp;chỉ&nbsp;là&nbsp;thành&nbsp;viên&nbsp;đội&nbsp;tuyển&nbsp;Toán&nbsp;đạt&nbsp;giải&nbsp;cấp&nbsp;Tỉnh&nbsp;mà&nbsp;còn&nbsp;năng&nbsp;động&nbsp;tham&nbsp;gia&nbsp;CLB&nbsp;Chữ&nbsp;Sư&nbsp;phạm&nbsp;và&nbsp;CLB&nbsp;Bóng&nbsp;đá,&nbsp;rèn&nbsp;luyện&nbsp;nên&nbsp;bản&nbsp;lĩnh,&nbsp;sự&nbsp;kiên&nbsp;trì&nbsp;và&nbsp;kỹ&nbsp;năng&nbsp;sư&nbsp;phạm&nbsp;vững&nbsp;vàng.</span></p><p><span style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">Với&nbsp;hơn&nbsp;4&nbsp;năm&nbsp;kinh&nbsp;nghiệm&nbsp;thực&nbsp;chiến&nbsp;(từ&nbsp;gia&nbsp;sư,&nbsp;trợ&nbsp;giảng&nbsp;đến&nbsp;giáo&nbsp;viên&nbsp;chính&nbsp;thức&nbsp;tại&nbsp;trung&nbsp;tâm&nbsp;MathPlus),&nbsp;cô&nbsp;Linh&nbsp;am&nbsp;hiểu&nbsp;sâu&nbsp;sắc&nbsp;tâm&nbsp;lý&nbsp;học&nbsp;sinh&nbsp;và&nbsp;phương&nbsp;pháp&nbsp;ôn&nbsp;thi&nbsp;Toán&nbsp;cấp&nbsp;2,&nbsp;cấp&nbsp;3.&nbsp;Cô&nbsp;đặc&nbsp;biệt&nbsp;thành&nbsp;công&nbsp;trong&nbsp;việc&nbsp;xây&nbsp;dựng&nbsp;lộ&nbsp;trình&nbsp;cho&nbsp;các&nbsp;lớp&nbsp;luyện&nbsp;thi&nbsp;vào&nbsp;10&nbsp;và&nbsp;thi&nbsp;Đại&nbsp;học&nbsp;với&nbsp;mục&nbsp;tiêu&nbsp;điểm&nbsp;8+,&nbsp;9+.</span></p><p><span style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">Sở&nbsp;hữu&nbsp;kỹ&nbsp;năng&nbsp;quản&nbsp;lý&nbsp;lớp&nbsp;học,&nbsp;soạn&nbsp;giáo&nbsp;án&nbsp;sáng&nbsp;tạo&nbsp;và&nbsp;thành&nbsp;thạo&nbsp;công&nbsp;nghệ&nbsp;dạy&nbsp;học&nbsp;trực&nbsp;tuyến,&nbsp;cô&nbsp;Linh&nbsp;luôn&nbsp;tâm&nbsp;niệm:&nbsp;</span><em style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">&quot;Dạy&nbsp;Toán&nbsp;không&nbsp;chỉ&nbsp;là&nbsp;truyền&nbsp;thụ&nbsp;công&nbsp;thức,&nbsp;mà&nbsp;là&nbsp;người&nbsp;bạn&nbsp;đồng&nbsp;hành,&nbsp;giúp&nbsp;các&nbsp;em&nbsp;tư&nbsp;duy&nbsp;logic&nbsp;và&nbsp;tự&nbsp;tin&nbsp;chinh&nbsp;phục&nbsp;mọi&nbsp;mục&nbsp;tiêu.&quot;</em></p>",
+      "role": "Giáo viên Toán THCS",
+      "exp": "Giáo viên Toán",
+      "students": "1000+",
+      "createdAt": "2026-07-15T01:07:32.741Z",
+      "updatedAt": "2026-07-22T12:27:45.668Z"
+    },
+    {
+      "id": 3,
+      "name": "Thầy Nghiêm Thanh",
+      "avatar": "/api/uploads/teachers/1784723289528-87198660-avatar.jpg",
+      "bio": "<p>Thầy&nbsp;Thanh&nbsp;tốt&nbsp;nghiệp&nbsp;loại&nbsp;Giỏi&nbsp;chuyên&nbsp;ngành&nbsp;Sư&nbsp;phạm&nbsp;Toán,&nbsp;Đại&nbsp;học&nbsp;Sư&nbsp;phạm&nbsp;Hà&nbsp;Nội.&nbsp;Với&nbsp;niềm&nbsp;đam&nbsp;mê&nbsp;mãnh&nbsp;liệt&nbsp;với&nbsp;nghề&nbsp;giáo,&nbsp;thầy&nbsp;đã&nbsp;tích&nbsp;lũy&nbsp;bề&nbsp;dày&nbsp;kinh&nbsp;nghiệm&nbsp;giảng&nbsp;dạy&nbsp;Toán&nbsp;cấp&nbsp;2&nbsp;và&nbsp;cấp&nbsp;3&nbsp;qua&nbsp;nhiều&nbsp;vai&nbsp;trò:&nbsp;từ&nbsp;gia&nbsp;sư&nbsp;kèm&nbsp;cặp&nbsp;1-1,&nbsp;trợ&nbsp;giảng,&nbsp;đến&nbsp;giảng&nbsp;viên&nbsp;chính&nbsp;tại&nbsp;các&nbsp;trung&nbsp;tâm&nbsp;luyện&nbsp;thi&nbsp;uy&nbsp;tín.&nbsp;Đặc&nbsp;biệt,&nbsp;thầy&nbsp;có&nbsp;thời&nbsp;gian&nbsp;dài&nbsp;cộng&nbsp;tác&nbsp;và&nbsp;trợ&nbsp;giảng&nbsp;tại&nbsp;hệ&nbsp;thống&nbsp;các&nbsp;trường&nbsp;THPT&nbsp;chất&nbsp;lượng&nbsp;cao&nbsp;và&nbsp;trường&nbsp;Chuyên&nbsp;trên&nbsp;địa&nbsp;bàn&nbsp;Hà&nbsp;Nội.&nbsp;Điều&nbsp;này&nbsp;giúp&nbsp;thầy&nbsp;am&nbsp;hiểu&nbsp;sâu&nbsp;sát&nbsp;chương&nbsp;trình,&nbsp;&quot;bắt&nbsp;bệnh&quot;&nbsp;nhanh&nbsp;các&nbsp;lỗi&nbsp;sai&nbsp;của&nbsp;học&nbsp;sinh&nbsp;và&nbsp;cập&nbsp;nhật&nbsp;cấu&nbsp;trúc&nbsp;đề&nbsp;thi&nbsp;mới&nbsp;nhất.&nbsp;Phong&nbsp;cách&nbsp;giảng&nbsp;dạy&nbsp;của&nbsp;thầy&nbsp;Thanh&nbsp;tận&nbsp;tâm,&nbsp;dễ&nbsp;hiểu,&nbsp;chú&nbsp;trọng&nbsp;&quot;cá&nbsp;nhân&nbsp;hóa&quot;&nbsp;lộ&nbsp;trình.&nbsp;Thầy&nbsp;không&nbsp;chỉ&nbsp;giúp&nbsp;học&nbsp;sinh&nbsp;mất&nbsp;gốc&nbsp;lấy&nbsp;lại&nbsp;căn&nbsp;bản&nbsp;mà&nbsp;còn&nbsp;rèn&nbsp;tư&nbsp;duy&nbsp;logic,&nbsp;giúp&nbsp;các&nbsp;em&nbsp;học&nbsp;sinh&nbsp;khá,&nbsp;giỏi&nbsp;tự&nbsp;tin&nbsp;bứt&nbsp;phá&nbsp;điểm&nbsp;9,&nbsp;10.&nbsp;Thầy&nbsp;Nghiêm&nbsp;Văn&nbsp;Thanh&nbsp;tốt&nbsp;nghiệp&nbsp;loại&nbsp;Giỏi&nbsp;chuyên&nbsp;ngành&nbsp;Sư&nbsp;phạm&nbsp;Toán,&nbsp;Đại&nbsp;học&nbsp;Sư&nbsp;phạm&nbsp;Hà&nbsp;Nội.&nbsp;Với&nbsp;niềm&nbsp;đam&nbsp;mê&nbsp;mãnh&nbsp;liệt&nbsp;với&nbsp;nghề&nbsp;giáo,&nbsp;thầy&nbsp;đã&nbsp;tích&nbsp;lũy&nbsp;bề&nbsp;dày&nbsp;kinh&nbsp;nghiệm&nbsp;giảng&nbsp;dạy&nbsp;Toán&nbsp;cấp&nbsp;2&nbsp;và&nbsp;cấp&nbsp;3&nbsp;qua&nbsp;nhiều&nbsp;vai&nbsp;trò:&nbsp;từ&nbsp;gia&nbsp;sư&nbsp;kèm&nbsp;cặp&nbsp;1-1,&nbsp;trợ&nbsp;giảng,&nbsp;đến&nbsp;giảng&nbsp;viên&nbsp;chính&nbsp;tại&nbsp;các&nbsp;trung&nbsp;tâm&nbsp;luyện&nbsp;thi&nbsp;uy&nbsp;tín.&nbsp;Đặc&nbsp;biệt,&nbsp;thầy&nbsp;có&nbsp;thời&nbsp;gian&nbsp;dài&nbsp;cộng&nbsp;tác&nbsp;và&nbsp;trợ&nbsp;giảng&nbsp;tại&nbsp;hệ&nbsp;thống&nbsp;các&nbsp;trường&nbsp;THPT&nbsp;chất&nbsp;lượng&nbsp;cao&nbsp;và&nbsp;trường&nbsp;trọng&nbsp;điểm&nbsp;trên&nbsp;địa&nbsp;bàn&nbsp;Hà&nbsp;Nội.&nbsp;Điều&nbsp;này&nbsp;giúp&nbsp;thầy&nbsp;am&nbsp;hiểu&nbsp;sâu&nbsp;sát&nbsp;chương&nbsp;trình,&nbsp;&quot;bắt&nbsp;bệnh&quot;&nbsp;nhanh&nbsp;các&nbsp;lỗi&nbsp;sai&nbsp;của&nbsp;học&nbsp;sinh&nbsp;và&nbsp;luôn&nbsp;cập&nbsp;nhật&nbsp;cấu&nbsp;trúc&nbsp;đề&nbsp;thi&nbsp;mới&nbsp;nhất.&nbsp;</p>",
+      "role": "Giáo viên Toán PTTH",
+      "exp": "5+ năm",
+      "students": "3.000+",
+      "createdAt": "2026-07-15T01:07:32.737Z",
+      "updatedAt": "2026-07-22T12:28:12.827Z"
+    },
+    {
       "id": 1,
       "name": "Thầy Dũng Toán",
-      "avatar": null,
+      "avatar": "/images/thay_dung.png",
       "bio": "Chuyên gia luyện thi Đại học với hơn 15 năm kinh nghiệm. Thầy nổi tiếng với phương pháp giải nhanh và tư duy đột phá.",
       "role": "Giáo viên Toán THPT",
       "exp": "15+ năm",
       "students": "10.000+",
       "createdAt": "2026-07-11T04:16:40.647Z",
-      "updatedAt": "2026-07-11T04:16:40.647Z"
+      "updatedAt": "2026-07-15T01:07:32.720Z"
     },
     {
       "id": 2,
       "name": "Thầy Trần Hồng Hà",
-      "avatar": null,
-      "bio": "Giáo viên chuyên ôn luyện thi vào lớp 10 các trường Chuyên. Thầy có rất nhiều học sinh đạt thủ khoa, á khoa.",
-      "role": "Giáo viên Toán THCS",
-      "exp": "10+ năm",
-      "students": "5.000+",
+      "avatar": "/api/uploads/teachers/1784723228957-776566922-avatar.jpg",
+      "bio": "<p>Thầy&nbsp;Trần&nbsp;Hồng&nbsp;Hà&nbsp;là&nbsp;Thạc&nbsp;sĩ&nbsp;Toán&nbsp;học,&nbsp;tốt&nbsp;nghiệp&nbsp;Đại&nbsp;học&nbsp;Sư&nbsp;phạm&nbsp;Hà&nbsp;Nội.&nbsp;Với&nbsp;hơn&nbsp;40&nbsp;năm&nbsp;đứng&nbsp;trên&nbsp;bục&nbsp;giảng,&nbsp;thầy&nbsp;đã&nbsp;để&nbsp;lại&nbsp;dấu&nbsp;ấn&nbsp;sâu&nbsp;đậm&nbsp;qua&nbsp;nhiều&nbsp;môi&nbsp;trường&nbsp;giáo&nbsp;dục:&nbsp;từ&nbsp;Cao&nbsp;đẳng&nbsp;Sư&nbsp;phạm&nbsp;Tây&nbsp;Bắc,&nbsp;THPT&nbsp;Phục&nbsp;Hòa&nbsp;đến&nbsp;THCS&nbsp;Bế&nbsp;Văn&nbsp;Đàn.</p><p>Không&nbsp;chỉ&nbsp;vững&nbsp;vàng&nbsp;chuyên&nbsp;môn,&nbsp;thầy&nbsp;nhiều&nbsp;năm&nbsp;liền&nbsp;giữ&nbsp;vai&nbsp;trò&nbsp;Tổ&nbsp;trưởng&nbsp;Tổ&nbsp;Toán,&nbsp;liên&nbsp;tục&nbsp;đạt&nbsp;danh&nbsp;hiệu&nbsp;Giáo&nbsp;viên&nbsp;dạy&nbsp;giỏi&nbsp;cấp&nbsp;Quận/Thành&nbsp;phố&nbsp;và&nbsp;là&nbsp;tác&nbsp;giả&nbsp;của&nbsp;nhiều&nbsp;Sáng&nbsp;kiến&nbsp;kinh&nbsp;nghiệm&nbsp;(SKKN)&nbsp;được&nbsp;công&nbsp;nhận&nbsp;cấp&nbsp;Thành&nbsp;phố.</p><p>Dù&nbsp;đã&nbsp;dày&nbsp;dặn&nbsp;kinh&nbsp;nghiệm,&nbsp;thầy&nbsp;vẫn&nbsp;luôn&nbsp;tiên&nbsp;phong&nbsp;cập&nbsp;nhật&nbsp;phương&nbsp;pháp&nbsp;giảng&nbsp;dạy&nbsp;hiện&nbsp;đại.&nbsp;Thầy&nbsp;lấy&nbsp;phương&nbsp;châm&nbsp;&quot;Tâm&nbsp;huyết&nbsp;với&nbsp;nghề&nbsp;-&nbsp;Trách&nbsp;nhiệm&nbsp;với&nbsp;học&nbsp;sinh&nbsp;-&nbsp;Đổi&nbsp;mới&nbsp;để&nbsp;phát&nbsp;triển&quot;&nbsp;làm&nbsp;kim&nbsp;chỉ&nbsp;nam&nbsp;xuyên&nbsp;suốt&nbsp;cho&nbsp;sự&nbsp;nghiệp&nbsp;giáo&nbsp;dục&nbsp;cao&nbsp;cả&nbsp;của&nbsp;mình.</p><p><span style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">Không&nbsp;chỉ&nbsp;là&nbsp;một&nbsp;giáo&nbsp;viên&nbsp;đứng&nbsp;lớp,&nbsp;thầy&nbsp;Hà&nbsp;còn&nbsp;là&nbsp;một&nbsp;nhà&nbsp;quản&nbsp;lý&nbsp;chuyên&nbsp;môn&nbsp;xuất&nbsp;sắc:</span></p><ul><li><strong style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">Tổ&nbsp;trưởng&nbsp;Tổ&nbsp;Toán:</strong><span style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">&nbsp;Giữ&nbsp;vai&nbsp;trò&nbsp;&quot;nhạc&nbsp;trưởng&quot;&nbsp;của&nbsp;tổ&nbsp;chuyên&nbsp;môn&nbsp;trong&nbsp;nhiều&nbsp;năm&nbsp;liền.&nbsp;Thầy&nbsp;là&nbsp;người&nbsp;trực&nbsp;tiếp&nbsp;chỉ&nbsp;đạo&nbsp;chuyên&nbsp;môn,&nbsp;dự&nbsp;giờ,&nbsp;đánh&nbsp;giá&nbsp;và&nbsp;dìu&nbsp;dắt&nbsp;hàng&nbsp;chục&nbsp;giáo&nbsp;viên&nbsp;trẻ&nbsp;trưởng&nbsp;thành.</span></li><li><strong style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">Giáo&nbsp;viên&nbsp;dạy&nbsp;giỏi:</strong><span style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">&nbsp;Nhiều&nbsp;năm&nbsp;liền&nbsp;đạt&nbsp;danh&nbsp;hiệu&nbsp;Giáo&nbsp;viên&nbsp;dạy&nbsp;giỏi&nbsp;cấp&nbsp;Quận&nbsp;và&nbsp;cấp&nbsp;Thành&nbsp;phố,&nbsp;được&nbsp;hội&nbsp;đồng&nbsp;giám&nbsp;khảo&nbsp;đánh&nbsp;giá&nbsp;cao&nbsp;về&nbsp;khả&nbsp;năng&nbsp;làm&nbsp;chủ&nbsp;lớp&nbsp;học&nbsp;và&nbsp;xử&nbsp;lý&nbsp;tình&nbsp;huống&nbsp;sư&nbsp;phạm.</span></li><li><strong style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">Nhà&nbsp;nghiên&nbsp;cứu&nbsp;giáo&nbsp;dục:</strong><span style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">&nbsp;Tác&nbsp;giả&nbsp;của&nbsp;nhiều&nbsp;</span><strong style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">Sáng&nbsp;kiến&nbsp;kinh&nbsp;nghiệm&nbsp;(SKKN)&nbsp;cấp&nbsp;Thành&nbsp;phố</strong><span style=\"color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);\">.&nbsp;Các&nbsp;sáng&nbsp;kiến&nbsp;của&nbsp;thầy&nbsp;không&nbsp;mang&nbsp;tính&nbsp;lý&nbsp;thuyết&nbsp;suông&nbsp;mà&nbsp;đều&nbsp;xuất&nbsp;phát&nbsp;từ&nbsp;thực&nbsp;tiễn&nbsp;giảng&nbsp;dạy,&nbsp;giúp&nbsp;học&nbsp;sinh&nbsp;dễ&nbsp;hiểu&nbsp;bài,&nbsp;nhớ&nbsp;lâu&nbsp;và&nbsp;yêu&nbsp;thích&nbsp;môn&nbsp;Toán.</span></li></ul>",
+      "role": "Giáo viên Toán (Thạc sĩ)",
+      "exp": "40+ năm",
+      "students": "2.000+",
       "createdAt": "2026-07-11T04:16:40.694Z",
-      "updatedAt": "2026-07-11T04:16:40.694Z"
-    },
-    {
-      "id": 3,
-      "name": "Thầy Thanh & Cô Linh",
-      "avatar": "",
-      "bio": "Bộ đôi giáo viên tận tâm với Toán Tiểu học, giúp hàng ngàn học sinh yêu thích và tự tin học Toán.",
-      "role": "Giáo viên Toán Tiểu học",
-      "exp": "8+ năm",
-      "students": "3.000+",
-      "createdAt": "2026-07-11T04:16:40.724Z",
-      "updatedAt": "2026-07-11T09:47:11.961Z"
+      "updatedAt": "2026-07-22T12:27:12.130Z"
     }
   ],
   "posts": [
     {
-      "id": 1,
-      "title": "Bài viết mẫu về phương pháp học Toán số 1",
-      "slug": "bai-viet-mau-so-1",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 1. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
-      "published": true,
-      "createdAt": "2026-07-11T07:25:20.579Z",
-      "updatedAt": "2026-07-11T07:25:20.579Z"
-    },
-    {
-      "id": 2,
-      "title": "Bài viết mẫu về phương pháp học Toán số 2",
-      "slug": "bai-viet-mau-so-2",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 2. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
-      "published": true,
-      "createdAt": "2026-07-11T07:25:20.596Z",
-      "updatedAt": "2026-07-11T07:25:20.596Z"
-    },
-    {
       "id": 3,
-      "title": "Bài viết mẫu về phương pháp học Toán số 3",
-      "slug": "bai-viet-mau-so-3",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 3. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "title": "Toán lớp 6: Phân số và các phép tính",
+      "slug": "toan-lop-6-phan-so-va-cac-phep-tinh",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Phân số $\\frac{a}{b}$ với $a, b \\in \\mathbb{Z}, b \\neq 0$.</p>\n      <p>Quy tắc quy đồng mẫu số, rút gọn phân số là những bước nền tảng để thực hiện các phép tính cộng, trừ, nhân, chia phân số.</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>Tính: $\\frac{3}{4} + \\frac{5}{6}$</li>\n        <li>Tìm x: $x - \\frac{1}{2} = \\frac{3}{5}$</li>\n      </ol>\n    ",
+      "image": "/images/math_geometry.jpg",
       "published": true,
-      "createdAt": "2026-07-11T07:25:20.610Z",
-      "updatedAt": "2026-07-11T07:25:20.610Z"
+      "createdAt": "2026-07-14T03:32:11.967Z",
+      "updatedAt": "2026-07-14T09:21:12.769Z"
     },
     {
       "id": 4,
-      "title": "Bài viết mẫu về phương pháp học Toán số 4",
-      "slug": "bai-viet-mau-so-4",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 4. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "title": "Toán lớp 6: Số nguyên và ứng dụng",
+      "slug": "toan-lop-6-so-nguyen",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Tập hợp số nguyên $\\mathbb{Z} = \\{...; -3; -2; -1; 0; 1; 2; 3; ...\\}$</p>\n      <p>Quy tắc dấu ngoặc: Khi bỏ dấu ngoặc có dấu \"-\" đằng trước, ta phải đổi dấu tất cả các số hạng trong ngoặc.</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>Thực hiện phép tính: $15 - (-20) + 10$</li>\n        <li>Tìm x: $x + 12 = -5$</li>\n      </ol>\n    ",
+      "image": "/images/math_statistics.jpg",
       "published": true,
-      "createdAt": "2026-07-11T07:25:20.625Z",
-      "updatedAt": "2026-07-11T07:25:20.625Z"
+      "createdAt": "2026-07-14T03:32:12.046Z",
+      "updatedAt": "2026-07-14T09:21:12.773Z"
     },
     {
       "id": 5,
-      "title": "Bài viết mẫu về phương pháp học Toán số 5",
-      "slug": "bai-viet-mau-so-5",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 5. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "title": "Toán lớp 7: Tập hợp các số hữu tỉ",
+      "slug": "toan-lop-7-tap-hop-so-huu-ti",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Số hữu tỉ là số viết được dưới dạng phân số $\\frac{a}{b}$ với $a, b \\in \\mathbb{Z}, b \\neq 0$. Tập hợp số hữu tỉ được kí hiệu là $\\mathbb{Q}$.</p>\n      <p>Mỗi số hữu tỉ có thể được biểu diễn bởi một điểm trên trục số.</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>So sánh các số hữu tỉ: $\\frac{-3}{4}$ và $\\frac{-4}{5}$</li>\n        <li>Thực hiện phép tính: $\\frac{1}{2} + \\frac{-2}{3} \\times \\frac{3}{4}$</li>\n      </ol>\n    ",
+      "image": "/images/math_algebra.jpg",
       "published": true,
-      "createdAt": "2026-07-11T07:25:20.640Z",
-      "updatedAt": "2026-07-11T07:25:20.640Z"
+      "createdAt": "2026-07-14T03:32:12.097Z",
+      "updatedAt": "2026-07-14T09:21:12.776Z"
     },
     {
       "id": 6,
-      "title": "Bài viết mẫu về phương pháp học Toán số 6",
-      "slug": "bai-viet-mau-so-6",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 6. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "title": "Toán lớp 7: Đại lượng tỉ lệ thuận, tỉ lệ nghịch",
+      "slug": "toan-lop-7-dai-luong-ti-le",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Hai đại lượng $y$ và $x$ tỉ lệ thuận nếu $y = kx$ ($k \\neq 0$). Hai đại lượng $y$ và $x$ tỉ lệ nghịch nếu $y = \\frac{a}{x}$ ($a \\neq 0$).</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>Biết $x$ và $y$ là hai đại lượng tỉ lệ thuận, khi $x = 3$ thì $y = 6$. Tính $y$ khi $x = 5$.</li>\n        <li>Ba lớp 7A, 7B, 7C trồng được 120 cây. Biết số cây trồng được tỉ lệ với 3, 4, 5. Tính số cây mỗi lớp.</li>\n      </ol>\n    ",
+      "image": "/images/math_geometry.jpg",
       "published": true,
-      "createdAt": "2026-07-11T07:25:20.655Z",
-      "updatedAt": "2026-07-11T07:25:20.655Z"
+      "createdAt": "2026-07-14T03:32:12.137Z",
+      "updatedAt": "2026-07-14T09:21:12.780Z"
     },
     {
       "id": 7,
-      "title": "Bài viết mẫu về phương pháp học Toán số 7",
-      "slug": "bai-viet-mau-so-7",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 7. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "title": "Toán lớp 7: Các trường hợp bằng nhau của tam giác",
+      "slug": "toan-lop-7-cac-truong-hop-bang-nhau-tam-giac",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Ba trường hợp bằng nhau của tam giác: Cạnh - Cạnh - Cạnh (c.c.c), Cạnh - Góc - Cạnh (c.g.c), Góc - Cạnh - Góc (g.c.g).</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>Cho tam giác ABC cân tại A. Lấy D, E trên cạnh BC sao cho BD = CE. Chứng minh tam giác ABD = tam giác ACE.</li>\n        <li>Cho góc xOy, phân giác Oz. Lấy A thuộc Ox, B thuộc Oy sao cho OA = OB. Lấy C thuộc Oz. Chứng minh $\\Delta AOC = \\Delta BOC$.</li>\n      </ol>\n    ",
+      "image": "/images/math_statistics.jpg",
       "published": true,
-      "createdAt": "2026-07-11T07:25:20.671Z",
-      "updatedAt": "2026-07-11T07:25:20.671Z"
+      "createdAt": "2026-07-14T03:32:12.213Z",
+      "updatedAt": "2026-07-14T09:21:12.783Z"
     },
     {
       "id": 8,
-      "title": "Bài viết mẫu về phương pháp học Toán số 8",
-      "slug": "bai-viet-mau-so-8",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 8. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "title": "Toán lớp 8: Nhân, chia đa thức",
+      "slug": "toan-lop-8-nhan-chia-da-thuc",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Quy tắc nhân đơn thức với đa thức, đa thức với đa thức.</p>\n      <p>7 hằng đẳng thức đáng nhớ: $(A+B)^2, (A-B)^2, A^2-B^2, (A+B)^3, (A-B)^3, A^3+B^3, A^3-B^3$.</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>Khai triển: $(2x - 3y)^2$</li>\n        <li>Rút gọn biểu thức: $(x-2)(x+2) - x(x-1)$</li>\n      </ol>\n    ",
+      "image": "/images/math_algebra.jpg",
       "published": true,
-      "createdAt": "2026-07-11T07:25:20.689Z",
-      "updatedAt": "2026-07-11T07:25:20.689Z"
+      "createdAt": "2026-07-14T03:32:12.246Z",
+      "updatedAt": "2026-07-14T09:21:12.789Z"
     },
     {
       "id": 9,
-      "title": "Bài viết mẫu về phương pháp học Toán số 9",
-      "slug": "bai-viet-mau-so-9",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 9. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "title": "Toán lớp 8: Phân thức đại số",
+      "slug": "toan-lop-8-phan-thuc-dai-so",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Phân thức đại số là một biểu thức có dạng $\\frac{A}{B}$, trong đó $A, B$ là những đa thức và $B$ khác đa thức $0$.</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>Rút gọn phân thức: $\\frac{x^2 - 4x + 4}{x^2 - 4}$</li>\n        <li>Thực hiện phép tính: $\\frac{x}{x-1} + \\frac{2}{x+1} - \\frac{2}{x^2-1}$</li>\n      </ol>\n    ",
+      "image": "/images/math_geometry.jpg",
       "published": true,
-      "createdAt": "2026-07-11T07:25:20.703Z",
-      "updatedAt": "2026-07-11T07:25:20.703Z"
+      "createdAt": "2026-07-14T03:32:12.297Z",
+      "updatedAt": "2026-07-14T09:21:12.793Z"
     },
     {
       "id": 10,
-      "title": "Bài viết mẫu về phương pháp học Toán số 10",
-      "slug": "bai-viet-mau-so-10",
-      "content": "<p>Đây là nội dung chi tiết của bài viết số 10. Học toán cần sự kiên nhẫn và phương pháp đúng đắn...</p>",
-      "image": "https://toan.vn/wp-content/uploads/2025/06/z6654844451158_4c348eebf8267220e5db3fe8fec2afb2.jpg",
+      "title": "Toán lớp 8: Tứ giác, Hình thang, Hình bình hành",
+      "slug": "toan-lop-8-tu-giac-hinh-thang",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Tổng các góc của một tứ giác bằng $360^\\circ$.</p>\n      <p>Dấu hiệu nhận biết hình bình hành, hình chữ nhật, hình thoi, hình vuông.</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>Cho hình bình hành ABCD. Gọi M, N lần lượt là trung điểm của AB, CD. Chứng minh AMCN là hình bình hành.</li>\n        <li>Tính các góc của hình thang cân ABCD biết góc A = $60^\\circ$.</li>\n      </ol>\n    ",
+      "image": "/images/math_statistics.jpg",
       "published": true,
-      "createdAt": "2026-07-11T07:25:20.720Z",
-      "updatedAt": "2026-07-11T07:25:20.720Z"
+      "createdAt": "2026-07-14T03:32:12.327Z",
+      "updatedAt": "2026-07-14T09:21:12.797Z"
+    },
+    {
+      "id": 11,
+      "title": "Toán lớp 8: Định lý Thalès trong tam giác",
+      "slug": "toan-lop-8-dinh-ly-thales",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Nếu một đường thẳng cắt hai cạnh của một tam giác và song song với cạnh còn lại thì nó định ra trên hai cạnh đó những đoạn thẳng tương ứng tỉ lệ.</p>\n      <p>Hệ quả định lý Thalès và tính chất đường phân giác trong tam giác.</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>Cho $\\Delta ABC$, MN // BC (M thuộc AB, N thuộc AC). Biết AM = 2, MB = 3, AN = 4. Tính NC.</li>\n      </ol>\n    ",
+      "image": "/images/math_algebra.jpg",
+      "published": true,
+      "createdAt": "2026-07-14T03:32:12.359Z",
+      "updatedAt": "2026-07-14T09:21:12.800Z"
+    },
+    {
+      "id": 2,
+      "title": "Toán lớp 6: Ôn tập về Số tự nhiên và các phép toán",
+      "slug": "toan-lop-6-on-tap-ve-so-tu-nhien",
+      "content": "\n      <h2>Lý thuyết cơ bản</h2>\n      <p>Tập hợp các số tự nhiên được kí hiệu là $\\mathbb{N} = \\{0; 1; 2; 3; ...\\}$.</p>\n      <p>Phép cộng và phép nhân các số tự nhiên có các tính chất giao hoán, kết hợp, phân phối của phép nhân đối với phép cộng.</p>\n      <h2>Bài tập vận dụng</h2>\n      <ol>\n        <li>Tính nhanh: $25 \\times 12 \\times 4$</li>\n        <li>Tìm x, biết: $2x + 15 = 45$</li>\n        <li>Một quyển sách có 200 trang. Hỏi cần bao nhiêu chữ số để đánh số trang của quyển sách đó?</li>\n      </ol>\n      <p>Các em hãy thử sức nhé!</p>\n    ",
+      "image": "/images/math_algebra.jpg",
+      "published": true,
+      "createdAt": "2026-07-14T03:32:11.904Z",
+      "updatedAt": "2026-07-14T09:21:12.754Z"
     }
   ],
   "registrations": [],
   "successStories": [
     {
-      "id": 1,
-      "studentName": "Nguyễn Minh Nguyệt",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 1)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-1",
-      "createdAt": "2026-07-11T04:16:40.745Z",
-      "updatedAt": "2026-07-11T04:16:40.745Z"
+      "id": 16,
+      "studentName": "Nguyễn Bá Tuấn",
+      "achievement": "Điểm 10 môn Toán thi vào 10",
+      "excerpt": "Hành trình bứt phá điểm số ấn tượng từ một học sinh trung bình khá vươn lên đạt điểm 10 tuyệt đối môn Toán trong kỳ thi vào 10.",
+      "content": "### **Hành trình bứt phá của Nguyễn Bá Tuấn**\n\nNguyễn Bá Tuấn (áo xanh trong ảnh) là một học sinh từng có học lực môn Toán ở mức trung bình khá. Khi mới đến với Trung tâm giáo dục MathPlus Academy, em khá tự ti với khả năng Toán học của mình. Việc giải quyết các bài toán hình học, hay các phương trình đại số luôn là một trở ngại lớn.\n\nTuy nhiên, nhờ phương pháp học tập chủ động tại MathPlus Academy cùng sự tận tâm hướng dẫn của các thầy cô, Tuấn đã dần thay đổi. Phương pháp chia nhỏ kiến thức, liên tục thực hành với các dạng bài tập từ cơ bản đến nâng cao, kết hợp cùng những buổi trao đổi bài sôi nổi đã giúp em lấy lại căn bản và phát triển tư duy logic.\n\nSự quyết tâm, nỗ lực không ngừng nghỉ của em đã gặt hái được trái ngọt. Trong kỳ thi tuyển sinh vào lớp 10, Tuấn đã xuất sắc đạt **điểm 10 tuyệt đối môn Toán**! Tổng điểm xét tuyển của em đạt 46.50 điểm (Ngữ văn: 8.25; Ngoại ngữ: 10.0; Toán: 10.00).\n\nThành quả này hoàn toàn xứng đáng với những giọt mồ hôi và sự kiên trì của Tuấn. Trung tâm giáo dục MathPlus Academy vô cùng tự hào khi được đồng hành cùng em trên chặng đường chinh phục tri thức và mở ra một tương lai tươi sáng.\n\n![Bảng điểm của Tuấn](/images/score_tuan.png)\n",
+      "imageUrl": "/images/student_tuan.jpg",
+      "slug": "nguyen-ba-tuan-diem-10-toan-vao-10",
+      "createdAt": "2026-07-15T00:07:16.799Z",
+      "updatedAt": "2026-07-15T00:07:16.799Z"
     },
     {
-      "id": 2,
-      "studentName": "Trần Nhật Hải",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 2)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-2",
-      "createdAt": "2026-07-11T04:16:40.772Z",
-      "updatedAt": "2026-07-11T04:16:40.772Z"
+      "id": 17,
+      "studentName": "Trần Minh Đức",
+      "achievement": "Lớp 6 - Học sinh Giỏi Toán Cấp Quận",
+      "excerpt": "Bí quyết đạt điểm tối đa trong các kỳ thi Toán.",
+      "content": "<p>Trần Minh Đức là một học sinh xuất sắc của Trung tâm giáo dục MathPlus Academy. Ngay từ khi học lớp 6, em đã bộc lộ niềm đam mê mãnh liệt với môn Toán. Nhờ sự hướng dẫn tận tình của các thầy cô, Đức không chỉ củng cố vững chắc kiến thức nền tảng mà còn phát triển tư duy logic vượt bậc, giúp em đạt giải cao trong kỳ thi Học sinh Giỏi cấp Quận.</p>",
+      "imageUrl": "/images/success_student_1.jpg",
+      "slug": "tran-minh-duc-hoc-sinh-gioi-toan-cap-quan-lop-6",
+      "createdAt": "2026-07-15T01:24:04.294Z",
+      "updatedAt": "2026-07-15T01:24:04.294Z"
     },
     {
-      "id": 3,
-      "studentName": "Lê Khánh Vân",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 3)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-3",
-      "createdAt": "2026-07-11T04:16:40.793Z",
-      "updatedAt": "2026-07-11T04:16:40.793Z"
+      "id": 18,
+      "studentName": "Lê Phương Thảo",
+      "achievement": "Lớp 8 - Nỗ lực không ngừng nghỉ",
+      "excerpt": "Từ học sinh trung bình vươn lên top đầu lớp.",
+      "content": "<p>Trước khi đến với Trung tâm giáo dục MathPlus Academy, Phương Thảo thường cảm thấy tự ti với môn Toán. Những bài hình học và đại số phức tạp từng là nỗi ám ảnh. Thế nhưng, với sự động viên và phương pháp giảng dạy dễ hiểu của thầy cô tại MathPlus, Thảo đã từng bước lấy lại căn bản. Giờ đây, em luôn đạt điểm 9, 10 và nằm trong top đầu của lớp 8.</p>",
+      "imageUrl": "/images/success_student_2.jpg",
+      "slug": "le-phuong-thao-no-luc-khong-ngung-nghi-lop-8",
+      "createdAt": "2026-07-15T01:24:04.316Z",
+      "updatedAt": "2026-07-15T01:24:04.316Z"
     },
     {
-      "id": 4,
-      "studentName": "Phạm Quỳnh Anh",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 4)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-4",
-      "createdAt": "2026-07-11T04:16:40.815Z",
-      "updatedAt": "2026-07-11T04:16:40.815Z"
-    },
-    {
-      "id": 5,
-      "studentName": "Hoàng Minh Tuấn",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 5)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-5",
-      "createdAt": "2026-07-11T04:16:40.835Z",
-      "updatedAt": "2026-07-11T04:16:40.835Z"
-    },
-    {
-      "id": 6,
-      "studentName": "Vũ Hải Đăng",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 6)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-6",
-      "createdAt": "2026-07-11T04:16:40.862Z",
-      "updatedAt": "2026-07-11T04:16:40.862Z"
-    },
-    {
-      "id": 7,
-      "studentName": "Ngô Bảo Trâm",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 7)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-7",
-      "createdAt": "2026-07-11T04:16:40.883Z",
-      "updatedAt": "2026-07-11T04:16:40.883Z"
-    },
-    {
-      "id": 8,
-      "studentName": "Đặng Thùy Dương",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 8)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-8",
-      "createdAt": "2026-07-11T04:16:40.909Z",
-      "updatedAt": "2026-07-11T04:16:40.909Z"
-    },
-    {
-      "id": 9,
-      "studentName": "Bùi Đức Anh",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 9)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-9",
-      "createdAt": "2026-07-11T04:16:40.927Z",
-      "updatedAt": "2026-07-11T04:16:40.927Z"
-    },
-    {
-      "id": 10,
-      "studentName": "Đỗ Minh Khang",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 10)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-10",
-      "createdAt": "2026-07-11T04:16:40.953Z",
-      "updatedAt": "2026-07-11T04:16:40.953Z"
-    },
-    {
-      "id": 11,
-      "studentName": "Trịnh Thị Nhàn",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 11)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-11",
-      "createdAt": "2026-07-11T04:16:40.973Z",
-      "updatedAt": "2026-07-11T04:16:40.973Z"
-    },
-    {
-      "id": 12,
-      "studentName": "Hồ Quang Hiếu",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 12)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-12",
-      "createdAt": "2026-07-11T04:16:41.000Z",
-      "updatedAt": "2026-07-11T04:16:41.000Z"
-    },
-    {
-      "id": 13,
-      "studentName": "Lý Hải Băng",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 13)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-13",
-      "createdAt": "2026-07-11T04:16:41.019Z",
-      "updatedAt": "2026-07-11T04:16:41.019Z"
-    },
-    {
-      "id": 14,
-      "studentName": "Tạ Minh Tú",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 14)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-14",
-      "createdAt": "2026-07-11T04:16:41.046Z",
-      "updatedAt": "2026-07-11T04:16:41.046Z"
-    },
-    {
-      "id": 15,
-      "studentName": "Cao Quốc Vượng",
-      "achievement": "Thủ khoa Đại học Bách Khoa - Điểm 10 môn Toán (Học sinh 15)",
-      "excerpt": "Hành trình nỗ lực không ngừng nghỉ và sự đồng hành tận tâm của các thầy cô MathPlus đã giúp em đạt được thành tích mơ ước.",
-      "content": "Nội dung chi tiết câu chuyện thành công...",
-      "imageUrl": null,
-      "slug": "cau-chuyen-thanh-cong-15",
-      "createdAt": "2026-07-11T04:16:41.068Z",
-      "updatedAt": "2026-07-11T04:16:41.068Z"
+      "id": 19,
+      "studentName": "Hoàng Nhật Nam",
+      "achievement": "Lớp 9 - Đánh thức đam mê Toán học",
+      "excerpt": "Hành trình từ mất gốc Toán đến say mê học tập.",
+      "content": "<p>Giai đoạn đầu lớp 9, Nhật Nam gặp rất nhiều khó khăn với môn Toán và từng nghĩ mình bị mất gốc hoàn toàn. Được gia đình giới thiệu đến Trung tâm giáo dục MathPlus Academy, Nam bắt đầu học lại từ những khái niệm cơ bản nhất. Bằng sự nỗ lực phi thường và cách truyền đạt lôi cuốn của thầy cô, Nam không chỉ lấy lại kiến thức mà còn thực sự say mê môn học này, tự tin bước vào kỳ thi chuyển cấp.</p>",
+      "imageUrl": "/images/success_student_3.jpg",
+      "slug": "hoang-nhat-nam-danh-thuc-dam-me-lop-9",
+      "createdAt": "2026-07-15T01:24:04.319Z",
+      "updatedAt": "2026-07-15T01:24:04.319Z"
     }
   ]
 }
