@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FileText, BookOpen, Search } from "lucide-react";
 
 type Document = {
-  id: string;
+  id: number;
   title: string;
   slug: string;
   description: string | null;
