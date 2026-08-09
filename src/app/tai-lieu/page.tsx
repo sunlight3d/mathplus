@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 };
 
 import { PrismaClient } from "@prisma/client";
+import DocumentList from "./DocumentList";
 
 const prisma = new PrismaClient();
 
@@ -33,32 +34,7 @@ export default async function TaiLieuPage() {
 
       {/* Main Content */}
       <section className="container mx-auto px-4 mt-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {documents.map((doc) => (
-            <Link 
-              key={doc.id} 
-              href={`/tai-lieu/${doc.slug}`}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col transform hover:-translate-y-1"
-            >
-              <div className={`h-40 bg-gradient-to-r ${doc.color} flex items-center justify-center relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10"></div>
-                <BookOpen className="text-white/80 w-20 h-20 group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600 transition-colors">
-                  {doc.title}
-                </h3>
-                <p className="text-gray-500 text-sm mb-4">
-                  {doc.description}
-                </p>
-                <div className="mt-auto flex items-center text-green-600 font-medium text-sm">
-                  <FileText className="w-4 h-4 mr-2" />
-                  Đọc tài liệu
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <DocumentList documents={documents} />
       </section>
     </div>
   );
