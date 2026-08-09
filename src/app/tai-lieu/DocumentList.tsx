@@ -10,7 +10,7 @@ type Document = {
   slug: string;
   description: string | null;
   fileUrl: string;
-  color: string;
+  color: string | null;
 };
 
 // Hàm bỏ dấu tiếng Việt để tìm kiếm
