@@ -13,3 +13,11 @@ temp
 node_modules
 db_dump.json
 db_dump.sql
+OllamaSetup.exe
+lib
+scratch
+ảnh ọt
+*.docx
+*.tar.gz
+*.zip
+backups
