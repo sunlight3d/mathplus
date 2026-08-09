@@ -4,6 +4,8 @@ import { ArrowLeft, Download } from "lucide-react";
 import { documents } from "../page";
 import type { Metadata } from "next";
 
+import PDFViewer from "@/components/PDFViewer";
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const doc = documents.find((d) => d.id === slug);
@@ -57,11 +59,7 @@ export default async function DocumentDetailPage({
       {/* PDF Viewer */}
       <section className="container mx-auto px-4 mt-8">
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden" style={{ height: "calc(100vh - 250px)", minHeight: "600px" }}>
-          <iframe 
-            src={`${doc.fileUrl}#view=FitH`} 
-            className="w-full h-full border-0"
-            title={doc.title}
-          />
+          <PDFViewer fileUrl={doc.fileUrl} title={doc.title} />
         </div>
       </section>
     </div>
