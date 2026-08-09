@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Users, BookOpen, Settings, LogOut, FileText } from "lucide-react";
+import { LayoutDashboard, Users, BookOpen, Settings, LogOut, FileText, FolderOpen } from "lucide-react";
 import { logoutAction } from "@/actions/auth";
 
 export default function AdminSidebar() {
@@ -13,6 +13,7 @@ export default function AdminSidebar() {
     { name: "Khóa học", href: "/admin/courses", icon: BookOpen },
     { name: "Giáo viên", href: "/admin/teachers", icon: Users },
     { name: "Bài viết", href: "/admin/posts", icon: FileText },
+    { name: "Tài liệu", href: "/admin/documents", icon: FolderOpen },
     { name: "Cài đặt", href: "/admin/settings", icon: Settings },
   ];
 

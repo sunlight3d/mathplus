@@ -45,3 +45,40 @@ export async function uploadImageAction(formData: FormData) {
     return { success: false, message: "Có lỗi xảy ra khi upload ảnh" };
   }
 }
+
+export async function uploadDocumentAction(formData: FormData) {
+  try {
+    const file = formData.get("file") as File | null;
+    if (!file) {
+      return { success: false, message: "Không tìm thấy file" };
+    }
+
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    const sanitizedName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, '');
+    const filename = `${uniqueSuffix}-${sanitizedName}`;
+
+    // Upload to public/documents
+    const uploadDir = path.join(process.cwd(), "public", "documents");
+
+    try {
+      await fs.access(uploadDir);
+    } catch {
+      await fs.mkdir(uploadDir, { recursive: true });
+    }
+
+    const filepath = path.join(uploadDir, filename);
+    await fs.writeFile(filepath, buffer);
+
+    return { 
+      success: true, 
+      url: `/documents/${filename}` 
+    };
+
+  } catch (error) {
+    console.error("Upload document error:", error);
+    return { success: false, message: "Có lỗi xảy ra khi upload tài liệu" };
+  }
+}

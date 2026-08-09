@@ -73,3 +73,14 @@ model SiteSetting {
   description String?
   updatedAt   DateTime @updatedAt
 }
+
+model Document {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  description String?
+  fileUrl     String
+  color       String?  @default("from-blue-500 to-cyan-400")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

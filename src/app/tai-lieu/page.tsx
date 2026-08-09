@@ -7,31 +7,15 @@ export const metadata: Metadata = {
   description: "Tài liệu học tập Toán các lớp 6, 7, 8 và luyện thi",
 };
 
-export const documents = [
-  {
-    id: "toan-lop-6",
-    title: "Toán lớp 6",
-    description: "Tài liệu học tập và bài tập Toán lớp 6",
-    fileUrl: "/documents/toan-lop-6.pdf",
-    color: "from-blue-500 to-cyan-400"
-  },
-  {
-    id: "toan-lop-7",
-    title: "Toán lớp 7",
-    description: "Tài liệu học tập và bài tập Toán lớp 7",
-    fileUrl: "/documents/toan-lop-7.pdf",
-    color: "from-emerald-500 to-teal-400"
-  },
-  {
-    id: "toan-lop-8",
-    title: "Toán lớp 8",
-    description: "Tài liệu học tập và bài tập Toán lớp 8",
-    fileUrl: "/documents/toan-lop-8.pdf",
-    color: "from-orange-500 to-amber-400"
-  }
-];
+import { PrismaClient } from "@prisma/client";
 
-export default function TaiLieuPage() {
+const prisma = new PrismaClient();
+
+export default async function TaiLieuPage() {
+  const documents = await prisma.document.findMany({
+    orderBy: { createdAt: "desc" },
+  });
+
   return (
     <div className="bg-gray-50 min-h-screen pb-20">
       {/* Hero Section */}
@@ -53,7 +37,7 @@ export default function TaiLieuPage() {
           {documents.map((doc) => (
             <Link 
               key={doc.id} 
-              href={`/tai-lieu/${doc.id}`}
+              href={`/tai-lieu/${doc.slug}`}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col transform hover:-translate-y-1"
             >
               <div className={`h-40 bg-gradient-to-r ${doc.color} flex items-center justify-center relative overflow-hidden`}>

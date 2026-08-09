@@ -1,14 +1,16 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Download } from "lucide-react";
-import { documents } from "../page";
+import { PrismaClient } from "@prisma/client";
 import type { Metadata } from "next";
+
+const prisma = new PrismaClient();
 
 import PDFViewer from "@/components/PDFViewer";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const doc = documents.find((d) => d.id === slug);
+  const doc = await prisma.document.findUnique({ where: { slug } });
   if (!doc) return {};
 
   return {
@@ -23,7 +25,7 @@ export default async function DocumentDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const doc = documents.find((d) => d.id === slug);
+  const doc = await prisma.document.findUnique({ where: { slug } });
 
   if (!doc) {
     notFound();
