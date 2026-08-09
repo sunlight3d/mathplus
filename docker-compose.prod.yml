@@ -35,6 +35,7 @@ services:
       - DATABASE_URL=postgresql://mathplus:MathPlus%402026%21Secure@db:5432/mathplus?schema=public
     volumes:
       - uploads_data:/app/public/uploads
+      - ./public/documents:/app/public/documents
 
 volumes:
   postgres_data:
