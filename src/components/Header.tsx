@@ -25,6 +25,7 @@ export default function Header({ logoUrl = "/images/logo.jpg" }: { logoUrl?: str
     { name: "Đăng ký học – thi", path: "/dang-ki-hoc" },
     { name: "Blog", path: "/blog" },
     { name: "Tài liệu", path: "/tai-lieu" },
+    { name: "Trắc nghiệm", path: "/trac-nghiem" },
     { name: "Liên hệ", path: "/lien-he" },
   ];
 

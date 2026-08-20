@@ -50,10 +50,11 @@ export default function Footer({ logoUrl = "/images/logo.jpg" }: { logoUrl?: str
           <div>
             <h3 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Liên kết</h3>
             <ul className="space-y-3">
-              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Về chúng tôi</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Đội ngũ giáo viên</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Tuyển dụng</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Liên hệ</Link></li>
+              <li><Link href="/gioi-thieu" className="text-gray-300 hover:text-white transition-colors">Về chúng tôi</Link></li>
+              <li><Link href="/doi-ngu-giao-vien" className="text-gray-300 hover:text-white transition-colors">Đội ngũ giáo viên</Link></li>
+              <li><Link href="/tai-lieu" className="text-gray-300 hover:text-white transition-colors">Tài liệu học tập</Link></li>
+              <li><Link href="/trac-nghiem" className="text-gray-300 hover:text-white transition-colors">Trắc nghiệm Toán</Link></li>
+              <li><Link href="/lien-he" className="text-gray-300 hover:text-white transition-colors">Liên hệ</Link></li>
             </ul>
           </div>
           <div>
