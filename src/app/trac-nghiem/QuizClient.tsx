@@ -17,14 +17,26 @@ import {
   ListOrdered,
   Calculator,
   Compass,
-  Radio
+  Shuffle,
+  Bot,
+  GraduationCap,
+  Loader2,
+  BookOpen,
+  Check
 } from "lucide-react";
 import BurningFuse from "@/components/quiz/BurningFuse";
 import { quizAudio } from "@/components/quiz/quizAudio";
 import { quizSpeech } from "@/components/quiz/quizSpeech";
-import { mathQuizQuestions, QuizQuestion } from "@/components/quiz/quizData";
+import {
+  defaultMathQuizQuestions,
+  GRADES,
+  QuizQuestion,
+  GradeItem
+} from "@/components/quiz/quizData";
 
 export default function QuizClient() {
+  const [selectedGrade, setSelectedGrade] = useState<number>(6);
+  const [questions, setQuestions] = useState<QuizQuestion[]>(defaultMathQuizQuestions);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [quizStatus, setQuizStatus] = useState<"IDLE" | "READING_QUESTION" | "COUNTDOWN" | "REVEALED">("IDLE");
@@ -37,10 +49,15 @@ export default function QuizClient() {
   const [answeredCount, setAnsweredCount] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Record<number, { selected: string; isCorrect: boolean }>>({});
 
+  // Loading states for AI generation and DB fetch
+  const [isGeneratingAI, setIsGeneratingAI] = useState(false);
+  const [isLoadingDB, setIsLoadingDB] = useState(false);
+  const [notification, setNotification] = useState<{ message: string; type: "success" | "info" | "error" } | null>(null);
+
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const autoNextRef = useRef<NodeJS.Timeout | null>(null);
 
-  const currentQ: QuizQuestion = mathQuizQuestions[currentIndex];
+  const currentQ: QuizQuestion = questions[currentIndex] || defaultMathQuizQuestions[0];
 
   // Synchronize sound effects state
   useEffect(() => {
@@ -53,6 +70,86 @@ export default function QuizClient() {
     if (timerRef.current) clearInterval(timerRef.current);
     if (autoNextRef.current) clearTimeout(autoNextRef.current);
   }, []);
+
+  // Show auto-dismiss notification toast
+  const showToast = (message: string, type: "success" | "info" | "error" = "success") => {
+    setNotification({ message, type });
+    setTimeout(() => setNotification(null), 4000);
+  };
+
+  // Reset quiz state when new questions are loaded
+  const resetQuizState = (newQuestions: QuizQuestion[]) => {
+    stopAllAudioAndTimers();
+    setQuestions(newQuestions);
+    setCurrentIndex(0);
+    setScore(0);
+    setAnsweredCount(0);
+    setUserAnswers({});
+    setSelectedOption(null);
+    setQuizStatus("IDLE");
+    setTimeLeft(totalDuration);
+  };
+
+  // Fetch questions by grade from Database
+  const fetchQuestionsFromDB = async (grade: number) => {
+    setIsLoadingDB(true);
+    stopAllAudioAndTimers();
+    try {
+      const res = await fetch(`/api/quiz/questions?grade=${grade}&limit=10`);
+      const data = await res.json();
+
+      if (data.success && Array.isArray(data.questions) && data.questions.length > 0) {
+        resetQuizState(data.questions);
+        showToast(`Đã tải 10 câu hỏi ngẫu nhiên Toán Lớp ${grade} từ cơ sở dữ liệu!`, "info");
+      } else {
+        // Fallback: If DB doesn't have it yet, try AI generation or filter default questions
+        generateQuestionsWithAI(grade);
+      }
+    } catch (err) {
+      console.error("Error fetching questions from DB:", err);
+      // Fallback
+      const filtered = defaultMathQuizQuestions.filter(q => (q.grade || 6) === grade);
+      resetQuizState(filtered.length > 0 ? filtered : defaultMathQuizQuestions);
+    } finally {
+      setIsLoadingDB(false);
+    }
+  };
+
+  // Generate 10 new questions using qwen3.5:397b-cloud on Ollama and save to DB
+  const generateQuestionsWithAI = async (grade: number) => {
+    setIsGeneratingAI(true);
+    stopAllAudioAndTimers();
+    try {
+      const res = await fetch("/api/quiz/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ grade, count: 10 })
+      });
+      const data = await res.json();
+
+      if (data.success && Array.isArray(data.questions) && data.questions.length > 0) {
+        resetQuizState(data.questions);
+        const sourceText = data.source === "AI_GENERATED"
+          ? "AI (Qwen 3.5 Cloud) đã tạo thành công 10 câu hỏi mới & lưu vào DB!"
+          : `Đã chọn ngẫu nhiên 10 câu hỏi Toán Lớp ${grade} từ kho dữ liệu!`;
+        showToast(sourceText, "success");
+      } else {
+        showToast(data.message || "Không thể sinh câu hỏi mới, vui lòng thử lại.", "error");
+      }
+    } catch (err) {
+      console.error("AI Generation failed:", err);
+      showToast("Lỗi kết nối khi gọi AI, đang dùng dữ liệu dự phòng.", "error");
+    } finally {
+      setIsGeneratingAI(false);
+    }
+  };
+
+  // Handle grade change
+  const handleGradeChange = (grade: number) => {
+    if (grade === selectedGrade && questions.length > 0) return;
+    setSelectedGrade(grade);
+    fetchQuestionsFromDB(grade);
+  };
 
   // Start the countdown timer after speech finishes
   const startCountdown = useCallback(() => {
@@ -94,7 +191,7 @@ export default function QuizClient() {
         answerSpeechText,
         () => {},
         () => {
-          if (autoAdvance && currentIndex < mathQuizQuestions.length - 1) {
+          if (autoAdvance && currentIndex < questions.length - 1) {
             autoNextRef.current = setTimeout(() => {
               goToNextQuestion();
             }, 3500);
@@ -102,7 +199,7 @@ export default function QuizClient() {
         }
       );
     }
-  }, [currentQ, ttsEnabled, autoAdvance, currentIndex]);
+  }, [currentQ, ttsEnabled, autoAdvance, currentIndex, questions.length]);
 
   // Play question: Speak aloud in Vietnamese -> then start countdown
   const playCurrentQuestion = useCallback(() => {
@@ -159,7 +256,7 @@ export default function QuizClient() {
         feedbackSpeech,
         () => {},
         () => {
-          if (autoAdvance && currentIndex < mathQuizQuestions.length - 1) {
+          if (autoAdvance && currentIndex < questions.length - 1) {
             autoNextRef.current = setTimeout(() => {
               goToNextQuestion();
             }, 3500);
@@ -170,7 +267,7 @@ export default function QuizClient() {
   };
 
   const goToNextQuestion = () => {
-    if (currentIndex < mathQuizQuestions.length - 1) {
+    if (currentIndex < questions.length - 1) {
       setCurrentIndex((i) => i + 1);
     }
   };
@@ -191,6 +288,11 @@ export default function QuizClient() {
     setQuizStatus("IDLE");
   };
 
+  // Initial load
+  useEffect(() => {
+    fetchQuestionsFromDB(6);
+  }, []);
+
   useEffect(() => {
     if (quizStatus !== "IDLE") {
       playCurrentQuestion();
@@ -203,9 +305,24 @@ export default function QuizClient() {
   const isBurning = quizStatus === "COUNTDOWN";
   const isTimeUp = quizStatus === "REVEALED" && timeLeft === 0 && !selectedOption;
   const isAnswerRevealed = quizStatus === "REVEALED";
+  const currentGradeInfo = GRADES.find((g) => g.id === selectedGrade) || GRADES[0];
 
   return (
     <div className="max-w-5xl mx-auto pb-16 px-4">
+      {/* Toast Notification */}
+      {notification && (
+        <div className={`fixed top-20 right-5 z-50 px-4 py-3 rounded-2xl shadow-2xl flex items-center space-x-2.5 text-sm font-bold animate-bounce border-2 ${
+          notification.type === "success"
+            ? "bg-[#2e5311] border-[#FFB800] text-white"
+            : notification.type === "info"
+            ? "bg-[#1b310a] border-[#64B428] text-white"
+            : "bg-red-600 border-red-300 text-white"
+        }`}>
+          {notification.type === "success" ? <Sparkles className="w-5 h-5 text-[#FFB800]" /> : <BookOpen className="w-5 h-5" />}
+          <span>{notification.message}</span>
+        </div>
+      )}
+
       {/* Top Controls Toolbar with MathPlus Green Palette */}
       <div className="flex flex-wrap items-center justify-between gap-3 bg-[#2e5311]/90 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border-2 border-[#64B428]/40 mb-6 shadow-2xl">
         <div className="flex items-center space-x-3">
@@ -215,7 +332,9 @@ export default function QuizClient() {
           <div>
             <div className="flex items-center space-x-2">
               <span className="text-xs font-black uppercase tracking-wider text-[#FFB800]">Thực hành trực tuyến</span>
-              <span className="text-[10px] bg-[#64B428] text-white px-2 py-0.5 rounded-full font-bold">Toán THCS & THPT</span>
+              <span className="text-[10px] bg-[#64B428] text-white px-2 py-0.5 rounded-full font-bold">
+                {currentGradeInfo.label}
+              </span>
             </div>
             <h2 className="text-base sm:text-lg font-black text-white">MathPlus Quick Quiz</h2>
           </div>
@@ -286,6 +405,23 @@ export default function QuizClient() {
         <div className="lg:col-span-7 flex justify-center">
           <div className="w-full max-w-[430px] rounded-[36px] bg-gradient-to-b from-[#E8F8E0] via-[#F4FCF0] to-[#E2F5D7] p-4 sm:p-5 shadow-[0_20px_60px_rgba(0,0,0,0.6)] border-4 border-[#64B428] relative overflow-hidden text-gray-900">
             
+            {/* Loading Overlay during AI Generation */}
+            {isGeneratingAI && (
+              <div className="absolute inset-0 bg-[#1b310a]/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center text-white">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#64B428] to-[#FFB800] flex items-center justify-center mb-4 shadow-xl animate-spin">
+                  <Bot className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-lg font-black text-[#FFB800] mb-2">Qwen 3.5 Cloud Đang Soạn Đề...</h4>
+                <p className="text-xs text-gray-200 leading-relaxed max-w-xs mb-4">
+                  Đang khởi tạo 10 câu hỏi trắc nghiệm Toán Lớp {selectedGrade} chuẩn theo chương trình GDPT mới và tự động lưu vào cơ sở dữ liệu.
+                </p>
+                <div className="flex items-center space-x-2 text-xs text-[#64B428] font-bold bg-black/40 px-3 py-1.5 rounded-full">
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>Vui lòng chờ giây lát...</span>
+                </div>
+              </div>
+            )}
+
             {/* Math Grid Paper Texture on Card */}
             <div
               className="absolute inset-0 opacity-20 pointer-events-none"
@@ -316,11 +452,11 @@ export default function QuizClient() {
                   height={20}
                   className="w-5 h-5 rounded-full object-cover border border-[#64B428]"
                 />
-                <span>CÂU {currentIndex + 1} / {mathQuizQuestions.length}</span>
+                <span>CÂU {currentIndex + 1} / {questions.length}</span>
               </div>
               
               <div className="bg-[#2e5311] px-3.5 py-1.5 rounded-full shadow-md text-[11px] font-black text-[#FFB800] uppercase tracking-wide border border-[#FFB800]/40">
-                {currentQ.topic}
+                {currentQ.topic || `TOÁN LỚP ${selectedGrade}`}
               </div>
             </div>
 
@@ -328,7 +464,7 @@ export default function QuizClient() {
             <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-2xl p-3.5 shadow-md border-2 border-[#FFB800] mb-3 text-center">
               <div className="relative mx-auto w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-tr from-[#64B428]/20 via-[#FFB800]/20 to-emerald-100 p-1.5 shadow-inner border-2 border-[#64B428] flex items-center justify-center">
                 <span className="text-5xl sm:text-6xl filter drop-shadow-md select-none animate-bounce">
-                  {currentQ.iconType || "📐"}
+                  {currentQ.iconType || currentGradeInfo.icon}
                 </span>
                 
                 {/* Purple/Green Countdown Badge */}
@@ -337,12 +473,12 @@ export default function QuizClient() {
                     ? "bg-red-500 scale-110 animate-ping"
                     : "bg-[#2e5311]"
                 }`}>
-                  {quizStatus === "COUNTDOWN" ? timeLeft : currentQ.id}
+                  {quizStatus === "COUNTDOWN" ? timeLeft : currentIndex + 1}
                 </div>
               </div>
 
               <div className="mt-2 text-[11px] font-black text-[#2e5311] uppercase tracking-widest flex items-center justify-center space-x-1">
-                <span>HỎI ĐÁP TOÁN HỌC MATHPLUS</span>
+                <span>HỎI ĐÁP TOÁN LỚP {selectedGrade} • MATHPLUS</span>
               </div>
             </div>
 
@@ -373,7 +509,7 @@ export default function QuizClient() {
 
             {/* Options List */}
             <div className="relative z-10 space-y-2.5 mb-4">
-              {currentQ.options.map((option) => {
+              {currentQ.options && currentQ.options.map((option) => {
                 const isSelected = selectedOption === option.key;
                 const isCorrect = isAnswerRevealed && option.key === currentQ.correctAnswer;
                 const isWrongSelected = isAnswerRevealed && isSelected && !isCorrect;
@@ -427,7 +563,7 @@ export default function QuizClient() {
                   className="w-full py-3.5 bg-gradient-to-r from-[#64B428] via-[#509020] to-[#2e5311] hover:brightness-110 text-white rounded-full font-black text-base shadow-xl transition-all hover:scale-105 flex items-center justify-center space-x-2 border-2 border-[#FFB800]"
                 >
                   <Play className="w-5 h-5 fill-white text-white" />
-                  <span>BẮT ĐẦU ĐỐ VUI TOÁN HỌC</span>
+                  <span>BẮT ĐẦU ĐỐ VUI TOÁN LỚP {selectedGrade}</span>
                 </button>
               ) : (
                 <>
@@ -451,7 +587,7 @@ export default function QuizClient() {
 
                     <button
                       onClick={goToNextQuestion}
-                      disabled={currentIndex === mathQuizQuestions.length - 1}
+                      disabled={currentIndex === questions.length - 1}
                       className="px-4 py-2 bg-[#64B428] hover:bg-[#509020] disabled:opacity-40 text-white rounded-full font-black text-xs shadow-md transition-all flex items-center space-x-1"
                     >
                       <span>Câu tiếp</span>
@@ -464,18 +600,84 @@ export default function QuizClient() {
 
             {/* Bottom Channel Signature */}
             <div className="relative z-10 mt-3 pt-2 text-center text-[11px] text-[#2e5311] font-semibold">
-              <span className="font-black text-[#2e5311]">MathPlus Academy</span> • Học Toán Chủ Động #MathPlus #Quiz #ToanHoc
+              <span className="font-black text-[#2e5311]">MathPlus Academy</span> • Học Toán Chủ Động #MathPlus #Lop{selectedGrade}
             </div>
           </div>
         </div>
 
-        {/* Right Column: Score, Solutions, Question Quick Selector */}
+        {/* Right Column: Grade Selector, Actions, Score, Solutions */}
         <div className="lg:col-span-5 space-y-5">
           
+          {/* Grade Selector Card */}
+          <div className="bg-[#2e5311]/95 backdrop-blur-md rounded-3xl p-5 border-2 border-[#64B428]/40 shadow-xl text-white">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-sm font-black text-[#FFB800] uppercase tracking-wider flex items-center">
+                <GraduationCap className="w-4 h-4 mr-2" /> Chọn Lớp Học
+              </h3>
+              <span className="text-xs bg-[#64B428] text-white px-2.5 py-0.5 rounded-full font-bold">
+                {currentGradeInfo.label}
+              </span>
+            </div>
+
+            {/* Grid of Grades 6 to 12 */}
+            <div className="grid grid-cols-4 sm:grid-cols-7 lg:grid-cols-4 gap-2 mb-4">
+              {GRADES.map((g) => {
+                const isSelected = g.id === selectedGrade;
+                return (
+                  <button
+                    key={g.id}
+                    onClick={() => handleGradeChange(g.id)}
+                    className={`py-2 px-1 rounded-xl text-xs font-black transition-all flex flex-col items-center justify-center border-2 ${
+                      isSelected
+                        ? "bg-gradient-to-tr from-[#64B428] to-[#FFB800] text-[#1b310a] border-white shadow-lg scale-105"
+                        : "bg-black/30 hover:bg-black/50 text-gray-200 border-[#64B428]/30"
+                    }`}
+                  >
+                    <span className="text-sm">{g.icon}</span>
+                    <span>{g.shortLabel}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Quick Actions: Random 10 Questions & AI Generate */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-[#64B428]/30">
+              <button
+                onClick={() => fetchQuestionsFromDB(selectedGrade)}
+                disabled={isLoadingDB || isGeneratingAI}
+                className="py-2.5 px-3 bg-black/40 hover:bg-black/60 border border-[#64B428] text-white rounded-xl text-xs font-black transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
+              >
+                {isLoadingDB ? (
+                  <Loader2 className="w-4 h-4 animate-spin text-[#FFB800]" />
+                ) : (
+                  <Shuffle className="w-4 h-4 text-[#FFB800]" />
+                )}
+                <span>Random 10 câu</span>
+              </button>
+
+              <button
+                onClick={() => generateQuestionsWithAI(selectedGrade)}
+                disabled={isGeneratingAI || isLoadingDB}
+                className="py-2.5 px-3 bg-gradient-to-r from-[#64B428] to-[#509020] hover:brightness-110 border border-[#FFB800] text-white rounded-xl text-xs font-black shadow-md transition-all flex items-center justify-center space-x-1.5 disabled:opacity-50"
+              >
+                {isGeneratingAI ? (
+                  <Loader2 className="w-4 h-4 animate-spin text-[#FFB800]" />
+                ) : (
+                  <Bot className="w-4 h-4 text-[#FFB800]" />
+                )}
+                <span>AI Sinh 10 câu mới</span>
+              </button>
+            </div>
+
+            <div className="mt-2.5 text-[11px] text-gray-300 italic text-center">
+              💡 Model AI <span className="text-[#FFB800] font-bold">qwen3.5:397b-cloud</span> sẽ tự động biên soạn & lưu vào DB.
+            </div>
+          </div>
+
           {/* Performance Card */}
           <div className="bg-[#2e5311]/90 backdrop-blur-md rounded-3xl p-5 border-2 border-[#64B428]/40 shadow-xl text-white">
             <h3 className="text-sm font-black text-[#FFB800] uppercase tracking-wider mb-3 flex items-center">
-              <Trophy className="w-4 h-4 mr-2" /> Kết quả thử thách
+              <Trophy className="w-4 h-4 mr-2" /> Kết quả thử thách ({currentGradeInfo.label})
             </h3>
 
             <div className="grid grid-cols-2 gap-3 mb-4">
@@ -484,7 +686,7 @@ export default function QuizClient() {
                 <div className="text-xs text-gray-300 font-bold mt-1">Câu trả lời đúng</div>
               </div>
               <div className="bg-black/30 rounded-2xl p-3.5 text-center border border-[#FFB800]/30">
-                <div className="text-3xl font-black text-[#FFB800]">{answeredCount} / {mathQuizQuestions.length}</div>
+                <div className="text-3xl font-black text-[#FFB800]">{answeredCount} / {questions.length}</div>
                 <div className="text-xs text-gray-300 font-bold mt-1">Đã hoàn thành</div>
               </div>
             </div>
@@ -493,12 +695,12 @@ export default function QuizClient() {
             <div className="w-full bg-black/40 h-3 rounded-full overflow-hidden p-0.5 border border-[#64B428]/30 mb-2.5">
               <div
                 className="bg-gradient-to-r from-[#FFB800] to-[#64B428] h-full rounded-full transition-all duration-300 shadow-sm"
-                style={{ width: `${(answeredCount / mathQuizQuestions.length) * 100}%` }}
+                style={{ width: `${(answeredCount / (questions.length || 1)) * 100}%` }}
               />
             </div>
 
             <div className="flex items-center justify-between text-xs text-gray-300">
-              <span className="font-semibold">Tiến độ: {Math.round((answeredCount / mathQuizQuestions.length) * 100)}%</span>
+              <span className="font-semibold">Tiến độ: {Math.round((answeredCount / (questions.length || 1)) * 100)}%</span>
               <button
                 onClick={restartQuiz}
                 className="text-[#FFB800] hover:text-amber-200 underline font-black"
@@ -527,8 +729,8 @@ export default function QuizClient() {
               <ListOrdered className="w-4 h-4 mr-2" /> Chọn nhanh câu hỏi
             </h3>
 
-            <div className="grid grid-cols-4 gap-2.5">
-              {mathQuizQuestions.map((q, idx) => {
+            <div className="grid grid-cols-5 gap-2">
+              {questions.map((q, idx) => {
                 const state = userAnswers[q.id];
                 const isCurrent = idx === currentIndex;
 
@@ -544,12 +746,12 @@ export default function QuizClient() {
 
                 return (
                   <button
-                    key={q.id}
+                    key={q.id || idx}
                     onClick={() => setCurrentIndex(idx)}
-                    className={`h-12 rounded-2xl border-2 text-xs font-extrabold transition-all flex flex-col items-center justify-center shadow-md ${color}`}
+                    className={`h-11 rounded-2xl border-2 text-xs font-extrabold transition-all flex flex-col items-center justify-center shadow-md ${color}`}
                   >
                     <span>Câu {idx + 1}</span>
-                    <span className="text-[11px]">{q.iconType || "❓"}</span>
+                    <span className="text-[10px]">{q.iconType || "📐"}</span>
                   </button>
                 );
               })}

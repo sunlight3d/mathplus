@@ -1,0 +1,1766 @@
+{
+  "6": [
+    {
+      "topic": "Dấu hiệu chia hết",
+      "question": "Số nào sau đây chia hết cho cả 2 và 5?",
+      "options": [
+        {
+          "key": "A",
+          "text": "12"
+        },
+        {
+          "key": "B",
+          "text": "15"
+        },
+        {
+          "key": "C",
+          "text": "20"
+        },
+        {
+          "key": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số chia hết cho 2 phải có chữ số tận cùng là 0, 2, 4, 6, 8. Số chia hết cho 5 phải có chữ số tận cùng là 0 hoặc 5. Do đó, số chia hết cho cả 2 và 5 phải có chữ số tận cùng là 0. Chọn 20.",
+      "iconType": "🔢"
+    },
+    {
+      "topic": "Cộng trừ số nguyên",
+      "question": "Kết quả của phép tính (-15) + 10 là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "-25"
+        },
+        {
+          "key": "B",
+          "text": "25"
+        },
+        {
+          "key": "C",
+          "text": "5"
+        },
+        {
+          "key": "D",
+          "text": "-5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Khi cộng hai số nguyên khác dấu, ta trừ hai giá trị tuyệt đối (15 - 10 = 5) và đặt dấu của số có giá trị tuyệt đối lớn hơn (dấu của -15). Vậy kết quả là -5.",
+      "iconType": "➕"
+    },
+    {
+      "topic": "Phân số bằng nhau",
+      "question": "Mẫu số chung nhỏ nhất của hai phân số 1/4 và 1/6 là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "10"
+        },
+        {
+          "key": "B",
+          "text": "12"
+        },
+        {
+          "key": "C",
+          "text": "24"
+        },
+        {
+          "key": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mẫu số chung nhỏ nhất chính là BCNN(4, 6). Vì 4 = 2^2, 6 = 2.3 nên BCNN(4, 6) = 2^2.3 = 12.",
+      "iconType": "🍰"
+    },
+    {
+      "topic": "Hình học trực quan",
+      "question": "Hình nào dưới đây có đúng 4 trục đối xứng?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tam giác đều"
+        },
+        {
+          "key": "B",
+          "text": "Hình chữ nhật"
+        },
+        {
+          "key": "C",
+          "text": "Hình vuông"
+        },
+        {
+          "key": "D",
+          "text": "Hình thang cân"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hình vuông có 4 trục đối xứng (2 đường chéo và 2 đường nối trung điểm các cạnh đối). Tam giác đều có 3, hình chữ nhật có 2, hình thang cân có 1.",
+      "iconType": "📐"
+    },
+    {
+      "topic": "Lũy thừa số tự nhiên",
+      "question": "Viết gọn tích 3^4 . 3^2 dưới dạng một lũy thừa:",
+      "options": [
+        {
+          "key": "A",
+          "text": "3^6"
+        },
+        {
+          "key": "B",
+          "text": "3^8"
+        },
+        {
+          "key": "C",
+          "text": "9^6"
+        },
+        {
+          "key": "D",
+          "text": "6^6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Khi nhân hai lũy thừa cùng cơ số, ta giữ nguyên cơ số và cộng các số mũ: 3^4 . 3^2 = 3^(4+2) = 3^6.",
+      "iconType": "🚀"
+    },
+    {
+      "topic": "Tập hợp số tự nhiên",
+      "question": "Cho tập hợp A = {x ∈ ℕ | 5 < x ≤ 9}. Số phần tử của tập hợp A là bao nhiêu?",
+      "options": [
+        {
+          "key": "A",
+          "text": "3 phần tử"
+        },
+        {
+          "key": "B",
+          "text": "4 phần tử"
+        },
+        {
+          "key": "C",
+          "text": "5 phần tử"
+        },
+        {
+          "key": "D",
+          "text": "6 phần tử"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Các số tự nhiên x thỏa mãn điều kiện 5 < x ≤ 9 là: 6; 7; 8; 9. Đếm số lượng ta thấy có 4 phần tử.",
+      "iconType": "📦"
+    },
+    {
+      "topic": "Dấu hiệu chia hết",
+      "question": "Chữ số thích hợp điền vào dấu * để số 12*5 chia hết cho 9 là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "1"
+        },
+        {
+          "key": "B",
+          "text": "2"
+        },
+        {
+          "key": "C",
+          "text": "3"
+        },
+        {
+          "key": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tổng các chữ số của số 12*5 là 1 + 2 + * + 5 = 8 + *. Để số đó chia hết cho 9 thì tổng các chữ số phải chia hết cho 9. Vậy 8 + * = 9 suy ra * = 1.",
+      "iconType": "✅"
+    },
+    {
+      "topic": "Số nguyên",
+      "question": "Sắp xếp các số nguyên sau theo thứ tự tăng dần: -5; 0; 3; -2.",
+      "options": [
+        {
+          "key": "A",
+          "text": "-5; -2; 0; 3"
+        },
+        {
+          "key": "B",
+          "text": "3; 0; -2; -5"
+        },
+        {
+          "key": "C",
+          "text": "-2; -5; 0; 3"
+        },
+        {
+          "key": "D",
+          "text": "0; 3; -2; -5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trong số nguyên, số âm luôn nhỏ hơn 0 và số dương. So sánh số âm: -5 < -2. Vậy thứ tự tăng dần là: -5; -2; 0; 3.",
+      "iconType": "🌡️"
+    },
+    {
+      "topic": "Phân số",
+      "question": "Kết quả rút gọn của phân số 12/18 về phân số tối giản là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "2/3"
+        },
+        {
+          "key": "B",
+          "text": "3/4"
+        },
+        {
+          "key": "C",
+          "text": "4/6"
+        },
+        {
+          "key": "D",
+          "text": "6/9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chia cả tử và mẫu của phân số 12/18 cho ước chung lớn nhất là 6. Ta được 12:6 = 2 và 18:6 = 3. Vậy phân số tối giản là 2/3.",
+      "iconType": "🍰"
+    },
+    {
+      "topic": "Chu vi hình chữ nhật",
+      "question": "Một mảnh vườn hình chữ nhật có chiều dài 20m, chiều rộng 15m. Chu vi mảnh vườn đó là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "35m"
+        },
+        {
+          "key": "B",
+          "text": "300m"
+        },
+        {
+          "key": "C",
+          "text": "70m"
+        },
+        {
+          "key": "D",
+          "text": "60m"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi hình chữ nhật được tính bằng công thức: (chiều dài + chiều rộng) x 2. Thay số ta được: (20 + 15) x 2 = 35 x 2 = 70m.",
+      "iconType": "📏"
+    }
+  ],
+  "7": [
+    {
+      "topic": "Số hữu tỉ",
+      "question": "Kết quả của phép tính (-3/4) + (5/6) là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "1/12"
+        },
+        {
+          "key": "B",
+          "text": "-1/12"
+        },
+        {
+          "key": "C",
+          "text": "2/5"
+        },
+        {
+          "key": "D",
+          "text": "-2/5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Quy đồng mẫu số chung là 12. Ta có: (-3/4) + (5/6) = (-9/12) + (10/12) = 1/12.",
+      "iconType": "🧮"
+    },
+    {
+      "topic": "Số thực",
+      "question": "Tìm x biết căn bậc hai của (x^2) bằng 5:",
+      "options": [
+        {
+          "key": "A",
+          "text": "x = 5"
+        },
+        {
+          "key": "B",
+          "text": "x = -5"
+        },
+        {
+          "key": "C",
+          "text": "x = 25"
+        },
+        {
+          "key": "D",
+          "text": "x = 5 hoặc x = -5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ta có căn bậc hai của (x^2) chính là |x|. Vậy |x| = 5 suy ra x = 5 hoặc x = -5.",
+      "iconType": "🔢"
+    },
+    {
+      "topic": "Biểu thức đại số",
+      "question": "Giá trị của biểu thức P = 3x^2 - 2y tại x = -1 và y = 2 là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "1"
+        },
+        {
+          "key": "B",
+          "text": "-1"
+        },
+        {
+          "key": "C",
+          "text": "5"
+        },
+        {
+          "key": "D",
+          "text": "-5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thay x = -1 và y = 2 vào biểu thức: P = 3.(-1)^2 - 2.2 = 3.1 - 4 = 3 - 4 = -1.",
+      "iconType": "📝"
+    },
+    {
+      "topic": "Tỉ lệ thức",
+      "question": "Cho x/3 = y/5 và x + y = 16. Giá trị của x là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "6"
+        },
+        {
+          "key": "B",
+          "text": "10"
+        },
+        {
+          "key": "C",
+          "text": "3"
+        },
+        {
+          "key": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Áp dụng tính chất dãy tỉ số bằng nhau: x/3 = y/5 = (x+y)/(3+5) = 16/8 = 2. Suy ra x = 3.2 = 6.",
+      "iconType": "⚖️"
+    },
+    {
+      "topic": "Tam giác bằng nhau",
+      "question": "Cho tam giác ABC và MNP có AB = MN, góc B = góc N. Cần thêm điều kiện nào để tam giác ABC = tam giác MNP (c.g.c)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "BC = NP"
+        },
+        {
+          "key": "B",
+          "text": "AC = MP"
+        },
+        {
+          "key": "C",
+          "text": "Góc A = Góc M"
+        },
+        {
+          "key": "D",
+          "text": "BC = MP"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Để hai tam giác bằng nhau theo trường hợp cạnh-góc-cạnh, cần hai cạnh kề góc bằng nhau. Đã có AB = MN và góc B = góc N, cần thêm cạnh kề còn lại là BC = NP.",
+      "iconType": "📐"
+    },
+    {
+      "topic": "Số hữu tỉ",
+      "question": "Tính giá trị biểu thức A = (-0,5)² · 4 + 1/2.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1,5"
+        },
+        {
+          "key": "B",
+          "text": "2"
+        },
+        {
+          "key": "C",
+          "text": "1"
+        },
+        {
+          "key": "D",
+          "text": "0,5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta có: (-0,5)² = 0,25. Suy ra A = 0,25 · 4 + 0,5 = 1 + 0,5 = 1,5.",
+      "iconType": "🧮"
+    },
+    {
+      "topic": "Số thực",
+      "question": "Tìm x biết |x| = √4.",
+      "options": [
+        {
+          "key": "A",
+          "text": "2"
+        },
+        {
+          "key": "B",
+          "text": "-2"
+        },
+        {
+          "key": "C",
+          "text": "2 hoặc -2"
+        },
+        {
+          "key": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì √4 = 2 nên |x| = 2. Do đó x = 2 hoặc x = -2.",
+      "iconType": "🔢"
+    },
+    {
+      "topic": "Biểu thức đại số",
+      "question": "Tính giá trị biểu thức P = 3x² - 2y tại x = 2 và y = -1.",
+      "options": [
+        {
+          "key": "A",
+          "text": "10"
+        },
+        {
+          "key": "B",
+          "text": "14"
+        },
+        {
+          "key": "C",
+          "text": "8"
+        },
+        {
+          "key": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thay x = 2, y = -1 vào P ta được: P = 3·2² - 2·(-1) = 3·4 + 2 = 12 + 2 = 14.",
+      "iconType": "📝"
+    },
+    {
+      "topic": "Tỉ lệ thức",
+      "question": "Tìm x biết x/2 = y/3 và x + y = 10.",
+      "options": [
+        {
+          "key": "A",
+          "text": "2"
+        },
+        {
+          "key": "B",
+          "text": "4"
+        },
+        {
+          "key": "C",
+          "text": "6"
+        },
+        {
+          "key": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Áp dụng tính chất dãy tỉ số bằng nhau: x/2 = y/3 = (x+y)/(2+3) = 10/5 = 2. Suy ra x = 2·2 = 4.",
+      "iconType": "⚖️"
+    },
+    {
+      "topic": "Tam giác bằng nhau",
+      "question": "Cho ΔABC và ΔDEF có AB = DE, AC = DF. Cần thêm điều kiện nào để ΔABC = ΔDEF (c.g.c)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Góc B = Góc E"
+        },
+        {
+          "key": "B",
+          "text": "Góc A = Góc D"
+        },
+        {
+          "key": "C",
+          "text": "BC = EF"
+        },
+        {
+          "key": "D",
+          "text": "Góc C = Góc F"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trường hợp cạnh-góc-cạnh yêu cầu góc xen giữa hai cạnh tương ứng bằng nhau. Góc xen giữa AB và AC là góc A.",
+      "iconType": "📐"
+    }
+  ],
+  "8": [
+    {
+      "topic": "Hằng đẳng thức đáng nhớ",
+      "question": "Khai triển biểu thức (2x - 3)² ta được kết quả nào sau đây?",
+      "options": [
+        {
+          "key": "A",
+          "text": "4x² - 12x + 9"
+        },
+        {
+          "key": "B",
+          "text": "4x² - 9"
+        },
+        {
+          "key": "C",
+          "text": "4x² - 6x + 9"
+        },
+        {
+          "key": "D",
+          "text": "2x² - 12x + 9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Áp dụng hằng đẳng thức (A - B)² = A² - 2AB + B². Với A = 2x, B = 3 ta có: (2x)² - 2.2x.3 + 3² = 4x² - 12x + 9.",
+      "iconType": "🧮"
+    },
+    {
+      "topic": "Phân thức đại số",
+      "question": "Điều kiện xác định của phân thức 1/(x² - 4) là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "x ≠ 2"
+        },
+        {
+          "key": "B",
+          "text": "x ≠ -2"
+        },
+        {
+          "key": "C",
+          "text": "x ≠ 2 và x ≠ -2"
+        },
+        {
+          "key": "D",
+          "text": "x ≠ 4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Phân thức xác định khi mẫu thức khác 0. Ta có x² - 4 ≠ 0 ⇔ x² ≠ 4 ⇔ x ≠ 2 và x ≠ -2.",
+      "iconType": "➗"
+    },
+    {
+      "topic": "Hàm số bậc nhất",
+      "question": "Hàm số y = (m - 1)x + 2 đồng biến khi giá trị của m thỏa mãn:",
+      "options": [
+        {
+          "key": "A",
+          "text": "m < 1"
+        },
+        {
+          "key": "B",
+          "text": "m > 1"
+        },
+        {
+          "key": "C",
+          "text": "m = 1"
+        },
+        {
+          "key": "D",
+          "text": "m ≠ 1"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hàm số bậc nhất y = ax + b đồng biến khi hệ số góc a > 0. Ở đây a = m - 1, nên m - 1 > 0 ⇔ m > 1.",
+      "iconType": "📈"
+    },
+    {
+      "topic": "Tứ giác",
+      "question": "Dấu hiệu nào dưới đây là định nghĩa của hình thoi?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tứ giác có 2 đường chéo vuông góc"
+        },
+        {
+          "key": "B",
+          "text": "Tứ giác có 4 cạnh bằng nhau"
+        },
+        {
+          "key": "C",
+          "text": "Hình bình hành có 1 góc vuông"
+        },
+        {
+          "key": "D",
+          "text": "Tứ giác có 2 cạnh đối song song"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Theo định nghĩa, hình thoi là tứ giác có 4 cạnh bằng nhau. Các đáp án khác là tính chất hoặc định nghĩa của hình khác.",
+      "iconType": "🔷"
+    },
+    {
+      "topic": "Định lý Thales",
+      "question": "Cho tam giác ABC, MN // BC (M thuộc AB, N thuộc AC). Biết AM = 2, MB = 4, AN = 3. Độ dài đoạn NC là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "4"
+        },
+        {
+          "key": "B",
+          "text": "5"
+        },
+        {
+          "key": "C",
+          "text": "6"
+        },
+        {
+          "key": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Áp dụng định lý Thales: AM/MB = AN/NC. Thay số: 2/4 = 3/NC ⇒ NC = (4.3)/2 = 6.",
+      "iconType": "📐"
+    },
+    {
+      "topic": "Hằng đẳng thức đáng nhớ",
+      "question": "Kết quả khai triển biểu thức (3x - 2)^2 là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "9x^2 - 6x + 4"
+        },
+        {
+          "key": "B",
+          "text": "9x^2 - 12x + 4"
+        },
+        {
+          "key": "C",
+          "text": "3x^2 - 12x + 4"
+        },
+        {
+          "key": "D",
+          "text": "9x^2 - 4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Áp dụng hằng đẳng thức bình phương của một hiệu: (A - B)^2 = A^2 - 2AB + B^2. Với A = 3x và B = 2, ta có: (3x)^2 - 2.3x.2 + 2^2 = 9x^2 - 12x + 4.",
+      "iconType": "✨"
+    },
+    {
+      "topic": "Phân thức đại số",
+      "question": "Điều kiện xác định của phân thức (x + 1) / (x^2 - 9) là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "x khác 3"
+        },
+        {
+          "key": "B",
+          "text": "x khác -3"
+        },
+        {
+          "key": "C",
+          "text": "x khác 3 và x khác -3"
+        },
+        {
+          "key": "D",
+          "text": "x khác 0"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Phân thức xác định khi mẫu thức khác 0. Ta có: x^2 - 9 khác 0 <=> (x - 3)(x + 3) khác 0 <=> x khác 3 và x khác -3.",
+      "iconType": "➗"
+    },
+    {
+      "topic": "Hàm số bậc nhất",
+      "question": "Tìm m để hàm số y = (m - 2)x + 3 đồng biến trên tập số thực R:",
+      "options": [
+        {
+          "key": "A",
+          "text": "m > 2"
+        },
+        {
+          "key": "B",
+          "text": "m < 2"
+        },
+        {
+          "key": "C",
+          "text": "m = 2"
+        },
+        {
+          "key": "D",
+          "text": "m khác 2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hàm số bậc nhất y = ax + b đồng biến khi hệ số góc a > 0. Ở đây a = m - 2, nên ta cần m - 2 > 0 <=> m > 2.",
+      "iconType": "📈"
+    },
+    {
+      "topic": "Tứ giác",
+      "question": "Hình bình hành có hai đường chéo vuông góc với nhau là hình gì?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Hình chữ nhật"
+        },
+        {
+          "key": "B",
+          "text": "Hình thoi"
+        },
+        {
+          "key": "C",
+          "text": "Hình vuông"
+        },
+        {
+          "key": "D",
+          "text": "Hình thang cân"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Theo dấu hiệu nhận biết hình thoi: Hình bình hành có hai đường chéo vuông góc với nhau thì là hình thoi.",
+      "iconType": "🟥"
+    },
+    {
+      "topic": "Định lý Thales",
+      "question": "Cho tam giác ABC, DE song song BC (D thuộc AB, E thuộc AC). Biết AD = 2, DB = 4, AE = 3. Độ dài EC là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "5"
+        },
+        {
+          "key": "B",
+          "text": "6"
+        },
+        {
+          "key": "C",
+          "text": "7"
+        },
+        {
+          "key": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Áp dụng định lý Thales trong tam giác: AD/DB = AE/EC. Thay số: 2/4 = 3/EC => 1/2 = 3/EC => EC = 6.",
+      "iconType": "📐"
+    }
+  ],
+  "9": [
+    {
+      "topic": "Căn bậc hai",
+      "question": "Điều kiện xác định của biểu thức A = √(2x - 4) là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "x ≥ 2"
+        },
+        {
+          "key": "B",
+          "text": "x ≤ 2"
+        },
+        {
+          "key": "C",
+          "text": "x > 2"
+        },
+        {
+          "key": "D",
+          "text": "x < 2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Biểu thức căn bậc hai √A xác định khi và chỉ khi A ≥ 0. Do đó, 2x - 4 ≥ 0 ⇔ 2x ≥ 4 ⇔ x ≥ 2.",
+      "iconType": "📐"
+    },
+    {
+      "topic": "Hệ phương trình",
+      "question": "Nghiệm của hệ phương trình {x + y = 3; 2x - y = 0} là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1; 2)"
+        },
+        {
+          "key": "B",
+          "text": "(2; 1)"
+        },
+        {
+          "key": "C",
+          "text": "(3; 0)"
+        },
+        {
+          "key": "D",
+          "text": "(0; 3)"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng từng vế hai phương trình ta được 3x = 3 ⇔ x = 1. Thay x = 1 vào phương trình thứ nhất: 1 + y = 3 ⇔ y = 2. Vậy nghiệm (1; 2).",
+      "iconType": "📝"
+    },
+    {
+      "topic": "Hệ thức Vi-ét",
+      "question": "Cho phương trình x² - 5x + 6 = 0. Tổng hai nghiệm x₁ + x₂ bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "5"
+        },
+        {
+          "key": "B",
+          "text": "-5"
+        },
+        {
+          "key": "C",
+          "text": "6"
+        },
+        {
+          "key": "D",
+          "text": "-6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Theo hệ thức Vi-ét, tổng hai nghiệm S = x₁ + x₂ = -b/a. Với phương trình đã cho, a = 1, b = -5 nên S = -(-5)/1 = 5.",
+      "iconType": "📊"
+    },
+    {
+      "topic": "Đường tròn",
+      "question": "Cho đường tròn (O; 5cm) và điểm M sao cho OM = 6cm. Vị trí của điểm M là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "M nằm ngoài đường tròn"
+        },
+        {
+          "key": "B",
+          "text": "M nằm trong đường tròn"
+        },
+        {
+          "key": "C",
+          "text": "M nằm trên đường tròn"
+        },
+        {
+          "key": "D",
+          "text": "M trùng tâm O"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "So sánh khoảng cách từ điểm đến tâm (OM) với bán kính (R). Vì OM = 6cm > R = 5cm nên điểm M nằm ngoài đường tròn.",
+      "iconType": "🔄"
+    },
+    {
+      "topic": "Ôn thi vào 10",
+      "question": "Tìm m để phương trình x² - 2x + m = 0 có hai nghiệm phân biệt:",
+      "options": [
+        {
+          "key": "A",
+          "text": "m < 1"
+        },
+        {
+          "key": "B",
+          "text": "m > 1"
+        },
+        {
+          "key": "C",
+          "text": "m = 1"
+        },
+        {
+          "key": "D",
+          "text": "m ≤ 1"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Phương trình bậc hai có hai nghiệm phân biệt khi biệt thức Δ' > 0. Ta có Δ' = 1² - m = 1 - m. Vậy 1 - m > 0 ⇔ m < 1.",
+      "iconType": "🎯"
+    },
+    {
+      "topic": "Căn bậc hai",
+      "question": "Tìm điều kiện xác định của biểu thức P = √(3x - 9).",
+      "options": [
+        {
+          "key": "A",
+          "text": "x ≥ 3"
+        },
+        {
+          "key": "B",
+          "text": "x ≤ 3"
+        },
+        {
+          "key": "C",
+          "text": "x > 3"
+        },
+        {
+          "key": "D",
+          "text": "x < 3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Biểu thức căn bậc hai √A xác định khi và chỉ khi A ≥ 0. Do đó, 3x - 9 ≥ 0 ⇔ 3x ≥ 9 ⇔ x ≥ 3. Vậy điều kiện xác định là x ≥ 3.",
+      "iconType": "🧮"
+    },
+    {
+      "topic": "Hệ phương trình bậc nhất",
+      "question": "Nghiệm của hệ phương trình { 2x + y = 7; x - y = 2 } là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "(3; 1)"
+        },
+        {
+          "key": "B",
+          "text": "(1; 3)"
+        },
+        {
+          "key": "C",
+          "text": "(2; 3)"
+        },
+        {
+          "key": "D",
+          "text": "(3; 2)"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng vế theo vế hai phương trình ta được: 3x = 9 ⇔ x = 3. Thay x = 3 vào phương trình thứ hai: 3 - y = 2 ⇔ y = 1. Vậy nghiệm của hệ là (3; 1).",
+      "iconType": "📉"
+    },
+    {
+      "topic": "Phương trình bậc hai",
+      "question": "Phương trình x^2 - 4x + m = 0 có hai nghiệm phân biệt khi:",
+      "options": [
+        {
+          "key": "A",
+          "text": "m > 4"
+        },
+        {
+          "key": "B",
+          "text": "m < 4"
+        },
+        {
+          "key": "C",
+          "text": "m = 4"
+        },
+        {
+          "key": "D",
+          "text": "m ≥ 4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Phương trình có hai nghiệm phân biệt khi Δ' > 0. Ta có Δ' = (-2)^2 - 1.m = 4 - m. Điều kiện: 4 - m > 0 ⇔ m < 4.",
+      "iconType": "📈"
+    },
+    {
+      "topic": "Hệ thức Vi-ét",
+      "question": "Cho phương trình x^2 - 3x - 4 = 0 có hai nghiệm x1, x2. Tính giá trị biểu thức S = x1 + x2 - x1.x2.",
+      "options": [
+        {
+          "key": "A",
+          "text": "7"
+        },
+        {
+          "key": "B",
+          "text": "-7"
+        },
+        {
+          "key": "C",
+          "text": "1"
+        },
+        {
+          "key": "D",
+          "text": "-1"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Theo hệ thức Vi-ét, ta có tổng nghiệm x1 + x2 = 3 và tích nghiệm x1.x2 = -4. Thay vào biểu thức S: S = 3 - (-4) = 3 + 4 = 7.",
+      "iconType": "🧩"
+    },
+    {
+      "topic": "Đường tròn",
+      "question": "Cho đường tròn (O) và tiếp tuyến Ax tại điểm A thuộc đường tròn. Khi đó số đo góc OAx bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "45 độ"
+        },
+        {
+          "key": "B",
+          "text": "60 độ"
+        },
+        {
+          "key": "C",
+          "text": "90 độ"
+        },
+        {
+          "key": "D",
+          "text": "180 độ"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Theo tính chất tiếp tuyến của đường tròn, tiếp tuyến tại một điểm bất kỳ trên đường tròn thì vuông góc với bán kính đi qua điểm đó. Do đó, Ax vuông góc với OA, suy ra góc OAx = 90 độ.",
+      "iconType": "⭕"
+    }
+  ],
+  "10": [
+    {
+      "topic": "Mệnh đề - Tập hợp",
+      "question": "Cho hai tập hợp A = [-2; 5) và B = (0; 7]. Tập hợp A ∩ B là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "(0; 5)"
+        },
+        {
+          "key": "B",
+          "text": "[0; 5]"
+        },
+        {
+          "key": "C",
+          "text": "(0; 5]"
+        },
+        {
+          "key": "D",
+          "text": "[0; 5)"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Giao của hai tập hợp A và B là tập hợp các phần tử vừa thuộc A vừa thuộc B.\\n- Tập A chứa các số từ -2 đến 5 (bao gồm -2, không bao gồm 5).\\n- Tập B chứa các số từ 0 đến 7 (không bao gồm 0, bao gồm 7).\\n- Phần chung là các số lớn hơn 0 và nhỏ hơn 5.\\n- Do 0 không thuộc B nên 0 không thuộc giao. Do 5 không thuộc A nên 5 không thuộc giao.\\nVậy A ∩ B = (0; 5).",
+      "iconType": "📊"
+    },
+    {
+      "topic": "Bất phương trình bậc hai",
+      "question": "Tìm tất cả các giá trị thực của tham số m để tam thức bậc hai f(x) = x² - 2mx + m + 2 luôn dương với mọi x ∈ R:",
+      "options": [
+        {
+          "key": "A",
+          "text": "m ∈ (-1; 2)"
+        },
+        {
+          "key": "B",
+          "text": "m ∈ [-1; 2]"
+        },
+        {
+          "key": "C",
+          "text": "m < -1 hoặc m > 2"
+        },
+        {
+          "key": "D",
+          "text": "m ≤ -1 hoặc m ≥ 2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Để tam thức bậc hai f(x) = ax² + bx + c luôn dương với mọi x, cần thỏa mãn:\\n1. a > 0 (Ở đây a = 1 > 0, thỏa mãn).\\n2. Δ' < 0.\\nTa có Δ' = (-m)² - 1.(m + 2) = m² - m - 2.\\nYêu cầu: m² - m - 2 < 0.\\nGiải bất phương trình: -1 < m < 2.\\nVậy m ∈ (-1; 2).",
+      "iconType": "📉"
+    },
+    {
+      "topic": "Đại số tổ hợp",
+      "question": "Một tổ học sinh có 10 người. Giáo viên cần chọn ra 3 học sinh để trực nhật. Hỏi có bao nhiêu cách chọn?",
+      "options": [
+        {
+          "key": "A",
+          "text": "720 cách"
+        },
+        {
+          "key": "B",
+          "text": "120 cách"
+        },
+        {
+          "key": "C",
+          "text": "1000 cách"
+        },
+        {
+          "key": "D",
+          "text": "30 cách"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Việc chọn 3 học sinh từ 10 học sinh không phân biệt thứ tự là tổ hợp chập 3 của 10 phần tử.\\nSố cách chọn là C(10, 3).\\nCông thức: C(n, k) = n! / [k!.(n-k)!].\\nÁp dụng: C(10, 3) = (10 × 9 × 8) / (3 × 2 × 1) = 720 / 6 = 120 cách.",
+      "iconType": "🎲"
+    },
+    {
+      "topic": "Vector",
+      "question": "Cho tam giác ABC. Điểm G thỏa mãn vectơ GA + vectơ GB + vectơ GC = vectơ 0. Khẳng định nào sau đây đúng?",
+      "options": [
+        {
+          "key": "A",
+          "text": "G là trung điểm cạnh BC"
+        },
+        {
+          "key": "B",
+          "text": "G là trực tâm tam giác ABC"
+        },
+        {
+          "key": "C",
+          "text": "G là trọng tâm tam giác ABC"
+        },
+        {
+          "key": "D",
+          "text": "G là tâm đường tròn ngoại tiếp"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Theo tính chất vectơ trong tam giác:\\n- Điểm G thỏa mãn đẳng thức vectơ GA + vectơ GB + vectơ GC = vectơ 0 chính là định nghĩa vectơ của trọng tâm tam giác.\\n- Trọng tâm là giao điểm của ba đường trung tuyến.\\nVậy G là trọng tâm tam giác ABC.",
+      "iconType": "➡️"
+    },
+    {
+      "topic": "Hệ thức lượng",
+      "question": "Tam giác ABC có cạnh b = 5, c = 8 và góc A = 60°. Độ dài cạnh a bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "6"
+        },
+        {
+          "key": "B",
+          "text": "7"
+        },
+        {
+          "key": "C",
+          "text": "√69"
+        },
+        {
+          "key": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Áp dụng định lý Cosin trong tam giác ABC:\\na² = b² + c² - 2bc.cosA\\nThay số: a² = 5² + 8² - 2.5.8.cos60°\\na² = 25 + 64 - 80.(1/2)\\na² = 89 - 40 = 49\\nSuy ra a = √49 = 7.",
+      "iconType": "📐"
+    },
+    {
+      "topic": "Mệnh đề - Tập hợp",
+      "question": "Cho hai tập hợp A = [-2; 5) và B = (0; 7). Tập hợp A ∪ B là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "[-2; 7)"
+        },
+        {
+          "key": "B",
+          "text": "(0; 5)"
+        },
+        {
+          "key": "C",
+          "text": "[-2; 7]"
+        },
+        {
+          "key": "D",
+          "text": "(0; 7)"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hợp của hai tập hợp là tập hợp chứa tất cả các phần tử thuộc A hoặc thuộc B. Biểu diễn trên trục số, đoạn [-2; 5) hợp với khoảng (0; 7) sẽ phủ kín từ -2 đến 7 (lấy -2, không lấy 7). Vậy A ∪ B = [-2; 7).",
+      "iconType": "📚"
+    },
+    {
+      "topic": "Bất phương trình bậc hai",
+      "question": "Tập nghiệm của bất phương trình $-x^2 + 4x - 3 \\ge 0$ là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "[1; 3]"
+        },
+        {
+          "key": "B",
+          "text": "(-∞; 1] ∪ [3; +∞)"
+        },
+        {
+          "key": "C",
+          "text": "(1; 3)"
+        },
+        {
+          "key": "D",
+          "text": "∅"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhân hai vế với -1 và đổi chiều bất phương trình ta được: $x^2 - 4x + 3 \\le 0$. Tam thức có hai nghiệm x1=1, x2=3. Hệ số a=1>0 nên biểu thức âm hoặc bằng 0 trong khoảng hai nghiệm. Vậy tập nghiệm là [1; 3].",
+      "iconType": "⚖️"
+    },
+    {
+      "topic": "Đại số tổ hợp",
+      "question": "Một tổ gồm 5 học sinh. Có bao nhiêu cách chọn 2 học sinh bất kỳ từ tổ này để trực nhật?",
+      "options": [
+        {
+          "key": "A",
+          "text": "10 cách"
+        },
+        {
+          "key": "B",
+          "text": "20 cách"
+        },
+        {
+          "key": "C",
+          "text": "5 cách"
+        },
+        {
+          "key": "D",
+          "text": "25 cách"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Việc chọn 2 học sinh từ 5 học sinh không phân biệt thứ tự là tổ hợp chập 2 của 5. Số cách chọn là $C_5^2 = \\frac{5!}{2!(5-2)!} = \\frac{5 \\times 4}{2} = 10$ cách.",
+      "iconType": "🎲"
+    },
+    {
+      "topic": "Vector",
+      "question": "Cho tam giác ABC có M là trung điểm cạnh BC. Đẳng thức nào sau đây đúng?",
+      "options": [
+        {
+          "key": "A",
+          "text": "$\\vec{AB} + \\vec{AC} = 2\\vec{AM}$"
+        },
+        {
+          "key": "B",
+          "text": "$\\vec{AB} + \\vec{AC} = \\vec{AM}$"
+        },
+        {
+          "key": "C",
+          "text": "$\\vec{AB} - \\vec{AC} = \\vec{BC}$"
+        },
+        {
+          "key": "D",
+          "text": "$\\vec{MA} + \\vec{MB} + \\vec{MC} = \\vec{0}$"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Theo quy tắc trung điểm vectơ, nếu M là trung điểm của đoạn thẳng BC thì tổng hai vectơ xuất phát từ một điểm A bất kỳ đến hai đầu mút B và C bằng hai lần vectơ trung tuyến AM. Vậy $\\vec{AB} + \\vec{AC} = 2\\vec{AM}$.",
+      "iconType": "🧭"
+    },
+    {
+      "topic": "Hệ thức lượng",
+      "question": "Tam giác ABC có AB = 5, AC = 8 và góc A = 60 độ. Độ dài cạnh BC bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "7"
+        },
+        {
+          "key": "B",
+          "text": "$\\sqrt{129}$"
+        },
+        {
+          "key": "C",
+          "text": "9"
+        },
+        {
+          "key": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Áp dụng định lý Cô-sin trong tam giác ABC: $BC^2 = AB^2 + AC^2 - 2.AB.AC.\\cos A$. Thay số: $BC^2 = 5^2 + 8^2 - 2.5.8.\\cos 60^\\circ = 25 + 64 - 40 = 49$. Suy ra BC = 7.",
+      "iconType": "📐"
+    }
+  ],
+  "11": [
+    {
+      "topic": "Hàm số lượng giác",
+      "question": "Chu kỳ cơ bản của hàm số y = cos(2x) là bao nhiêu?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2π"
+        },
+        {
+          "key": "B",
+          "text": "π"
+        },
+        {
+          "key": "C",
+          "text": "π/2"
+        },
+        {
+          "key": "D",
+          "text": "4π"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hàm số y = cos(kx) có chu kỳ T = 2π/|k|. Trong câu hỏi này, k = 2. Do đó, chu kỳ T = 2π/2 = π. Đáp án chính xác là B.",
+      "iconType": "📈"
+    },
+    {
+      "topic": "Cấp số cộng",
+      "question": "Cho cấp số cộng (un) với u1 = 2 và công sai d = 3. Giá trị của số hạng u5 là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "14"
+        },
+        {
+          "key": "B",
+          "text": "11"
+        },
+        {
+          "key": "C",
+          "text": "17"
+        },
+        {
+          "key": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Công thức số hạng tổng quát của cấp số cộng là un = u1 + (n - 1)d. Áp dụng với n = 5, ta có: u5 = 2 + (5 - 1)*3 = 2 + 4*3 = 2 + 12 = 14. Đáp án chính xác là A.",
+      "iconType": "🔢"
+    },
+    {
+      "topic": "Giới hạn",
+      "question": "Tính giới hạn: lim (x → 1) của (x² - 1)/(x - 1)",
+      "options": [
+        {
+          "key": "A",
+          "text": "0"
+        },
+        {
+          "key": "B",
+          "text": "1"
+        },
+        {
+          "key": "C",
+          "text": "2"
+        },
+        {
+          "key": "D",
+          "text": "Vô cực"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Thay x = 1 vào biểu thức ta được dạng vô định 0/0. Phân tích tử số: x² - 1 = (x - 1)(x + 1). Biểu thức trở thành (x - 1)(x + 1)/(x - 1). Triệt tiêu (x - 1), ta còn lại x + 1. Khi x → 1, giới hạn bằng 1 + 1 = 2. Đáp án chính xác là C.",
+      "iconType": "🧮"
+    },
+    {
+      "topic": "Đạo hàm",
+      "question": "Đạo hàm của hàm số y = x³ tại điểm x = 2 có giá trị bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "6"
+        },
+        {
+          "key": "B",
+          "text": "8"
+        },
+        {
+          "key": "C",
+          "text": "12"
+        },
+        {
+          "key": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đạo hàm của y = x^n là y' = n*x^(n-1). Với y = x³, ta có y' = 3x². Thay x = 2 vào đạo hàm, ta được y'(2) = 3*(2)² = 3*4 = 12. Đáp án chính xác là C.",
+      "iconType": "⚡"
+    },
+    {
+      "topic": "Hình không gian",
+      "question": "Cho hình chóp S.ABCD có đáy ABCD là hình bình hành tâm O. Giao tuyến của hai mặt phẳng (SAC) và (SBD) là đường thẳng nào?",
+      "options": [
+        {
+          "key": "A",
+          "text": "SA"
+        },
+        {
+          "key": "B",
+          "text": "SO"
+        },
+        {
+          "key": "C",
+          "text": "SC"
+        },
+        {
+          "key": "D",
+          "text": "SD"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta có S là điểm chung thứ nhất của (SAC) và (SBD). Vì ABCD là hình bình hành tâm O nên O thuộc AC (do đó O thuộc (SAC)) và O thuộc BD (do đó O thuộc (SBD)). Vậy O là điểm chung thứ hai. Giao tuyến của hai mặt phẳng là đường thẳng đi qua hai điểm chung S và O, tức là đường thẳng SO. Đáp án chính xác là B.",
+      "iconType": "🏗️"
+    },
+    {
+      "topic": "Hàm số lượng giác",
+      "question": "Hàm số y = tan(2x) có chu kỳ cơ bản là bao nhiêu?",
+      "options": [
+        {
+          "key": "A",
+          "text": "π"
+        },
+        {
+          "key": "B",
+          "text": "2π"
+        },
+        {
+          "key": "C",
+          "text": "π/2"
+        },
+        {
+          "key": "D",
+          "text": "π/4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hàm số y = tan(kx) có chu kỳ T = π/|k|. Với k = 2, ta có T = π/2.",
+      "iconType": "📈"
+    },
+    {
+      "topic": "Cấp số cộng",
+      "question": "Cho cấp số cộng (un) có u1 = 2 và công sai d = 3. Giá trị của u10 là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "29"
+        },
+        {
+          "key": "B",
+          "text": "32"
+        },
+        {
+          "key": "C",
+          "text": "30"
+        },
+        {
+          "key": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số hạng tổng quát un = u1 + (n-1)d. Vậy u10 = 2 + (10-1).3 = 2 + 27 = 29.",
+      "iconType": "🔢"
+    },
+    {
+      "topic": "Giới hạn",
+      "question": "Tính giới hạn L = lim (x tiến tới 2) của (x^2 - 4)/(x - 2).",
+      "options": [
+        {
+          "key": "A",
+          "text": "0"
+        },
+        {
+          "key": "B",
+          "text": "2"
+        },
+        {
+          "key": "C",
+          "text": "4"
+        },
+        {
+          "key": "D",
+          "text": "Vô cực"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dạng vô định 0/0. Biến đổi: (x-2)(x+2)/(x-2) = x+2. Khi x tiến tới 2, L = 2+2=4.",
+      "iconType": "∞"
+    },
+    {
+      "topic": "Đạo hàm",
+      "question": "Đạo hàm của hàm số y = sin(3x) là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "3cos(3x)"
+        },
+        {
+          "key": "B",
+          "text": "cos(3x)"
+        },
+        {
+          "key": "C",
+          "text": "-3cos(3x)"
+        },
+        {
+          "key": "D",
+          "text": "3sin(3x)"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Áp dụng quy tắc đạo hàm hàm hợp: (sin(u))' = u'.cos(u). Với u=3x, y' = 3cos(3x).",
+      "iconType": "📉"
+    },
+    {
+      "topic": "Hình không gian",
+      "question": "Cho hình chóp S.ABCD có đáy là hình vuông, SA vuông góc với mặt phẳng đáy. Đường thẳng nào sau đây vuông góc với mặt phẳng (SAB)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "SC"
+        },
+        {
+          "key": "B",
+          "text": "SD"
+        },
+        {
+          "key": "C",
+          "text": "AD"
+        },
+        {
+          "key": "D",
+          "text": "AC"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta có AD vuông góc AB (đáy vuông) và AD vuông góc SA (SA vuông góc đáy). Suy ra AD vuông góc (SAB).",
+      "iconType": "🏗️"
+    }
+  ],
+  "12": [
+    {
+      "topic": "Khảo sát hàm số",
+      "question": "Tìm tất cả các giá trị thực của tham số m để hàm số y = (x + m)/(x - 1) đồng biến trên mỗi khoảng xác định của nó.",
+      "options": [
+        {
+          "key": "A",
+          "text": "m > 1"
+        },
+        {
+          "key": "B",
+          "text": "m < -1"
+        },
+        {
+          "key": "C",
+          "text": "m >= -1"
+        },
+        {
+          "key": "D",
+          "text": "m <= 1"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tập xác định D = R \\ {1}.\nĐạo hàm y' = (-1 - m)/(x - 1)^2.\nHàm số đồng biến trên mỗi khoảng xác định khi và chỉ khi y' > 0 với mọi x thuộc D.\nSuy ra -1 - m > 0 <=> m < -1.",
+      "iconType": "📈"
+    },
+    {
+      "topic": "Hàm số mũ - Logarit",
+      "question": "Tổng tất cả các nghiệm của phương trình 4^x - 3.2^x + 2 = 0 bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "0"
+        },
+        {
+          "key": "B",
+          "text": "2"
+        },
+        {
+          "key": "C",
+          "text": "1"
+        },
+        {
+          "key": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đặt t = 2^x (điều kiện t > 0).\nPhương trình trở thành: t^2 - 3t + 2 = 0.\nGiải phương trình bậc hai ta được t = 1 hoặc t = 2 (thỏa mãn).\nVới t = 1 => 2^x = 1 => x = 0.\nVới t = 2 => 2^x = 2 => x = 1.\nTổng các nghiệm là S = 0 + 1 = 1.",
+      "iconType": "🧮"
+    },
+    {
+      "topic": "Nguyên hàm - Tích phân",
+      "question": "Giá trị của tích phân I = tích phân từ 1 đến e của ln(x)dx bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "1"
+        },
+        {
+          "key": "B",
+          "text": "e"
+        },
+        {
+          "key": "C",
+          "text": "e - 1"
+        },
+        {
+          "key": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đặt u = ln(x), dv = dx => du = dx/x, v = x.\nÁp dụng công thức tích phân từng phần:\nI = [x.ln(x)] từ 1 đến e - tích phân từ 1 đến e của dx.\nI = (e.ln(e) - 1.ln(1)) - (e - 1)\nI = (e.1 - 0) - e + 1 = 1.",
+      "iconType": "∫"
+    },
+    {
+      "topic": "Tọa độ Oxyz",
+      "question": "Trong không gian Oxyz, phương trình mặt cầu tâm I(1; -2; 3) và đi qua điểm A(1; 0; 3) là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "(x + 1)^2 + (y - 2)^2 + (z + 3)^2 = 4"
+        },
+        {
+          "key": "B",
+          "text": "(x - 1)^2 + (y + 2)^2 + (z - 3)^2 = 2"
+        },
+        {
+          "key": "C",
+          "text": "(x - 1)^2 + (y + 2)^2 + (z - 3)^2 = 9"
+        },
+        {
+          "key": "D",
+          "text": "(x - 1)^2 + (y + 2)^2 + (z - 3)^2 = 4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tâm mặt cầu I(1; -2; 3).\nBán kính R = IA = căn bậc hai của [(1-1)^2 + (0+2)^2 + (3-3)^2] = căn bậc hai của 4 = 2.\nPhương trình mặt cầu có dạng: (x - xI)^2 + (y - yI)^2 + (z - zI)^2 = R^2.\nVậy phương trình là: (x - 1)^2 + (y + 2)^2 + (z - 3)^2 = 4.",
+      "iconType": "🌐"
+    },
+    {
+      "topic": "Xác suất",
+      "question": "Một tổ học sinh có 5 nam và 4 nữ. Chọn ngẫu nhiên 2 học sinh. Xác suất để chọn được 1 nam và 1 nữ là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "4/9"
+        },
+        {
+          "key": "B",
+          "text": "5/9"
+        },
+        {
+          "key": "C",
+          "text": "1/2"
+        },
+        {
+          "key": "D",
+          "text": "5/18"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tổng số học sinh là 9. Số cách chọn 2 học sinh bất kỳ là n(Omega) = C(9, 2) = 36.\nGọi A là biến cố chọn được 1 nam và 1 nữ.\nSố cách chọn 1 nam từ 5 nam là C(5, 1) = 5.\nSố cách chọn 1 nữ từ 4 nữ là C(4, 1) = 4.\nSố kết quả thuận lợi cho A là n(A) = 5.4 = 20.\nXác suất P(A) = 20/36 = 5/9.",
+      "iconType": "🎲"
+    },
+    {
+      "topic": "Khảo sát hàm số",
+      "question": "Cho hàm số \\( y = x^3 - 3x + 1 \\). Số điểm cực trị của hàm số đã cho là bao nhiêu?",
+      "options": [
+        {
+          "key": "A",
+          "text": "0"
+        },
+        {
+          "key": "B",
+          "text": "1"
+        },
+        {
+          "key": "C",
+          "text": "2"
+        },
+        {
+          "key": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta có \\( y' = 3x^2 - 3 \\). Cho \\( y' = 0 \\Leftrightarrow 3x^2 - 3 = 0 \\Leftrightarrow x = \\pm 1 \\). Đạo hàm đổi dấu 2 lần khi qua các nghiệm này nên hàm số có 2 điểm cực trị.",
+      "iconType": "📈"
+    },
+    {
+      "topic": "Hàm số mũ",
+      "question": "Nghiệm của phương trình \\( 2^{2x-1} = 8 \\) là:",
+      "options": [
+        {
+          "key": "A",
+          "text": "x = 1"
+        },
+        {
+          "key": "B",
+          "text": "x = 2"
+        },
+        {
+          "key": "C",
+          "text": "x = 3"
+        },
+        {
+          "key": "D",
+          "text": "x = 4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Phương trình tương đương \\( 2^{2x-1} = 2^3 \\Rightarrow 2x - 1 = 3 \\Rightarrow 2x = 4 \\Rightarrow x = 2 \\).",
+      "iconType": "🚀"
+    },
+    {
+      "topic": "Tích phân",
+      "question": "Giá trị của tích phân \\( I = \\int_{0}^{1} (2x + 1) dx \\) bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "0"
+        },
+        {
+          "key": "B",
+          "text": "1"
+        },
+        {
+          "key": "C",
+          "text": "2"
+        },
+        {
+          "key": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta có nguyên hàm \\( F(x) = x^2 + x \\). Suy ra \\( I = F(1) - F(0) = (1^2 + 1) - 0 = 2 \\).",
+      "iconType": "📝"
+    },
+    {
+      "topic": "Tọa độ Oxyz",
+      "question": "Trong không gian Oxyz, mặt cầu \\( (S): (x-1)^2 + (y+2)^2 + z^2 = 9 \\) có bán kính bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "1"
+        },
+        {
+          "key": "B",
+          "text": "2"
+        },
+        {
+          "key": "C",
+          "text": "3"
+        },
+        {
+          "key": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Phương trình mặt cầu có dạng \\( (x-a)^2 + (y-b)^2 + (z-c)^2 = R^2 \\). Từ đề bài ta có \\( R^2 = 9 \\Rightarrow R = 3 \\).",
+      "iconType": "🌐"
+    },
+    {
+      "topic": "Xác suất",
+      "question": "Gieo một con xúc xắc cân đối và đồng chất. Xác suất để mặt xuất hiện là số chẵn bằng:",
+      "options": [
+        {
+          "key": "A",
+          "text": "\\( \\frac{1}{6} \\)"
+        },
+        {
+          "key": "B",
+          "text": "\\( \\frac{1}{3} \\)"
+        },
+        {
+          "key": "C",
+          "text": "\\( \\frac{1}{2} \\)"
+        },
+        {
+          "key": "D",
+          "text": "\\( \\frac{2}{3} \\)"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Không gian mẫu \\( \\Omega = \\{1, 2, 3, 4, 5, 6\\} \\) nên \\( n(\\Omega) = 6 \\). Biến cố A: 'Xuất hiện mặt chẵn' = \\( \\{2, 4, 6\\} \\) nên \\( n(A) = 3 \\). Vậy \\( P(A) = \\frac{3}{6} = \\frac{1}{2} \\).",
+      "iconType": "🎲"
+    }
+  ]
+}
