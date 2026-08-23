@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import BurningFuse from "@/components/quiz/BurningFuse";
 import { quizAudio } from "@/components/quiz/quizAudio";
-import { quizSpeech } from "@/components/quiz/quizSpeech";
+import { quizSpeech, formatMathForDisplay } from "@/components/quiz/quizSpeech";
 import {
   defaultMathQuizQuestions,
   getDefaultQuestionsForGrade,
@@ -452,8 +452,8 @@ export default function QuizClient() {
 
             {/* The Question Text Box */}
             <div className="relative z-10 bg-[#FFFDF5] border-2 border-[#FFB800]/70 rounded-2xl p-4 shadow-md mb-3">
-              <p className="text-sm sm:text-base font-black text-[#1b310a] leading-relaxed text-center">
-                {currentQ.question}
+              <p className="text-sm sm:text-base font-black text-[#1b310a] leading-relaxed text-center whitespace-pre-wrap">
+                {formatMathForDisplay(currentQ.question)}
               </p>
 
               {quizStatus === "READING_QUESTION" && (
@@ -509,7 +509,7 @@ export default function QuizClient() {
                       }`}>
                         {option.key}
                       </span>
-                      <span className="text-[15px] font-extrabold">{option.text}</span>
+                      <span className="text-[15px] font-extrabold">{formatMathForDisplay(option.text)}</span>
                     </div>
 
                     {isCorrect && (
@@ -668,8 +668,8 @@ export default function QuizClient() {
                 <Lightbulb className="w-5 h-5 text-[#FFB800] animate-bounce" />
                 <span>HƯỚNG DẪN GIẢI CHI TIẾT CÂU {currentIndex + 1}</span>
               </div>
-              <div className="text-sm text-green-50 leading-relaxed font-medium bg-black/40 p-4 rounded-2xl border border-[#64B428]/40 shadow-inner">
-                {currentQ.explanation}
+              <div className="text-sm text-green-50 leading-relaxed font-medium bg-black/40 p-4 rounded-2xl border border-[#64B428]/40 shadow-inner whitespace-pre-wrap">
+                {formatMathForDisplay(currentQ.explanation)}
               </div>
             </div>
           )}
