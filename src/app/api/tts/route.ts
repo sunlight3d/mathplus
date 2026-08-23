@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { normalizeMathSpeech } from "@/components/quiz/quizSpeech";
 
 export const dynamic = "force-dynamic";
 
@@ -8,14 +9,14 @@ const MAX_CACHE_SIZE = 500;
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  const text = searchParams.get("text");
+  const rawText = searchParams.get("text");
 
-  if (!text) {
+  if (!rawText) {
     return new NextResponse("Missing text parameter", { status: 400 });
   }
 
-  // Clean text and limit size per request chunk
-  const cleanText = text.trim().slice(0, 250);
+  // Normalize text on the server (handles 7,5%, 75%, 0,75%, AB=AH, fractions, etc.)
+  const cleanText = normalizeMathSpeech(rawText).trim().slice(0, 250);
   const cacheKey = `vi_${cleanText}`;
 
   if (ttsCache.has(cacheKey)) {
