@@ -1,4 +1,5 @@
 import defaultQuestionsMap from "./defaultQuestionsByGrade.json";
+import { sampleCurriculumBalanced } from "@/lib/quizSampling";
 
 export interface QuizOption {
   key: "A" | "B" | "C" | "D";
@@ -38,8 +39,8 @@ export const GRADES: GradeItem[] = [
 export function getDefaultQuestionsForGrade(grade: number): QuizQuestion[] {
   const gradeKey = String(grade) as keyof typeof defaultQuestionsMap;
   const list = defaultQuestionsMap[gradeKey] || defaultQuestionsMap["6"] || [];
-  return list.map((q: any, idx: number) => ({
-    id: idx + 1,
+  const formatted = list.map((q: any, idx: number) => ({
+    id: q.id || idx + 1,
     grade,
     topic: q.topic || `Toán Lớp ${grade}`,
     question: q.question,
@@ -48,6 +49,8 @@ export function getDefaultQuestionsForGrade(grade: number): QuizQuestion[] {
     explanation: q.explanation,
     iconType: q.iconType || "📐"
   }));
+
+  return sampleCurriculumBalanced(formatted, 10);
 }
 
 export const defaultMathQuizQuestions: QuizQuestion[] = getDefaultQuestionsForGrade(6);
