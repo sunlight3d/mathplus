@@ -1,5 +1,41 @@
 // Robust High-Quality Vietnamese Speech Engine via Next.js API & Safe Fallbacks
 
+const letterPronunciation: Record<string, string> = {
+  A: "A",
+  B: "Bê",
+  C: "Cê",
+  D: "Dê",
+  E: "E",
+  F: "Ép",
+  G: "Gờ",
+  H: "Hát",
+  I: "I",
+  J: "Di",
+  K: "Ca",
+  L: "E-lờ",
+  M: "Em",
+  N: "En",
+  O: "Ô",
+  P: "Pê",
+  Q: "Quy",
+  R: "E-rờ",
+  S: "Ét",
+  T: "Tê",
+  U: "U",
+  V: "Vê",
+  W: "Vê kép",
+  X: "Ích",
+  Y: "Y",
+  Z: "Rét"
+};
+
+export function spellUppercaseLetters(word: string): string {
+  return word
+    .split("")
+    .map((ch) => letterPronunciation[ch.toUpperCase()] || ch)
+    .join(" ");
+}
+
 function vietnameseNumberToWords(n: number | string): string {
   const units = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
   const num = parseInt(String(n), 10);
@@ -30,7 +66,16 @@ export function normalizeMathSpeech(text: string): string {
   if (!text) return "";
   let s = " " + String(text) + " ";
 
-  // 1. LaTeX & Formula cleanup
+  // 1. Convert answers "Đáp án A", "Đáp án B", "Đáp án C", "Đáp án D"
+  s = s.replace(/\b(đáp án|câu|chọn)\s+([A-D])\b/gi, (_m, prefix, key) => {
+    return prefix + " " + (letterPronunciation[key.toUpperCase()] || key);
+  });
+
+  s = s.replace(/\b([A-D])\s*([,:\-])\s*/g, (_m, key, punct) => {
+    return (letterPronunciation[key.toUpperCase()] || key) + " " + punct + " ";
+  });
+
+  // 2. LaTeX & Geometry symbol replacements
   s = s.replace(/\\\((.*?)\\\)/g, " $1 ");
   s = s.replace(/\\\[(.*?)\\\]/g, " $1 ");
   s = s.replace(/\$(.*?)\$/g, " $1 ");
@@ -40,22 +85,55 @@ export function normalizeMathSpeech(text: string): string {
   s = s.replace(/\\cdot/g, " nhân ");
   s = s.replace(/\\times/g, " nhân ");
   s = s.replace(/\\pm/g, " cộng trừ ");
-  s = s.replace(/\\le/g, " bé hơn hoặc bằng ");
-  s = s.replace(/\\ge/g, " lớn hơn hoặc bằng ");
-  s = s.replace(/\\ne/g, " khác ");
-  s = s.replace(/\\in/g, " thuộc ");
-  s = s.replace(/\\notin/g, " không thuộc ");
-  s = s.replace(/\\subset/g, " tập con của ");
-  s = s.replace(/\\cup/g, " hợp ");
-  s = s.replace(/\\cap/g, " giao ");
-  s = s.replace(/\\infty/g, " vô cùng ");
-  s = s.replace(/\\pi/g, " pi ");
-  s = s.replace(/\\alpha/g, " an-pha ");
-  s = s.replace(/\\beta/g, " bê-ta ");
-  s = s.replace(/\\Delta/g, " đen-ta ");
-  s = s.replace(/\\delta/g, " đen-ta ");
+  s = s.replace(/\\perp|⊥/g, " vuông góc với ");
+  s = s.replace(/\\parallel|∥/g, " song song với ");
+  s = s.replace(/\\sim|∽/g, " đồng dạng với ");
+  s = s.replace(/\\equiv|≡/g, " tương đương với ");
+  s = s.replace(/\\approx|≈/g, " xấp xỉ ");
+  s = s.replace(/\\le|≤/g, " bé hơn hoặc bằng ");
+  s = s.replace(/\\ge|≥/g, " lớn hơn hoặc bằng ");
+  s = s.replace(/\\ne|≠/g, " khác ");
+  s = s.replace(/\\in|∈/g, " thuộc ");
+  s = s.replace(/\\notin|∉/g, " không thuộc ");
+  s = s.replace(/\\subset|⊂/g, " tập con của ");
+  s = s.replace(/\\cup|∪/g, " hợp ");
+  s = s.replace(/\\cap|∩/g, " giao ");
+  s = s.replace(/\\emptyset|∅/g, " tập hợp rỗng ");
+  s = s.replace(/\\infty|∞/g, " vô cùng ");
+  s = s.replace(/\\pi|π/g, " pi ");
+  s = s.replace(/\\alpha|α/g, " an-pha ");
+  s = s.replace(/\\beta|β/g, " bê-ta ");
+  s = s.replace(/\\Delta|Δ/g, " đen-ta ");
+  s = s.replace(/\\delta|δ/g, " đen-ta ");
 
-  // 2. Fractions like (-3/4) or -3/4 or 1/12 or 5/6
+  // 3. Dot multiplication between geometric segments like AH.BC or AB.AC
+  s = s.replace(/([A-Z]+)\.([A-Z]+)/g, (_m, p1, p2) => {
+    return spellUppercaseLetters(p1) + " nhân " + spellUppercaseLetters(p2);
+  });
+
+  // 4. Geometric relations like AB=AH or AB = AH
+  s = s.replace(/([A-Z]+)\s*=\s*([A-Z]+)/g, (_m, p1, p2) => {
+    return spellUppercaseLetters(p1) + " bằng " + spellUppercaseLetters(p2);
+  });
+
+  // 5. Multi-letter uppercase tokens representing segments, triangles, shapes (AB, AH, ABC, ABCD, MNP, SA, SB, SH, SO...)
+  s = s.replace(/\b([A-Z]{2,6})\b/g, (_m, word) => {
+    if (word === "OXYZ") return "Ô ích y rét";
+    if (word === "OXY") return "Ô ích y";
+    if (word === "MATHPLUS" || word === "GDPT" || word === "THPT" || word === "VAT") return word;
+    return spellUppercaseLetters(word);
+  });
+
+  // 6. Geometry prefix + Single uppercase letter (tam giác A, đường cao AH, điểm B, tâm I, mặt phẳng P, mặt cầu S...)
+  s = s.replace(/\b(tam giác|tứ giác|hình chóp|đoạn thẳng|đường thẳng|đường cao|trung tuyến|phân giác|vectơ|vector|cạnh|góc|điểm|tâm|mặt phẳng|mặt cầu)\s+([A-Z])\b/gi, (_m, prefix, letter) => {
+    return prefix + " " + (letterPronunciation[letter.toUpperCase()] || letter);
+  });
+
+  s = s.replace(/\b(mặt phẳng|mặt cầu|đường tròn)\s*\(\s*([A-Z])\s*\)/gi, (_m, prefix, letter) => {
+    return prefix + " " + (letterPronunciation[letter.toUpperCase()] || letter);
+  });
+
+  // 7. Fractions like (-3/4) or -3/4 or 1/12 or 5/6
   s = s.replace(/\(\s*-\s*(\d+)\s*\/\s*(\d+)\s*\)/g, (_m, p1, p2) => " âm " + vietnameseNumberToWords(p1) + " phần " + vietnameseNumberToWords(p2) + " ");
   s = s.replace(/-\s*(\d+)\s*\/\s*(\d+)/g, (_m, p1, p2) => " âm " + vietnameseNumberToWords(p1) + " phần " + vietnameseNumberToWords(p2) + " ");
   s = s.replace(/(\d+)\s*\/\s*(\d+)/g, (_m, p1, p2) => " " + vietnameseNumberToWords(p1) + " phần " + vietnameseNumberToWords(p2) + " ");
@@ -67,24 +145,24 @@ export function normalizeMathSpeech(text: string): string {
   s = s.replace(/\(\s*-\s*(\d+)\s*\)/g, (_m, p1) => " âm " + vietnameseNumberToWords(p1) + " ");
 
   // Single numbers in options like "đáp án B, 2"
-  s = s.replace(/\b([A-D])\s*,\s*([+-]?\d+)\b/gi, (_m, p1, p2) => p1 + ", " + vietnameseNumberToWords(p2));
+  s = s.replace(/\b([A-D])\s*,\s*([+-]?\d+)\b/gi, (_m, p1, p2) => (letterPronunciation[p1.toUpperCase()] || p1) + ", " + vietnameseNumberToWords(p2));
 
-  // 3. Powers and Exponents
+  // 8. Powers and Exponents
   s = s.replace(/([a-zA-Z0-9]+)\^2\b/g, "$1 bình phương");
   s = s.replace(/([a-zA-Z0-9]+)²/g, "$1 bình phương");
   s = s.replace(/([a-zA-Z0-9]+)\^3\b/g, "$1 mũ ba");
   s = s.replace(/([a-zA-Z0-9]+)³/g, "$1 mũ ba");
   s = s.replace(/([a-zA-Z0-9]+)\^([0-9]+)/g, "$1 mũ $2");
 
-  // 4. Roots
+  // 9. Roots
   s = s.replace(/√(\d+)/g, (_m, p1) => " căn " + vietnameseNumberToWords(p1) + " ");
   s = s.replace(/√([a-zA-Z])/g, " căn $1 ");
 
-  // 5. Coordinate systems
+  // 10. Coordinate systems
   s = s.replace(/\bOxyz\b/gi, " Ô ích y rét ");
   s = s.replace(/\bOxy\b/gi, " Ô ích y ");
 
-  // 6. Variables x, y, z phonetics in Vietnamese
+  // 11. Variables x, y, z phonetics in Vietnamese
   s = s.replace(/(\d+)\s*x\b/gi, "$1 ích");
   s = s.replace(/\bx\s*\+/gi, "ích cộng ");
   s = s.replace(/\bx\s*-/gi, "ích trừ ");
@@ -103,7 +181,7 @@ export function normalizeMathSpeech(text: string): string {
   s = s.replace(/\bz\s*=/gi, "rét bằng ");
   s = s.replace(/\s+z\s+/gi, " rét ");
 
-  // 7. Math symbols
+  // 12. Math symbols
   s = s.replace(/\?/g, " ? ");
   s = s.replace(/\+/g, " cộng ");
   s = s.replace(/[–—−]/g, " trừ ");
@@ -123,7 +201,7 @@ export function normalizeMathSpeech(text: string): string {
   s = s.replace(/8A/gi, "tám A");
   s = s.replace(/9A/gi, "chín A");
 
-  // 8. Clean brackets and spacing
+  // 13. Clean brackets and spacing
   s = s.replace(/[(){}\[\]]/g, " ");
   s = s.replace(/\s+/g, " ").trim();
   return s;

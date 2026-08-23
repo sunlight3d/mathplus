@@ -153,7 +153,7 @@ export default function QuizClient() {
 
     const correct = currentQ.correctAnswer;
     const correctOpt = currentQ.options.find((o) => o.key === correct);
-    const answerSpeechText = `Hết giờ rồi! Đáp án chính xác là đáp án ${correct}, ${correctOpt?.text || ""}`;
+    const answerSpeechText = `Hết giờ rồi! Đáp án chính xác là đáp án ${correct}: ${correctOpt?.text || ""}`;
 
     if (ttsEnabled) {
       quizSpeech.speak(
@@ -217,8 +217,8 @@ export default function QuizClient() {
     const correct = currentQ.correctAnswer;
     const correctOpt = currentQ.options.find((o) => o.key === correct);
     const feedbackSpeech = isCorrect
-      ? `Chúc mừng bạn đã trả lời chính xác! Đáp án đúng là đáp án ${correct}, ${correctOpt?.text || ""}`
-      : `Rất tiếc chưa chính xác! Đáp án đúng là đáp án ${correct}, ${correctOpt?.text || ""}`;
+      ? `Chúc mừng bạn đã trả lời chính xác! Đáp án đúng là đáp án ${correct}: ${correctOpt?.text || ""}`
+      : `Rất tiếc chưa chính xác! Đáp án đúng là đáp án ${correct}: ${correctOpt?.text || ""}`;
 
     if (ttsEnabled) {
       quizSpeech.speak(
