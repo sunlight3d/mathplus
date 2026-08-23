@@ -36,45 +36,64 @@ export function spellUppercaseLetters(word: string): string {
     .join(" ");
 }
 
-export function vietnameseNumberToWords(n: number | string): string {
+function readGroup3(threeDigits: number, isFirstGroup = false): string {
   const units = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+  const h = Math.floor(threeDigits / 100);
+  const t = Math.floor((threeDigits % 100) / 10);
+  const u = threeDigits % 10;
+  let res = "";
+
+  if (h > 0 || !isFirstGroup) {
+    res += units[h] + " trăm ";
+  }
+
+  if (t > 1) {
+    res += (t === 2 ? "hai" : t === 3 ? "ba" : t === 4 ? "bốn" : t === 5 ? "năm" : t === 6 ? "sáu" : t === 7 ? "bảy" : t === 8 ? "tám" : "chín") + " mươi ";
+    if (u === 1) res += "mốt";
+    else if (u === 4) res += "tư";
+    else if (u === 5) res += "lăm";
+    else if (u > 0) res += units[u];
+  } else if (t === 1) {
+    res += "mười ";
+    if (u === 1) res += "một";
+    else if (u === 5) res += "lăm";
+    else if (u > 0) res += units[u];
+  } else if (t === 0 && u > 0) {
+    if (h > 0 || !isFirstGroup) res += "linh " + units[u];
+    else res += units[u];
+  } else if (t === 0 && u === 0 && isFirstGroup && h === 0) {
+    res += "không";
+  }
+
+  return res.trim();
+}
+
+export function vietnameseNumberToWords(n: number | string): string {
   const num = parseInt(String(n), 10);
   if (isNaN(num)) return String(n);
+  if (num === 0) return "không";
   if (num < 0) return "âm " + vietnameseNumberToWords(-num);
-  if (num < 10) return units[num];
-  if (num === 10) return "mười";
-  if (num < 20) {
-    const unit = num % 10;
-    if (unit === 5) return "mười lăm";
-    if (unit === 1) return "mười một";
-    return "mười " + units[unit];
+
+  const scales = ["", "nghìn", "triệu", "tỷ"];
+  let numStr = String(num);
+  const groups: number[] = [];
+  while (numStr.length > 0) {
+    groups.unshift(parseInt(numStr.slice(-3), 10));
+    numStr = numStr.slice(0, -3);
   }
-  if (num < 100) {
-    const ten = Math.floor(num / 10);
-    const unit = num % 10;
-    let s = (ten === 2 ? "hai" : ten === 3 ? "ba" : ten === 4 ? "bốn" : ten === 5 ? "năm" : ten === 6 ? "sáu" : ten === 7 ? "bảy" : ten === 8 ? "tám" : "chín") + " mươi";
-    if (unit === 1) s += " mốt";
-    else if (unit === 4) s += " tư";
-    else if (unit === 5) s += " lăm";
-    else if (unit > 0) s += " " + units[unit];
-    return s;
+
+  const result: string[] = [];
+  for (let i = 0; i < groups.length; i++) {
+    const g = groups[i];
+    const scaleIndex = groups.length - 1 - i;
+    if (g > 0 || groups.length === 1) {
+      const gWords = readGroup3(g, i === 0);
+      const scaleWord = scales[scaleIndex] || "";
+      result.push((gWords + " " + scaleWord).trim());
+    }
   }
-  if (num < 1000) {
-    const hundred = Math.floor(num / 100);
-    const rest = num % 100;
-    let s = units[hundred] + " trăm";
-    if (rest === 0) return s;
-    if (rest < 10) return s + " linh " + units[rest];
-    return s + " " + vietnameseNumberToWords(rest);
-  }
-  if (num < 1000000) {
-    const thousand = Math.floor(num / 1000);
-    const rest = num % 1000;
-    let s = vietnameseNumberToWords(thousand) + " nghìn";
-    if (rest === 0) return s;
-    return s + " " + vietnameseNumberToWords(rest);
-  }
-  return String(n);
+
+  return result.join(" ").trim();
 }
 
 function decimalPartToWords(decStr: string): string {
@@ -136,6 +155,10 @@ export function normalizeMathSpeech(text: string): string {
   // Negative numbers in parens like (-3) or (-5)
   s = s.replace(/\(\s*-\s*(\d+)\s*\)/g, (_m, p1) => " âm " + vietnameseNumberToWords(p1) + " ");
 
+  // Standalone isolated integers in option text e.g. "đáp án Bê : 12" -> "đáp án Bê : mười hai"
+  s = s.replace(/:\s*([+-]?\d+)\s*$/g, (_m, num) => ": " + vietnameseNumberToWords(num));
+  s = s.replace(/:\s*([+-]?\d+)\s+([a-zA-ZÀ-ỹ])/g, (_m, num, nextWord) => ": " + vietnameseNumberToWords(num) + " " + nextWord);
+
   // 5. LaTeX & Geometry symbol replacements
   s = s.replace(/\\\((.*?)\\\)/g, " $1 ");
   s = s.replace(/\\\[(.*?)\\\]/g, " $1 ");
@@ -177,7 +200,7 @@ export function normalizeMathSpeech(text: string): string {
     return spellUppercaseLetters(p1) + " bằng " + spellUppercaseLetters(p2);
   });
 
-  // 8. Multi-letter uppercase tokens representing segments, triangles, shapes (AB, AH, ABC, ABCD, MNP, SA, SB, SH, SO...)
+  // 8. Multi-letter uppercase tokens (AB, AH, ABC, ABCD, MNP, SA, SB, SH, SO...)
   s = s.replace(/\b([A-Z]{2,6})\b/g, (_m, word) => {
     if (word === "OXYZ") return "Ô ích y rét";
     if (word === "OXY") return "Ô ích y";
@@ -210,19 +233,19 @@ export function normalizeMathSpeech(text: string): string {
   s = s.replace(/\bOxy\b/gi, " Ô ích y ");
 
   // 13. Variables x, y, z phonetics in Vietnamese
-  s = s.replace(/(\d+)\s*x\b/gi, "$1 ích");
+  s = s.replace(/(\d+)\s*x\b/gi, (_m, d) => vietnameseNumberToWords(d) + " ích");
   s = s.replace(/\bx\s*\+/gi, "ích cộng ");
   s = s.replace(/\bx\s*-/gi, "ích trừ ");
   s = s.replace(/\bx\s*=/gi, "ích bằng ");
   s = s.replace(/\s+x\s+/gi, " ích ");
 
-  s = s.replace(/(\d+)\s*y\b/gi, "$1 y");
+  s = s.replace(/(\d+)\s*y\b/gi, (_m, d) => vietnameseNumberToWords(d) + " y");
   s = s.replace(/\by\s*\+/gi, "y cộng ");
   s = s.replace(/\by\s*-/gi, "y trừ ");
   s = s.replace(/\by\s*=/gi, "y bằng ");
   s = s.replace(/\s+y\s+/gi, " y ");
 
-  s = s.replace(/(\d+)\s*z\b/gi, "$1 rét");
+  s = s.replace(/(\d+)\s*z\b/gi, (_m, d) => vietnameseNumberToWords(d) + " rét");
   s = s.replace(/\bz\s*\+/gi, "rét cộng ");
   s = s.replace(/\bz\s*-/gi, "rét trừ ");
   s = s.replace(/\bz\s*=/gi, "rét bằng ");
