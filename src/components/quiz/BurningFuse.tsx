@@ -29,7 +29,7 @@ export default function BurningFuse({
         <div className="flex items-center space-x-1.5">
           <Flame className={`w-4 h-4 ${isBurning ? "text-orange-500 animate-bounce" : "text-gray-400"}`} />
           <span className="uppercase tracking-wider">
-            {isTimeUp ? "💥 ĐÃ HẾT GIỜ!" : isBurning ? "🔥 Đang đếm ngược..." : "⏳ Chờ đọc xong câu hỏi"}
+            {isTimeUp ? "💥 ĐÃ HẾT GIỜ!" : isBurning ? "🔥 Đang đếm ngược..." : "⏱️ Số giây của mỗi câu hỏi"}
           </span>
         </div>
         <div className="flex items-center space-x-1 font-mono text-sm">

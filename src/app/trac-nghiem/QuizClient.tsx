@@ -151,9 +151,7 @@ export default function QuizClient() {
     setQuizStatus("REVEALED");
     quizAudio.playTimeUp();
 
-    const correct = currentQ.correctAnswer;
-    const correctOpt = currentQ.options.find((o) => o.key === correct);
-    const answerSpeechText = `Hết giờ rồi! Đáp án chính xác là đáp án ${correct}: ${correctOpt?.text || ""}`;
+    const answerSpeechText = "Hết giờ rồi!";
 
     if (ttsEnabled) {
       quizSpeech.speak(
@@ -163,12 +161,12 @@ export default function QuizClient() {
           if (autoAdvance && currentIndex < questions.length - 1) {
             autoNextRef.current = setTimeout(() => {
               goToNextQuestion();
-            }, 3500);
+            }, 2000);
           }
         }
       );
     }
-  }, [currentQ, ttsEnabled, autoAdvance, currentIndex, questions.length]);
+  }, [ttsEnabled, autoAdvance, currentIndex, questions.length]);
 
   // Play question: Speak aloud in Vietnamese -> then start countdown
   const playCurrentQuestion = useCallback(() => {
@@ -214,11 +212,11 @@ export default function QuizClient() {
       [currentQ.id]: { selected: key, isCorrect },
     }));
 
-    const correct = currentQ.correctAnswer;
-    const correctOpt = currentQ.options.find((o) => o.key === correct);
+    const CORRECT_PHRASES = ["Chính xác!", "Đúng rồi!", "Rất giỏi!", "Quá chuẩn!", "Tuyệt vời!"];
+    const WRONG_PHRASES = ["Sai rồi!", "Chưa chính xác!", "Sai rồi, cố lên nhé!", "Chưa đúng rồi!"];
     const feedbackSpeech = isCorrect
-      ? `Chúc mừng bạn đã trả lời chính xác! Đáp án đúng là đáp án ${correct}: ${correctOpt?.text || ""}`
-      : `Rất tiếc chưa chính xác! Đáp án đúng là đáp án ${correct}: ${correctOpt?.text || ""}`;
+      ? CORRECT_PHRASES[Math.floor(Math.random() * CORRECT_PHRASES.length)]
+      : WRONG_PHRASES[Math.floor(Math.random() * WRONG_PHRASES.length)];
 
     if (ttsEnabled) {
       quizSpeech.speak(
@@ -228,7 +226,7 @@ export default function QuizClient() {
           if (autoAdvance && currentIndex < questions.length - 1) {
             autoNextRef.current = setTimeout(() => {
               goToNextQuestion();
-            }, 3500);
+            }, 2000);
           }
         }
       );
