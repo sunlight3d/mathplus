@@ -1,7 +1,8 @@
-// Web Audio API Sound Generator for Quiz
+// Web Audio API Sound Generator & Static Audio Player for Quiz
 class QuizSoundEffects {
   private ctx: AudioContext | null = null;
   public enabled: boolean = true;
+  private currentVoiceAudio: HTMLAudioElement | null = null;
 
   private getContext(): AudioContext | null {
     if (typeof window === "undefined") return null;
@@ -15,6 +16,17 @@ class QuizSoundEffects {
       this.ctx.resume();
     }
     return this.ctx;
+  }
+
+  public stopVoice() {
+    if (this.currentVoiceAudio) {
+      try {
+        this.currentVoiceAudio.pause();
+        this.currentVoiceAudio.currentTime = 0;
+        this.currentVoiceAudio.src = "";
+      } catch (e) {}
+      this.currentVoiceAudio = null;
+    }
   }
 
   public playTick() {
@@ -105,7 +117,6 @@ class QuizSoundEffects {
     const ctx = this.getContext();
     if (!ctx) return;
 
-    // Pop & chime
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.type = "square";
@@ -119,6 +130,57 @@ class QuizSoundEffects {
     gain.connect(ctx.destination);
     osc.start();
     osc.stop(ctx.currentTime + 0.2);
+  }
+
+  // Play static Vietnamese voice files
+  public playVoice(src: string, onEnded?: () => void) {
+    if (!this.enabled || typeof window === "undefined") {
+      if (onEnded) onEnded();
+      return;
+    }
+
+    this.stopVoice();
+
+    try {
+      const audio = new Audio(src);
+      this.currentVoiceAudio = audio;
+
+      audio.onended = () => {
+        this.currentVoiceAudio = null;
+        if (onEnded) onEnded();
+      };
+
+      audio.onerror = () => {
+        this.currentVoiceAudio = null;
+        if (onEnded) onEnded();
+      };
+
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((e) => {
+          console.warn("Audio play blocked:", e);
+          if (onEnded) onEnded();
+        });
+      }
+    } catch (e) {
+      if (onEnded) onEnded();
+    }
+  }
+
+  public playCorrectVoice(onEnded?: () => void) {
+    const files = ["/audio/chinh_xac.mp3", "/audio/dung_roi.mp3"];
+    const file = files[Math.floor(Math.random() * files.length)];
+    this.playVoice(file, onEnded);
+  }
+
+  public playWrongVoice(onEnded?: () => void) {
+    const files = ["/audio/chua_chinh_xac.mp3", "/audio/sai_roi.mp3"];
+    const file = files[Math.floor(Math.random() * files.length)];
+    this.playVoice(file, onEnded);
+  }
+
+  public playTimeUpVoice(onEnded?: () => void) {
+    this.playVoice("/audio/het_gio.mp3", onEnded);
   }
 }
 

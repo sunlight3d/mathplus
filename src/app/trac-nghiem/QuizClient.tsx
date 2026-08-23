@@ -66,6 +66,7 @@ export default function QuizClient() {
   // Clean speech synthesis, audio and timers
   const stopAllAudioAndTimers = useCallback(() => {
     quizSpeech.stop();
+    quizAudio.stopVoice();
     if (timerRef.current) clearInterval(timerRef.current);
     if (autoNextRef.current) clearTimeout(autoNextRef.current);
   }, []);
@@ -151,20 +152,20 @@ export default function QuizClient() {
     setQuizStatus("REVEALED");
     quizAudio.playTimeUp();
 
-    const answerSpeechText = "Hết giờ rồi!";
-
     if (ttsEnabled) {
-      quizSpeech.speak(
-        answerSpeechText,
-        () => {},
-        () => {
-          if (autoAdvance && currentIndex < questions.length - 1) {
-            autoNextRef.current = setTimeout(() => {
-              goToNextQuestion();
-            }, 2000);
-          }
+      quizAudio.playTimeUpVoice(() => {
+        if (autoAdvance && currentIndex < questions.length - 1) {
+          autoNextRef.current = setTimeout(() => {
+            goToNextQuestion();
+          }, 1800);
         }
-      );
+      });
+    } else {
+      if (autoAdvance && currentIndex < questions.length - 1) {
+        autoNextRef.current = setTimeout(() => {
+          goToNextQuestion();
+        }, 1800);
+      }
     }
   }, [ttsEnabled, autoAdvance, currentIndex, questions.length]);
 
@@ -212,24 +213,24 @@ export default function QuizClient() {
       [currentQ.id]: { selected: key, isCorrect },
     }));
 
-    const CORRECT_PHRASES = ["Chính xác!", "Đúng rồi!", "Rất giỏi!", "Quá chuẩn!", "Tuyệt vời!"];
-    const WRONG_PHRASES = ["Sai rồi!", "Chưa chính xác!", "Sai rồi, cố lên nhé!", "Chưa đúng rồi!"];
-    const feedbackSpeech = isCorrect
-      ? CORRECT_PHRASES[Math.floor(Math.random() * CORRECT_PHRASES.length)]
-      : WRONG_PHRASES[Math.floor(Math.random() * WRONG_PHRASES.length)];
-
     if (ttsEnabled) {
-      quizSpeech.speak(
-        feedbackSpeech,
-        () => {},
-        () => {
-          if (autoAdvance && currentIndex < questions.length - 1) {
-            autoNextRef.current = setTimeout(() => {
-              goToNextQuestion();
-            }, 2000);
-          }
+      const playVoice = isCorrect
+        ? quizAudio.playCorrectVoice.bind(quizAudio)
+        : quizAudio.playWrongVoice.bind(quizAudio);
+
+      playVoice(() => {
+        if (autoAdvance && currentIndex < questions.length - 1) {
+          autoNextRef.current = setTimeout(() => {
+            goToNextQuestion();
+          }, 1800);
         }
-      );
+      });
+    } else {
+      if (autoAdvance && currentIndex < questions.length - 1) {
+        autoNextRef.current = setTimeout(() => {
+          goToNextQuestion();
+        }, 1800);
+      }
     }
   };
 
