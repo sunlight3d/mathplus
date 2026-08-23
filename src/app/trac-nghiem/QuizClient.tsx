@@ -18,7 +18,6 @@ import {
   Calculator,
   Compass,
   Shuffle,
-  Bot,
   GraduationCap,
   Loader2,
   BookOpen,
@@ -29,6 +28,7 @@ import { quizAudio } from "@/components/quiz/quizAudio";
 import { quizSpeech } from "@/components/quiz/quizSpeech";
 import {
   defaultMathQuizQuestions,
+  getDefaultQuestionsForGrade,
   GRADES,
   QuizQuestion,
   GradeItem
@@ -49,8 +49,7 @@ export default function QuizClient() {
   const [answeredCount, setAnsweredCount] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Record<number, { selected: string; isCorrect: boolean }>>({});
 
-  // Loading states for AI generation and DB fetch
-  const [isGeneratingAI, setIsGeneratingAI] = useState(false);
+  // Loading state for DB fetch
   const [isLoadingDB, setIsLoadingDB] = useState(false);
   const [notification, setNotification] = useState<{ message: string; type: "success" | "info" | "error" } | null>(null);
 
@@ -100,47 +99,17 @@ export default function QuizClient() {
 
       if (data.success && Array.isArray(data.questions) && data.questions.length > 0) {
         resetQuizState(data.questions);
-        showToast(`Đã tải 10 câu hỏi ngẫu nhiên Toán Lớp ${grade} từ cơ sở dữ liệu!`, "info");
+        showToast(`Đã chọn ngẫu nhiên 10 câu hỏi Toán Lớp ${grade} chuẩn khung chương trình!`, "info");
       } else {
-        // Fallback: If DB doesn't have it yet, try AI generation or filter default questions
-        generateQuestionsWithAI(grade);
+        const fallback = getDefaultQuestionsForGrade(grade);
+        resetQuizState(fallback);
       }
     } catch (err) {
       console.error("Error fetching questions from DB:", err);
-      // Fallback
-      const filtered = defaultMathQuizQuestions.filter(q => (q.grade || 6) === grade);
-      resetQuizState(filtered.length > 0 ? filtered : defaultMathQuizQuestions);
+      const fallback = getDefaultQuestionsForGrade(grade);
+      resetQuizState(fallback);
     } finally {
       setIsLoadingDB(false);
-    }
-  };
-
-  // Generate 10 new questions using qwen3.5:397b-cloud on Ollama and save to DB
-  const generateQuestionsWithAI = async (grade: number) => {
-    setIsGeneratingAI(true);
-    stopAllAudioAndTimers();
-    try {
-      const res = await fetch("/api/quiz/generate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ grade, count: 10 })
-      });
-      const data = await res.json();
-
-      if (data.success && Array.isArray(data.questions) && data.questions.length > 0) {
-        resetQuizState(data.questions);
-        const sourceText = data.source === "AI_GENERATED"
-          ? "AI (Qwen 3.5 Cloud) đã tạo thành công 10 câu hỏi mới & lưu vào DB!"
-          : `Đã chọn ngẫu nhiên 10 câu hỏi Toán Lớp ${grade} từ kho dữ liệu!`;
-        showToast(sourceText, "success");
-      } else {
-        showToast(data.message || "Không thể sinh câu hỏi mới, vui lòng thử lại.", "error");
-      }
-    } catch (err) {
-      console.error("AI Generation failed:", err);
-      showToast("Lỗi kết nối khi gọi AI, đang dùng dữ liệu dự phòng.", "error");
-    } finally {
-      setIsGeneratingAI(false);
     }
   };
 
@@ -405,15 +374,15 @@ export default function QuizClient() {
         <div className="lg:col-span-7 flex justify-center">
           <div className="w-full max-w-[430px] rounded-[36px] bg-gradient-to-b from-[#E8F8E0] via-[#F4FCF0] to-[#E2F5D7] p-4 sm:p-5 shadow-[0_20px_60px_rgba(0,0,0,0.6)] border-4 border-[#64B428] relative overflow-hidden text-gray-900">
             
-            {/* Loading Overlay during AI Generation */}
-            {isGeneratingAI && (
-              <div className="absolute inset-0 bg-[#1b310a]/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center text-white">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#64B428] to-[#FFB800] flex items-center justify-center mb-4 shadow-xl animate-spin">
-                  <Bot className="w-8 h-8 text-white" />
+            {/* Loading Overlay during Question Fetch */}
+            {isLoadingDB && (
+              <div className="absolute inset-0 bg-[#1b310a]/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center text-white animate-fade-in">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#64B428] to-[#FFB800] flex items-center justify-center mb-4 shadow-xl">
+                  <Shuffle className="w-8 h-8 text-[#1b310a] animate-spin" />
                 </div>
-                <h4 className="text-lg font-black text-[#FFB800] mb-2">Qwen 3.5 Cloud Đang Soạn Đề...</h4>
-                <p className="text-xs text-gray-200 leading-relaxed max-w-xs mb-4">
-                  Đang khởi tạo 10 câu hỏi trắc nghiệm Toán Lớp {selectedGrade} chuẩn theo chương trình GDPT mới và tự động lưu vào cơ sở dữ liệu.
+                <h4 className="text-lg font-black text-[#FFB800] mb-2">Đang tải đề Toán Lớp {selectedGrade}...</h4>
+                <p className="text-xs text-gray-200 leading-relaxed max-w-xs mb-3">
+                  Trích xuất ngẫu nhiên 10 câu hỏi chuẩn theo khung chương trình GDPT.
                 </p>
                 <div className="flex items-center space-x-2 text-xs text-[#64B428] font-bold bg-black/40 px-3 py-1.5 rounded-full">
                   <Loader2 className="w-4 h-4 animate-spin" />
@@ -640,37 +609,20 @@ export default function QuizClient() {
               })}
             </div>
 
-            {/* Quick Actions: Random 10 Questions & AI Generate */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-[#64B428]/30">
+            {/* Quick Action: Random 10 Questions */}
+            <div className="pt-3 border-t border-[#64B428]/30">
               <button
                 onClick={() => fetchQuestionsFromDB(selectedGrade)}
-                disabled={isLoadingDB || isGeneratingAI}
-                className="py-2.5 px-3 bg-black/40 hover:bg-black/60 border border-[#64B428] text-white rounded-xl text-xs font-black transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
+                disabled={isLoadingDB}
+                className="w-full py-3 px-4 bg-gradient-to-r from-[#64B428] via-[#509020] to-[#2e5311] hover:brightness-110 border-2 border-[#FFB800] text-white rounded-2xl text-sm font-black shadow-lg transition-all flex items-center justify-center space-x-2 disabled:opacity-50 active:scale-95 cursor-pointer"
               >
                 {isLoadingDB ? (
-                  <Loader2 className="w-4 h-4 animate-spin text-[#FFB800]" />
+                  <Loader2 className="w-5 h-5 animate-spin text-[#FFB800]" />
                 ) : (
-                  <Shuffle className="w-4 h-4 text-[#FFB800]" />
+                  <Shuffle className="w-5 h-5 text-[#FFB800]" />
                 )}
-                <span>Random 10 câu</span>
+                <span>🎲 Đổi 10 câu hỏi ngẫu nhiên (Lớp {selectedGrade})</span>
               </button>
-
-              <button
-                onClick={() => generateQuestionsWithAI(selectedGrade)}
-                disabled={isGeneratingAI || isLoadingDB}
-                className="py-2.5 px-3 bg-gradient-to-r from-[#64B428] to-[#509020] hover:brightness-110 border border-[#FFB800] text-white rounded-xl text-xs font-black shadow-md transition-all flex items-center justify-center space-x-1.5 disabled:opacity-50"
-              >
-                {isGeneratingAI ? (
-                  <Loader2 className="w-4 h-4 animate-spin text-[#FFB800]" />
-                ) : (
-                  <Bot className="w-4 h-4 text-[#FFB800]" />
-                )}
-                <span>AI Sinh 10 câu mới</span>
-              </button>
-            </div>
-
-            <div className="mt-2.5 text-[11px] text-gray-300 italic text-center">
-              💡 Model AI <span className="text-[#FFB800] font-bold">qwen3.5:397b-cloud</span> sẽ tự động biên soạn & lưu vào DB.
             </div>
           </div>
 
