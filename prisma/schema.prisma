@@ -8,16 +8,15 @@ datasource db {
 }
 
 model Course {
-  id          Int      @id @default(autoincrement())
-  title       String
-  slug        String   @unique
-  description String?
-  category    String?
-  price       String?
-  image       String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
+  id            Int            @id @default(autoincrement())
+  title         String
+  slug          String         @unique
+  description   String?
+  category      String?
+  price         String?
+  image         String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
   registrations Registration[]
 }
 
@@ -34,14 +33,14 @@ model Teacher {
 }
 
 model Post {
-  id          Int      @id @default(autoincrement())
-  title       String
-  slug        String   @unique
-  content     String
-  image       String?
-  published   Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        Int      @id @default(autoincrement())
+  title     String
+  slug      String   @unique
+  content   String
+  image     String?
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Registration {
@@ -49,10 +48,10 @@ model Registration {
   studentName String
   phone       String
   courseId    Int?
-  course      Course?   @relation(fields: [courseId], references: [id])
-  status      String   @default("PENDING") // PENDING, CONTACTED, ENROLLED
+  status      String   @default("PENDING")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  course      Course?  @relation(fields: [courseId], references: [id])
 }
 
 model SuccessStory {
@@ -87,11 +86,11 @@ model Document {
 
 model QuizQuestion {
   id            Int      @id @default(autoincrement())
-  grade         Int      @default(6) // 6, 7, 8, 9, 10, 11, 12
+  grade         Int      @default(6)
   topic         String
   question      String
-  options       Json     // [{ key: "A", text: "..." }, { key: "B", text: "..." }, ...]
-  correctAnswer String   // "A" | "B" | "C" | "D"
+  options       Json
+  correctAnswer String
   explanation   String
   iconType      String?  @default("📐")
   createdAt     DateTime @default(now())
