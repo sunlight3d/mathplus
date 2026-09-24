@@ -30,7 +30,7 @@ set -e
 echo "----------------------------------------------------------"
 echo "1. Tìm thư mục MathPlus trên VPS..."
 TARGET_DIR=""
-for dir in /root/mathplus /root/mathplus-app /var/www/mathplus /home/mathplus; do
+for dir in /opt/mathplus /root/mathplus /root/mathplus-app /var/www/mathplus /home/mathplus; do
     if [ -d "$dir" ] && [ -f "$dir/docker-compose.prod.yml" ]; then
         TARGET_DIR="$dir"
         break
