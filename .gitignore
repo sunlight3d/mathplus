@@ -55,3 +55,10 @@ next-env.d.ts
 # Uploaded documents and media
 /public/documents/
 /public/uploads/
+
+# Scratch and temporary folders
+/scratch/
+/temp/
+/test-results/
+/Tài liệu/
+/ảnh ọt/

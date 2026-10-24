@@ -1,0 +1,227 @@
+import os
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.patches import Polygon, Circle, Rectangle
+
+fig_dir = r'c:\code\mathplus\lop10\figures'
+os.makedirs(fig_dir, exist_ok=True)
+
+plt.rcParams['font.sans-serif'] = 'Arial'
+plt.rcParams['font.family'] = 'sans-serif'
+
+# 1. Câu 3: Biểu đồ Ven A con B
+fig, ax = plt.subplots(figsize=(4.5, 3), dpi=220)
+ax.set_xlim(-0.2, 4.2)
+ax.set_ylim(-0.2, 3.2)
+ax.axis('off')
+circle_B = plt.Circle((2, 1.5), 1.3, color='#F8FAFC', ec='#0F172A', lw=2)
+circle_A = plt.Circle((1.8, 1.4), 0.65, color='#E2E8F0', ec='#0F172A', lw=2)
+ax.add_patch(circle_B)
+ax.add_patch(circle_A)
+ax.text(1.8, 1.35, 'A', fontsize=14, fontweight='bold', ha='center', va='center')
+ax.text(2.8, 2.3, 'B', fontsize=14, fontweight='bold', ha='center', va='center')
+ax.text(2, 0.05, 'Mô hình biểu đồ Ven: A ⊂ B', fontsize=11, ha='center', style='italic')
+plt.tight_layout()
+plt.savefig(os.path.join(fig_dir, 'c3_venn.png'), bbox_inches='tight')
+plt.close()
+
+# 2. Câu 8: 3 trục số giao P và Q
+fig, axes = plt.subplots(3, 1, figsize=(6.5, 3.2), dpi=220)
+labels = ['P = (-2; 5)', 'Q = (0; +∞)', 'P ∩ Q = (0; 5)']
+for i, ax in enumerate(axes):
+    ax.set_xlim(-4, 8)
+    ax.set_ylim(-0.5, 0.5)
+    ax.spines['left'].set_color('none')
+    ax.spines['right'].set_color('none')
+    ax.spines['top'].set_color('none')
+    ax.spines['bottom'].set_position(('data', 0))
+    ax.spines['bottom'].set_color('#0F172A')
+    ax.spines['bottom'].set_linewidth(1.5)
+    ax.plot(8, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False, markersize=5)
+    ax.set_yticks([])
+    ax.set_xticks([-2, 0, 5, 7])
+    ax.set_ylabel(labels[i], fontsize=10, fontweight='bold', rotation=0, labelpad=40, va='center')
+    
+    # Gạch bỏ miền không thuộc
+    if i == 0: # P = (-2; 5)
+        ax.plot([-2, 5], [0, 0], color='#0F172A', lw=4)
+        ax.text(-2, 0, '(', fontsize=14, fontweight='bold', ha='center', va='center')
+        ax.text(5, 0, ')', fontsize=14, fontweight='bold', ha='center', va='center')
+    elif i == 1: # Q = (0; +inf)
+        ax.plot([0, 7.8], [0, 0], color='#0F172A', lw=4)
+        ax.text(0, 0, '(', fontsize=14, fontweight='bold', ha='center', va='center')
+    elif i == 2: # P cap Q = (0; 5)
+        ax.plot([0, 5], [0, 0], color='#0F172A', lw=4)
+        ax.text(0, 0, '(', fontsize=14, fontweight='bold', ha='center', va='center')
+        ax.text(5, 0, ')', fontsize=14, fontweight='bold', ha='center', va='center')
+plt.tight_layout()
+plt.savefig(os.path.join(fig_dir, 'c8_axis.png'), bbox_inches='tight')
+plt.close()
+
+# 3. Câu 9: Biểu đồ Ven Anh - Pháp
+fig, ax = plt.subplots(figsize=(5.5, 3), dpi=220)
+ax.set_xlim(-0.2, 5.2)
+ax.set_ylim(-0.2, 3.2)
+ax.axis('off')
+c_eng = plt.Circle((1.8, 1.5), 1.2, color='#F1F5F9', ec='#0F172A', lw=2)
+c_fr = plt.Circle((3.2, 1.5), 1.2, color='#F8FAFC', ec='#0F172A', lw=2)
+ax.add_patch(c_eng)
+ax.add_patch(c_fr)
+ax.text(1.2, 1.5, '19\n(chỉ Anh)', fontsize=11, fontweight='bold', ha='center', va='center')
+ax.text(2.5, 1.5, '16\n(cả 2)', fontsize=11, fontweight='bold', ha='center', va='center')
+ax.text(3.8, 1.5, '14\n(chỉ Pháp)', fontsize=11, fontweight='bold', ha='center', va='center')
+ax.text(1.5, 2.8, 'Tiếng Anh (35)', fontsize=11, fontweight='bold', ha='center')
+ax.text(3.5, 2.8, 'Tiếng Pháp (30)', fontsize=11, fontweight='bold', ha='center')
+ax.text(2.5, 0.1, 'Tổng cộng = 19 + 16 + 14 = 49 người', fontsize=11, fontweight='bold', ha='center')
+plt.tight_layout()
+plt.savefig(os.path.join(fig_dir, 'c9_venn.png'), bbox_inches='tight')
+plt.close()
+
+# 4. Câu 22: Nửa mặt phẳng x - y >= -2
+fig, ax = plt.subplots(figsize=(4.5, 4), dpi=220)
+ax.spines['left'].set_position('zero')
+ax.spines['bottom'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False, markersize=5)
+ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False, markersize=5)
+ax.set_xlim(-4, 4)
+ax.set_ylim(-4, 4)
+x_vals = np.linspace(-4, 4, 200)
+y_line = x_vals + 2
+ax.plot(x_vals, y_line, 'k-', lw=1.5, label='x - y = -2')
+# Miền nghiệm x - y >= -2 <=> y <= x + 2
+ax.fill_between(x_vals, -4, y_line, color='#E2E8F0', alpha=0.6, hatch='//', label='Miền nghiệm (chứa O)')
+ax.plot(0, 0, 'ko', markersize=4)
+ax.text(0.15, -0.3, 'O(0;0)', fontsize=10, fontweight='bold')
+ax.text(-2.3, 0.2, '-2', fontsize=10)
+ax.text(0.2, 2.1, '2', fontsize=10)
+ax.set_xlabel('x', loc='right', fontsize=11, fontweight='bold', labelpad=-12)
+ax.set_ylabel('y', loc='top', fontsize=11, fontweight='bold', labelpad=-12)
+plt.title('Miền nghiệm bất phương trình x - y ≥ -2', fontsize=11, pad=12)
+plt.tight_layout()
+plt.savefig(os.path.join(fig_dir, 'c22_halfplane.png'), bbox_inches='tight')
+plt.close()
+
+# 5. Câu 23: Hệ y >= 0, 3x + 2y <= 6
+fig, ax = plt.subplots(figsize=(4.5, 4), dpi=220)
+ax.spines['left'].set_position('zero')
+ax.spines['bottom'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False, markersize=5)
+ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False, markersize=5)
+ax.set_xlim(-1, 4)
+ax.set_ylim(-1, 4.5)
+x_vals = np.linspace(-1, 4, 200)
+y_line = (6 - 3*x_vals)/2.0
+ax.plot(x_vals, y_line, 'k-', lw=1.5, label='3x + 2y = 6')
+poly = Polygon([[0, 0], [2, 0], [0, 3]], closed=True, color='#E2E8F0', alpha=0.7, ec='k', lw=1.5)
+ax.add_patch(poly)
+ax.plot(0, 0, 'ko', markersize=4)
+ax.text(-0.25, -0.3, 'O', fontsize=10, fontweight='bold')
+ax.text(2.05, -0.3, '2', fontsize=10, fontweight='bold')
+ax.text(-0.35, 3.0, '3', fontsize=10, fontweight='bold')
+ax.set_xlabel('x', loc='right', fontsize=11, fontweight='bold', labelpad=-12)
+ax.set_ylabel('y', loc='top', fontsize=11, fontweight='bold', labelpad=-12)
+plt.title('Miền nghiệm hệ y ≥ 0; 3x + 2y ≤ 6', fontsize=11, pad=12)
+plt.tight_layout()
+plt.savefig(os.path.join(fig_dir, 'c23_halfplane.png'), bbox_inches='tight')
+plt.close()
+
+# 6. Câu 24: Miền tứ giác ABCD
+fig, ax = plt.subplots(figsize=(5, 4.5), dpi=220)
+ax.spines['left'].set_position('zero')
+ax.spines['bottom'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False, markersize=5)
+ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False, markersize=5)
+ax.set_xlim(-1, 9)
+ax.set_ylim(-1, 6.5)
+poly24 = Polygon([[0, 2], [0, 5], [7, 5], [2, 0]], closed=True, color='#E2E8F0', alpha=0.7, ec='k', lw=1.5)
+ax.add_patch(poly24)
+pts = {'A(0;2)': (0, 2), 'B(0;5)': (0, 5), 'C(7;5)': (7, 5), 'D(2;0)': (2, 0)}
+for name, (px, py) in pts.items():
+    ax.plot(px, py, 'ko', markersize=5)
+    offset = (-0.6, 0.1) if px == 0 else (0.1, 0.1)
+    ax.text(px + offset[0], py + offset[1], name, fontsize=10, fontweight='bold')
+ax.set_xlabel('x', loc='right', fontsize=11, fontweight='bold', labelpad=-12)
+ax.set_ylabel('y', loc='top', fontsize=11, fontweight='bold', labelpad=-12)
+plt.title('Miền nghiệm tứ giác ABCD (Min f = -10 tại B)', fontsize=11, pad=12)
+plt.tight_layout()
+plt.savefig(os.path.join(fig_dir, 'c24_polygon.png'), bbox_inches='tight')
+plt.close()
+
+# 7. Bài 4 Tự luận: Miền tứ giác ABCD
+fig, ax = plt.subplots(figsize=(5, 4.5), dpi=220)
+ax.spines['left'].set_position('zero')
+ax.spines['bottom'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False, markersize=5)
+ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False, markersize=5)
+ax.set_xlim(-5, 2)
+ax.set_ylim(-2, 3.5)
+poly_b4 = Polygon([[-9/7, 16/7], [-15/4, -1], [0, -1], [0, 1]], closed=True, color='#E2E8F0', alpha=0.7, ec='k', lw=1.5)
+ax.add_patch(poly_b4)
+pts_b4 = {'A(-9/7; 16/7)': (-9/7, 16/7), 'B(-15/4; -1)': (-15/4, -1), 'C(0; -1)': (0, -1), 'D(0; 1)': (0, 1)}
+for name, (px, py) in pts_b4.items():
+    ax.plot(px, py, 'ko', markersize=5)
+    ax.text(px + 0.1, py + 0.1, name, fontsize=9, fontweight='bold')
+ax.set_xlabel('x', loc='right', fontsize=11, fontweight='bold', labelpad=-12)
+ax.set_ylabel('y', loc='top', fontsize=11, fontweight='bold', labelpad=-12)
+plt.title('Miền nghiệm hệ BPT Bài 4 (Tự luận)', fontsize=11, pad=12)
+plt.tight_layout()
+plt.savefig(os.path.join(fig_dir, 'part_c_b4.png'), bbox_inches='tight')
+plt.close()
+
+# 8. Bài 9 Tự luận: Xưởng Chiến - Bình
+fig, ax = plt.subplots(figsize=(5, 4.5), dpi=220)
+ax.spines['left'].set_position('zero')
+ax.spines['bottom'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False, markersize=5)
+ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False, markersize=5)
+ax.set_xlim(-5, 75)
+ax.set_ylim(-5, 50)
+poly_b9 = Polygon([[0, 0], [60, 0], [40, 30], [0, 110/3]], closed=True, color='#E2E8F0', alpha=0.7, ec='k', lw=1.5)
+ax.add_patch(poly_b9)
+pts_b9 = {'O(0;0)': (0, 0), 'A(60;0)': (60, 0), 'B(40;30)': (40, 30), 'C(0; 36.7)': (0, 110/3)}
+for name, (px, py) in pts_b9.items():
+    ax.plot(px, py, 'ko', markersize=5)
+    ax.text(px + 1, py + 1.5, name, fontsize=9, fontweight='bold')
+ax.set_xlabel('x (Loại I)', loc='right', fontsize=10, fontweight='bold', labelpad=-12)
+ax.set_ylabel('y (Loại II)', loc='top', fontsize=10, fontweight='bold', labelpad=-12)
+plt.title('Miền nghiệm quy hoạch sản xuất (Max tại B = 32 triệu)', fontsize=11, pad=12)
+plt.tight_layout()
+plt.savefig(os.path.join(fig_dir, 'part_c_b9.png'), bbox_inches='tight')
+plt.close()
+
+# 9. Bài 10 Tự luận: Thợ mộc An
+fig, ax = plt.subplots(figsize=(5, 4.5), dpi=220)
+ax.spines['left'].set_position('zero')
+ax.spines['bottom'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False, markersize=5)
+ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False, markersize=5)
+ax.set_xlim(-1, 12)
+ax.set_ylim(-1, 25)
+poly_b10 = Polygon([[0, 0], [0, 20], [5, 10]], closed=True, color='#E2E8F0', alpha=0.7, ec='k', lw=1.5)
+ax.add_patch(poly_b10)
+pts_b10 = {'O(0;0)': (0, 0), 'A(0;20)': (0, 20), 'B(5;10)': (5, 10)}
+for name, (px, py) in pts_b10.items():
+    ax.plot(px, py, 'ko', markersize=5)
+    ax.text(px + 0.3, py + 0.5, name, fontsize=10, fontweight='bold')
+ax.set_xlabel('x (Bàn)', loc='right', fontsize=10, fontweight='bold', labelpad=-12)
+ax.set_ylabel('y (Ghế)', loc='top', fontsize=10, fontweight='bold', labelpad=-12)
+plt.title('Miền nghiệm đóng bàn ghế anh An (Max tại A = 2 triệu)', fontsize=11, pad=12)
+plt.tight_layout()
+plt.savefig(os.path.join(fig_dir, 'part_c_b10.png'), bbox_inches='tight')
+plt.close()
+
+print('All 9 figures generated successfully!')
